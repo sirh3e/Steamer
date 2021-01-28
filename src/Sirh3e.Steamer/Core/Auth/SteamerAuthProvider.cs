@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sirh3e.Steamer.Auth
+namespace Sirh3e.Steamer.Core.Auth
 {
     public class SteamerAuthProvider : ISteamerAuthProvider
     {
