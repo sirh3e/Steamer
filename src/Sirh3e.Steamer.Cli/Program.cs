@@ -4,7 +4,6 @@ using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Clients;
 using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Utilities.Serializer.Json;
-using Sirh3e.Steamer.Web;
 using Sirh3e.Steamer.Web.Services;
 
 namespace Sirh3e.Steamer.Cli
