@@ -1,4 +1,4 @@
-﻿using Sirh3e.Steamer.Core.Reqeuest;
+﻿using Sirh3e.Steamer.Core.Request;
 
 namespace Sirh3e.Steamer.Core.Service
 {

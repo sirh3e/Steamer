@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using Sirh3e.Steamer.Core.Clients;
-using Sirh3e.Steamer.Core.Reqeuest;
+using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
 using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans;

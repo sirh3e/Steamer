@@ -1,6 +1,6 @@
 ﻿using Sirh3e.Steamer.Core.Method;
 
-namespace Sirh3e.Steamer.Core.Reqeuest
+namespace Sirh3e.Steamer.Core.Request
 {
     public interface ISteamerRequest
     {
