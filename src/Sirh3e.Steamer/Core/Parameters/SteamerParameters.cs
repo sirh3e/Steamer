@@ -25,8 +25,8 @@ namespace Sirh3e.Steamer.Core.Parameters
         public bool TryGetValue<TParameter>(string key, out TParameter parameter)
             where TParameter : ISteamerParameter
         {
-            var result = Parameters.TryGetValue(key, out var p);
-            parameter = (TParameter)p;
+            var result = Parameters.TryGetValue(key, out var _parameter);
+            parameter = (TParameter)_parameter;
 
             return result;
         }

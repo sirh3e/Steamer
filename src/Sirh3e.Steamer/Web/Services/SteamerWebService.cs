@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
+using Sirh3e.Steamer.Core.Clients;
 using Sirh3e.Steamer.Core.Reqeuest;
 using Sirh3e.Steamer.Core.Response;
+using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans;
 
 namespace Sirh3e.Steamer.Web.Services
@@ -23,6 +25,7 @@ namespace Sirh3e.Steamer.Web.Services
             var response = new TResponse
             {
                 Request = request,
+                //Provider = 
             };
 
             return response;
@@ -37,14 +40,16 @@ namespace Sirh3e.Steamer.Web.Services
                     @"D:\Programming\git\github\users\sirh3e\repositories\csharp\Steamer\src\Sirh3e.Steamer.Cli\NewFile1.txt")
                 .ReadToEnd();
 
-            response.Model = Serialize(response.Model, data);
+            response.Model = Serialize(response.Model, response.Provider);
 
             return response;
         }
 
-        private T Serialize<T>(T model, string data)
+        private T Serialize<T>(T model, ISteamerSerializerDataProvider provider)
         {
-            return Client.SerializerProvider.Serializer.Serialize<T>(data);
+            _ = provider ?? throw new ArgumentNullException(nameof(provider));
+
+            return Client.SerializerProvider.Serializer.Serialize<T>(provider);
         }
     }
 }

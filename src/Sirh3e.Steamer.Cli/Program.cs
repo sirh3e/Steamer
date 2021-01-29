@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Sirh3e.Steamer.Core.Auth;
-using Sirh3e.Steamer.Core.Client;
+using Sirh3e.Steamer.Core.Clients;
 using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Utilities.Serializer.Json;
 using Sirh3e.Steamer.Web;
@@ -14,11 +14,8 @@ namespace Sirh3e.Steamer.Cli
         private static void Main(string[] args)
         {
             var client = new SteamerWebClient.Builder()
-                .SetClient(new SteamerClient.Builder()
-                    .SetAuthProvider(new SteamerAuthProvider(""))
-                    .Build()
-                )
-                .SetProvider(new SteamerSerializerProvider.Builder()
+                .SetAuthProvider(new SteamerAuthProvider(""))
+                .SetSerializerProvider(new SteamerSerializerProvider.Builder()
                     .SetSerializer(new NewtonsoftSerializer(JsonConvert.DeserializeObject))
                     .Build())
                 .Build();

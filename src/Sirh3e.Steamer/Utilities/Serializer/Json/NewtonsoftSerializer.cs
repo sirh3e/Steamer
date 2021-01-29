@@ -11,9 +11,10 @@ namespace Sirh3e.Steamer.Utilities.Serializer.Json
             SerializeFunc = func ?? throw new ArgumentNullException(nameof(func));
         }
 
-        public T Serialize<T>(string data)
+        public T Serialize<T>(ISteamerSerializerDataProvider provider)
         {
-            _ = data ?? throw new ArgumentNullException(nameof(data));
+            _ = provider ?? throw new ArgumentNullException(nameof(provider));
+            var data = provider.GetData() ?? throw new ArgumentNullException(nameof(provider.GetData));
 
             return (T)SerializeFunc(data, typeof(T));
         }

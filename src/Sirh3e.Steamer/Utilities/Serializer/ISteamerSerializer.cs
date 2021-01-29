@@ -2,6 +2,6 @@
 {
     public interface ISteamerSerializer
     {
-        public T Serialize<T>(string data);
+        public T Serialize<T>(ISteamerSerializerDataProvider provider);
     }
 }

@@ -1,12 +1,12 @@
-﻿using Sirh3e.Steamer.Core.Client;
+﻿using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Web.Builders;
 
-namespace Sirh3e.Steamer.Web
+namespace Sirh3e.Steamer.Core.Clients
 {
     public interface ISteamerWebClient : ISteamWebInterfaceBuilder
     {
-        public ISteamerClient Client { get; }
+        public ISteamerAuthProvider AuthProvider { get; }
         public ISteamerSerializerProvider SerializerProvider { get; }
     }
 }

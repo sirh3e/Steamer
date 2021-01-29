@@ -1,5 +1,5 @@
 ﻿using System;
-using Sirh3e.Steamer.Core.Client;
+using Sirh3e.Steamer.Core.Clients;
 using Sirh3e.Steamer.Core.Method;
 
 namespace Sirh3e.Steamer.Core.Reqeuest
