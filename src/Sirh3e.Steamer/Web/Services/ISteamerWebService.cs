@@ -1,11 +1,13 @@
-﻿using Sirh3e.Steamer.Core.Clients;
-using Sirh3e.Steamer.Core.Service;
+﻿using System;
+using Sirh3e.Steamer.Core.Clients;
+using Sirh3e.Steamer.Net.Http;
 using Sirh3e.Steamer.Web.Services.SteamUser;
 
 namespace Sirh3e.Steamer.Web.Services
 {
-    public interface ISteamerWebService : ISteamWebSteamUserServiceBinder
+    public interface ISteamerWebService : IDisposable, ISteamWebSteamUserServiceBinder
     {
-        ISteamerWebClient Client { get; }
+        public ISteamerWebClient WebClient { get; }
+        public ISteamerHttpClientProvider HttpClientProvider { get; set; }
     }
 }

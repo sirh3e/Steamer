@@ -1,8 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Sirh3e.Steamer.Core.Clients;
 using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
+using Sirh3e.Steamer.Net.Http;
 using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans;
 
@@ -12,10 +15,21 @@ namespace Sirh3e.Steamer.Web.Services
     {
         public SteamerWebService(ISteamerWebClient client)
         {
-            Client = client ?? throw new ArgumentNullException(nameof(client));
+            WebClient = client ?? throw new ArgumentNullException(nameof(client));
         }
 
-        public ISteamerWebClient Client { get; }
+        public ISteamerWebClient WebClient { get; }
+        public ISteamerHttpClientProvider HttpClientProvider { get; set; }
+
+        private Task<HttpResponseMessage> GetHttpResponseMessage<TRequest>(TRequest request)
+            where TRequest : ISteamerRequest
+        {
+            return request.Method.HttpMethod.Method switch
+            {
+                "GET" => HttpClientProvider.HttpClient.GetAsync(new Uri("")),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+        }
 
         private TResponse Call<TRequest, TResponse>(TRequest request)
             where TRequest : ISteamerRequest
@@ -49,7 +63,12 @@ namespace Sirh3e.Steamer.Web.Services
         {
             _ = provider ?? throw new ArgumentNullException(nameof(provider));
 
-            return Client.SerializerProvider.Serializer.Serialize<T>(provider);
+            return WebClient.SerializerProvider.Serializer.Serialize<T>(provider);
+        }
+
+        public void Dispose()
+        {
+            HttpClientProvider.HttpClient?.Dispose();
         }
     }
 }
