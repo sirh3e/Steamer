@@ -8,6 +8,7 @@ namespace Sirh3e.Steamer.Core.Auth
         {
             ApiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey));
         }
+
         public string ApiKey { get; }
     }
 }

@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirh3e.Steamer", "src\Sirh3e.Steamer\Sirh3e.Steamer.csproj", "{B1A8AA2E-C01F-4C72-B617-A3408ECF6749}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirh3e.Steamer.Cli", "src\Sirh3e.Steamer.Cli\Sirh3e.Steamer.Cli.csproj", "{6B4DF5F9-5EB4-4060-BA57-C7E4D2C5D856}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{B1A8AA2E-C01F-4C72-B617-A3408ECF6749}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1A8AA2E-C01F-4C72-B617-A3408ECF6749}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1A8AA2E-C01F-4C72-B617-A3408ECF6749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B4DF5F9-5EB4-4060-BA57-C7E4D2C5D856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4DF5F9-5EB4-4060-BA57-C7E4D2C5D856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4DF5F9-5EB4-4060-BA57-C7E4D2C5D856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4DF5F9-5EB4-4060-BA57-C7E4D2C5D856}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
