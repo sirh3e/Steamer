@@ -5,7 +5,7 @@ using Sirh3e.Steamer.Web.Services.SteamUser;
 
 namespace Sirh3e.Steamer.Web.Services
 {
-    public interface ISteamerWebService : IDisposable, ISteamWebSteamUserServiceBinder
+    public interface ISteamerWebService : IDisposable, ISteamerWebSteamUserServiceBinder
     {
         public ISteamerWebClient WebClient { get; }
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }

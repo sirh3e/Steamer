@@ -8,7 +8,7 @@ using Sirh3e.Steamer.Core.Parameters;
 
 namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans
 {
-    public class PlayerBansRequestBuilder : SteamerMethod, IPlayerBansRequestBuilder
+    public class PlayerBansRequestBuilder : SteamerMethod, IPlayerBansRequestBuilder //ToDo rename SteamerMethod
     {
         public PlayerBansRequestBuilder(ISteamerInterface @interface) :
             base(@interface, HttpMethod.Get, "GetPlayerBans", 1,
