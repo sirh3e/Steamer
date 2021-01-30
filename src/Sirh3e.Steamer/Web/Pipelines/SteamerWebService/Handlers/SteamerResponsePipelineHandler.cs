@@ -12,13 +12,13 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
     {
         public TSteamerResponse Process((ISteamerRequest, Option<TSteamerResponseModel>) input)
         {
-            var (request, option) = input;
+            var (request, model) = input;
 
             _ = request ?? throw new ArgumentNullException(nameof(request));
 
             return new TSteamerResponse
             {
-                Model = option,
+                Model = model,
                 Request = request
             };
         }

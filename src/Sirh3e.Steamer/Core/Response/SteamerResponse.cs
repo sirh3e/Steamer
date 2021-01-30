@@ -8,6 +8,7 @@ namespace Sirh3e.Steamer.Core.Response
     {
         public ISteamerRequest Request { get; set; }
         public ISteamerSerializerDataProvider Provider { get; }
+
         public Option<object> Model { get; set; }
     }
 

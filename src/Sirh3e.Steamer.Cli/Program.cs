@@ -15,8 +15,9 @@ namespace Sirh3e.Steamer.Cli
     {
         private static void Main(string[] args)
         {
+            var apiKey = "8874C9EC68D98C99AA0F9CC6D35A7DCE";
             var client = new SteamerWebClient.Builder()
-                .SetAuthProvider(new SteamerAuthProvider(""))
+                .SetAuthProvider(new SteamerAuthProvider(apiKey))
                 .SetSerializerProvider(new SteamerSerializerProvider.Builder()
                     .SetSerializer(new NewtonsoftSerializer(JsonConvert.DeserializeObject))
                     .Build())
@@ -27,17 +28,16 @@ namespace Sirh3e.Steamer.Cli
             var service = new SteamerWebService(client, httpClientProvider);
 
 
-            var start = DateTime.Now;
             var response = client.SteamerUser.PlayerBans
-                .SetKey("") //ToDo add your key here
+                .SetKey(apiKey) //ToDo add your key here
                 .SetSteamIds(76561198220146080)
                 .Build()
                 .ServiceExecute(service);
 
-            var end = DateTime.Now;
+            var builder = client.SteamerUser.PlayerBans.SetKey(apiKey).SetSteamIds(76561198220146080);
+            var request = builder.Build();
 
-            var totalSeconds = (end - start).TotalSeconds;
-            Console.WriteLine(totalSeconds);
+            var steamerParameters = builder.Method.Parameters;
 
             //var response = service.Call(request); //ToDo rename it to Execute
             var option = response.Model;

@@ -21,7 +21,8 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService
                 .AddHandler(new SteamerHttpResponseMessageCatcherPipelineHandler())
                 .AddHandler(new SteamerHttpResponseMessageHandlerPipelineHandler())
                 .AddHandler(
-                    new SteamerResponseModelPipelineHandler<TSteamerResponseModel>(Service.WebClient.SerializerProvider))
+                    new SteamerResponseModelPipelineHandler<TSteamerResponseModel>(Service.WebClient
+                        .SerializerProvider))
                 .AddHandler(new SteamerResponsePipelineHandler<TSteamerResponse, TSteamerResponseModel>());
         }
 

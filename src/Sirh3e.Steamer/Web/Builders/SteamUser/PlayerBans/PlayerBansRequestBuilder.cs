@@ -12,7 +12,13 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans
     {
         public PlayerBansRequestBuilder(ISteamerInterface @interface)
         {
-            Method = new SteamerMethod(@interface,
+            Interface = @interface;
+            Method = GetDefaultMethod();
+        }
+
+        public ISteamerMethod GetDefaultMethod()
+        {
+            return new SteamerMethod(Interface,
                 HttpMethod.Get, "GetPlayerBans", 1,
                 new SteamerParameters(
                     new SteamerStringParameter("key"),
@@ -39,14 +45,18 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans
             return this;
         }
 
-        public ISteamerMethod Method { get; }
+        public ISteamerInterface Interface { get; }
+        public ISteamerMethod Method { get; set; }
 
         public IPlayerBansRequest Build()
         {
-            return new PlayerBansRequest
+            var request = new PlayerBansRequest
             {
                 Method = Method
             };
+
+            Method = GetDefaultMethod();
+            return request;
         }
     }
 }
