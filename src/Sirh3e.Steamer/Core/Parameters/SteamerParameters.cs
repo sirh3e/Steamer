@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Sirh3e.Steamer.Core.Parameter;
@@ -7,14 +8,13 @@ namespace Sirh3e.Steamer.Core.Parameters
 {
     public class SteamerParameters : ISteamerParameters
     {
-        protected Dictionary<string, ISteamerParameter> Parameters { get; } = new();
         public SteamerParameters(params ISteamerParameter[] parameters)
         {
             if (parameters.Any(parameter => TryAdd(parameter.Name, parameter).Equals(false)))
-            {
                 throw new NotImplementedException();
-            }
         }
+
+        protected Dictionary<string, ISteamerParameter> Parameters { get; } = new();
 
         public bool TryAdd<TParameter>(string key, TParameter parameter)
             where TParameter : ISteamerParameter
@@ -29,6 +29,24 @@ namespace Sirh3e.Steamer.Core.Parameters
             parameter = (TParameter)_parameter;
 
             return result;
+        }
+
+        public void SetValue<TValue>(string key, TValue value)
+        {
+            if (Parameters.TryGetValue(key, out var parameter))
+            {
+                parameter.Value = value;
+            }
+        }
+
+        public IEnumerator<ISteamerParameter> GetEnumerator()
+        {
+            return Parameters.Values.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

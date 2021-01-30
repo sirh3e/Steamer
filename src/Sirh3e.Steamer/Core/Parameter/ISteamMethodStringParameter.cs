@@ -4,9 +4,10 @@ namespace Sirh3e.Steamer.Core.Parameter
 {
     public class SteamerStringParameter : ISteamerParameter<string>
     {
-        public SteamerStringParameter(string name, string value)
+        public SteamerStringParameter(string name, bool required = true, string value = "")
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
+            Required = required;
             Value = value ?? throw new ArgumentNullException(nameof(value));
         }
 
@@ -19,9 +20,20 @@ namespace Sirh3e.Steamer.Core.Parameter
             throw new NotImplementedException();
         }
 
+        public string GetValueFromQueryString()
+        {
+            return Value;
+        }
+
         public void Deconstruct(out bool required, out string name, out object value)
         {
             throw new NotImplementedException();
+        }
+
+        object ISteamerParameter.Value
+        {
+            get => Value;
+            set => Value = value as string;
         }
 
         public void Deconstruct(out string name, out string value)
@@ -36,12 +48,6 @@ namespace Sirh3e.Steamer.Core.Parameter
 
             name = t;
             value = t1;
-        }
-
-        object ISteamerParameter.Value
-        {
-            get => Value;
-            set => Value = value as string;
         }
     }
 }

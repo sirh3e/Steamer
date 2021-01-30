@@ -37,7 +37,8 @@ namespace Sirh3e.Steamer.Core.Clients
 
             public SteamerWebClient Build()
             {
-                return new(AuthProvider ?? throw new ArgumentNullException(nameof(AuthProvider)), SerializerProvider ?? throw new ArgumentNullException(nameof(SerializerProvider)));
+                return new(AuthProvider ?? throw new ArgumentNullException(nameof(AuthProvider)),
+                    SerializerProvider ?? throw new ArgumentNullException(nameof(SerializerProvider)));
             }
         }
     }

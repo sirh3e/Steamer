@@ -12,5 +12,6 @@ namespace Sirh3e.Steamer.Core.Method
         public ulong Version { get; }
 
         public ISteamerParameters Parameters { get; }
+        public string GetUriHost();
     }
 }

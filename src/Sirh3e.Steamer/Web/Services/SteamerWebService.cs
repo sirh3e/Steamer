@@ -1,74 +1,41 @@
 ﻿using System;
-using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Sirh3e.Steamer.Core.Clients;
-using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
+using Sirh3e.Steamer.Core.Service;
 using Sirh3e.Steamer.Net.Http;
-using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans;
 
 namespace Sirh3e.Steamer.Web.Services
 {
     public class SteamerWebService : ISteamerWebService
     {
-        public SteamerWebService(ISteamerWebClient client)
+        public SteamerWebService(ISteamerWebClient webClient, ISteamerHttpClientProvider httpClientProvider)
         {
-            WebClient = client ?? throw new ArgumentNullException(nameof(client));
+            WebClient = webClient ?? throw new ArgumentNullException(nameof(webClient));
+            HttpClientProvider = httpClientProvider ?? throw new ArgumentNullException(nameof(httpClientProvider));
         }
 
         public ISteamerWebClient WebClient { get; }
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }
 
-        private Task<HttpResponseMessage> GetHttpResponseMessage<TRequest>(TRequest request)
-            where TRequest : ISteamerRequest
-        {
-            return request.Method.HttpMethod.Method switch
-            {
-                "GET" => HttpClientProvider.HttpClient.GetAsync(new Uri("")),
-                _ => throw new ArgumentOutOfRangeException()
-            };
-        }
-
-        private TResponse Call<TRequest, TResponse>(TRequest request)
-            where TRequest : ISteamerRequest
-            where TResponse : ISteamerResponse, new()
-        {
-
-            var response = new TResponse
-            {
-                Request = request,
-                //Provider = 
-            };
-
-            return response;
-        }
-
         public IPlayerBansResponse Call(IPlayerBansRequest request)
         {
-            var response = Call<IPlayerBansRequest, PlayerBansResponse>(request);
+            var response = new PlayerBansResponse();
 
-            var data = File
-                .OpenText(
-                    @"D:\Programming\git\github\users\sirh3e\repositories\csharp\Steamer\src\Sirh3e.Steamer.Cli\NewFile1.txt")
-                .ReadToEnd();
-
-            response.Model = Serialize(response.Model, response.Provider);
-
-            return response;
-        }
-
-        private T Serialize<T>(T model, ISteamerSerializerDataProvider provider)
-        {
-            _ = provider ?? throw new ArgumentNullException(nameof(provider));
-
-            return WebClient.SerializerProvider.Serializer.Serialize<T>(provider);
+            var pipeline = CreatePipeline(response, response.Model.Unwrap);
+            return pipeline.Process(request);
         }
 
         public void Dispose()
         {
             HttpClientProvider.HttpClient?.Dispose();
+        }
+
+        private SteamerServiceSteamerPipeline<TSteamerResponse, TSteamerResponseModel> CreatePipeline<TSteamerResponse,
+            TSteamerResponseModel>(TSteamerResponse response, Func<TSteamerResponseModel> model)
+            where TSteamerResponse : ISteamerResponse<TSteamerResponseModel>, new()
+        {
+            return new(this);
         }
     }
 }

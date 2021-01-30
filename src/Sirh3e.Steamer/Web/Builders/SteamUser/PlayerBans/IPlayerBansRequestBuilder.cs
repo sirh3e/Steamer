@@ -2,7 +2,8 @@
 {
     public interface IPlayerBansRequestBuilder
     {
-        public IPlayerBansRequestBuilder SetSteamIds(params ulong[] steamids);
+        public IPlayerBansRequestBuilder SetKey(string key);
+        public IPlayerBansRequestBuilder SetSteamIds(params ulong[] steamIds);
         public IPlayerBansRequest Build();
     }
 }

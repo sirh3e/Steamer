@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Net.Http;
 using Newtonsoft.Json;
 using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Clients;
+using Sirh3e.Steamer.Net.Http;
 using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Utilities.Serializer.Json;
 using Sirh3e.Steamer.Web.Services;
@@ -19,19 +21,20 @@ namespace Sirh3e.Steamer.Cli
                     .Build())
                 .Build();
 
-            var service = new SteamerWebService(client);
+            var httpClientProvider = new SteamerHttpClientProvider(new HttpClient());
+
+            var service = new SteamerWebService(client, httpClientProvider);
 
             var request = client.SteamUser.PlayerBans
-                .SetSteamIds(1, 2, 4, 8)
-                .SetSteamIds()
-                .SetSteamIds()
+                .SetKey("") //ToDo add your key here
+                .SetSteamIds(76561198220146080)
                 .Build();
             //.ServiceCall(service);
 
             var response = service.Call(request);
-            var model = response.Model;
+            var option = response.Model;
 
-            model.Players.ForEach(p => Console.WriteLine(p.SteamId));
+            option.Match(model => { model.Players.ForEach(p => Console.WriteLine(p.SteamId)); }, () => { });
         }
     }
 }

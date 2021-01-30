@@ -5,6 +5,7 @@
         public bool Required { get; }
         public string Name { get; }
         public object Value { get; set; }
+        public string GetValueFromQueryString();
         public void Deconstruct(out bool required, out string name, out object value);
     }
 

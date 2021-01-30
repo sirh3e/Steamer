@@ -1,4 +1,5 @@
-﻿using Sirh3e.Steamer.Core.Request;
+﻿using Sirh3e.Rust.Option;
+using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Utilities.Serializer;
 
 namespace Sirh3e.Steamer.Core.Response
@@ -7,11 +8,11 @@ namespace Sirh3e.Steamer.Core.Response
     {
         public ISteamerRequest Request { get; set; }
         public ISteamerSerializerDataProvider Provider { get; }
-        public object Model { get; set; }
+        public Option<object> Model { get; set; }
     }
 
     public interface ISteamerResponse<TModel> : ISteamerResponse
     {
-        public new TModel Model { get; set; }
+        public new Option<TModel> Model { get; set; }
     }
 }
