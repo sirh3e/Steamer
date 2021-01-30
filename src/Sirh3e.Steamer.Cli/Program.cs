@@ -28,7 +28,7 @@ namespace Sirh3e.Steamer.Cli
 
 
             var start = DateTime.Now;
-            var response = client.SteamUser.PlayerBans
+            var response = client.SteamerUser.PlayerBans
                 .SetKey("") //ToDo add your key here
                 .SetSteamIds(76561198220146080)
                 .Build()
@@ -43,10 +43,9 @@ namespace Sirh3e.Steamer.Cli
             var option = response.Model;
             //model.Players.ForEach(p => Console.WriteLine($"steamid: {p.SteamId} vac: {p.VacBanned}"));
 
-            option.Match(model =>
-            {
-                model.Players.ForEach(p => Console.WriteLine($"steamid: {p.SteamId} vac: {p.VacBanned}"));
-            }, () => { });
+            option.Match(
+                model => { model.Players.ForEach(p => Console.WriteLine($"steamid: {p.SteamId} vac: {p.VacBanned}")); },
+                () => { });
         }
     }
 }

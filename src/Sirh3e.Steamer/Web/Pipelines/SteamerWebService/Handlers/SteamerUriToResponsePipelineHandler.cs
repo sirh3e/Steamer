@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Net.Http;
 
-namespace Sirh3e.Steamer.Core.Pipeline.Handlers
+namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 {
     public class SteamerUriToResponsePipelineHandler : ISteamerPipelineHandler<(ISteamerRequest, Uri), (ISteamerRequest,
         Task<HttpResponseMessage>)>

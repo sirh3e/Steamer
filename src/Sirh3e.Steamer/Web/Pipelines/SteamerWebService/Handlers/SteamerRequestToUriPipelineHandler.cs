@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Web;
+using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
 
-namespace Sirh3e.Steamer.Core.Pipeline.Handlers
+namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 {
     public class SteamerRequestToUriPipelineHandler : ISteamerPipelineHandler<ISteamerRequest, (ISteamerRequest, Uri)>
     {
@@ -14,9 +15,7 @@ namespace Sirh3e.Steamer.Core.Pipeline.Handlers
             var queryNameValueCollection = HttpUtility.ParseQueryString(string.Empty);
 
             foreach (var parameter in input.Method.Parameters)
-            {
                 queryNameValueCollection.Set(parameter.Name, parameter.GetValueFromQueryString());
-            }
 
             var builder = new UriBuilder(input.Method.GetUriHost())
             {

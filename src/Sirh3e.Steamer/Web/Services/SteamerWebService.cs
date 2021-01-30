@@ -1,9 +1,9 @@
 ﻿using System;
 using Sirh3e.Steamer.Core.Clients;
 using Sirh3e.Steamer.Core.Response;
-using Sirh3e.Steamer.Core.Service;
 using Sirh3e.Steamer.Net.Http;
 using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans;
+using Sirh3e.Steamer.Web.Pipelines.SteamerWebService;
 
 namespace Sirh3e.Steamer.Web.Services
 {
@@ -31,7 +31,7 @@ namespace Sirh3e.Steamer.Web.Services
             HttpClientProvider.HttpClient?.Dispose();
         }
 
-        private SteamerServiceSteamerPipeline<TSteamerResponse, TSteamerResponseModel> CreatePipeline<TSteamerResponse,
+        private SteamerWebServicePipeline<TSteamerResponse, TSteamerResponseModel> CreatePipeline<TSteamerResponse,
             TSteamerResponseModel>(TSteamerResponse response, Func<TSteamerResponseModel> model)
             where TSteamerResponse : ISteamerResponse<TSteamerResponseModel>, new()
         {

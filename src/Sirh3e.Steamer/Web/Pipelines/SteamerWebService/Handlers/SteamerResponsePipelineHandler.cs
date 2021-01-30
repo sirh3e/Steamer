@@ -1,9 +1,10 @@
 ﻿using System;
 using Sirh3e.Rust.Option;
+using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
 
-namespace Sirh3e.Steamer.Core.Pipeline.Handlers
+namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 {
     public class SteamerResponsePipelineHandler<TSteamerResponse, TSteamerResponseModel> : ISteamerPipelineHandler<(
         ISteamerRequest, Option<TSteamerResponseModel>), TSteamerResponse>

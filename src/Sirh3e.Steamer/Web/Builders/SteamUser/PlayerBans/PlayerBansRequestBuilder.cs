@@ -8,21 +8,22 @@ using Sirh3e.Steamer.Core.Parameters;
 
 namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans
 {
-    public class PlayerBansRequestBuilder : SteamerMethod, IPlayerBansRequestBuilder //ToDo rename SteamerMethod
+    public class PlayerBansRequestBuilder : IPlayerBansRequestBuilder //ToDo rename SteamerMethod
     {
-        public PlayerBansRequestBuilder(ISteamerInterface @interface) :
-            base(@interface, HttpMethod.Get, "GetPlayerBans", 1,
+        public PlayerBansRequestBuilder(ISteamerInterface @interface)
+        {
+            Method = new SteamerMethod(@interface,
+                HttpMethod.Get, "GetPlayerBans", 1,
                 new SteamerParameters(
                     new SteamerStringParameter("key"),
-                    new SteamerStringParameter("steamids")))
-        {
+                    new SteamerStringParameter("steamids")));
         }
 
         public IPlayerBansRequestBuilder SetKey(string key)
         {
             _ = key ?? throw new ArgumentNullException(nameof(key));
 
-            Parameters.SetValue("key", key);
+            Method.Parameters.SetValue("key", key);
 
             return this;
         }
@@ -33,16 +34,18 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans
 
             var value = string.Join(",", steamIds.Select(steamId => steamId.ToString()).ToList());
 
-            Parameters.SetValue("steamids", value);
+            Method.Parameters.SetValue("steamids", value);
 
             return this;
         }
+
+        public ISteamerMethod Method { get; }
 
         public IPlayerBansRequest Build()
         {
             return new PlayerBansRequest
             {
-                Method = this
+                Method = Method
             };
         }
     }

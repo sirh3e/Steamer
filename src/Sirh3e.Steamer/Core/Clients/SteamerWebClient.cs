@@ -11,12 +11,12 @@ namespace Sirh3e.Steamer.Core.Clients
         {
             AuthProvider = authProvider ?? throw new ArgumentNullException(nameof(authProvider));
             SerializerProvider = serializerProvider ?? throw new ArgumentNullException(nameof(serializerProvider));
-            SteamUser = new SteamerUserInterfaceBuilder();
+            SteamerUser = new SteamerUserInterfaceBuilder();
         }
 
         public ISteamerAuthProvider AuthProvider { get; }
         public ISteamerSerializerProvider SerializerProvider { get; }
-        public ISteamUserInterfaceBuilder SteamUser { get; }
+        public ISteamerUserInterfaceBuilder SteamerUser { get; }
 
         public class Builder
         {

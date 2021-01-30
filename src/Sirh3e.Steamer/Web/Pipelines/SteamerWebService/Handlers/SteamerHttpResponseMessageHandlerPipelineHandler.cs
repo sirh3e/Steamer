@@ -2,9 +2,10 @@
 using System.Net;
 using System.Net.Http;
 using Sirh3e.Rust.Result;
+using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
 
-namespace Sirh3e.Steamer.Core.Pipeline.Handlers
+namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 {
     public class SteamerHttpResponseMessageHandlerPipelineHandler : ISteamerPipelineHandler<(ISteamerRequest,
         HttpResponseMessage), (ISteamerRequest, Result<HttpResponseMessage, string>)>
