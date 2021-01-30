@@ -4,11 +4,11 @@ namespace Sirh3e.Steamer.Utilities.Serializer.Json
 {
     public class NewtonsoftSerializer : ISteamerSerializer
     {
-        protected Func<string, Type, object> SerializeFunc;
+        private readonly Func<string, Type, object> SerializeFunc;
 
-        public NewtonsoftSerializer(Func<string, Type, object> func)
+        public NewtonsoftSerializer(Func<string, Type, object> serializeFunc)
         {
-            SerializeFunc = func ?? throw new ArgumentNullException(nameof(func));
+            SerializeFunc = serializeFunc ?? throw new ArgumentNullException(nameof(serializeFunc));
         }
 
         public T Serialize<T>(ISteamerSerializerDataProvider provider)
