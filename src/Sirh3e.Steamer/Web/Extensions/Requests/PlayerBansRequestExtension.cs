@@ -6,12 +6,12 @@ namespace Sirh3e.Steamer.Web.Extensions.Requests
 {
     public static class PlayerBansRequestExtension
     {
-        public static IPlayerBansResponse ServiceCall(this IPlayerBansRequest request, ISteamerWebService service)
+        public static IPlayerBansResponse ServiceExecute(this IPlayerBansRequest request, ISteamerWebService service)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request));
             _ = service ?? throw new ArgumentNullException(nameof(service));
 
-            return service.Call(request);
+            return service.Execute(request);
         }
     }
 }

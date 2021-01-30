@@ -32,7 +32,7 @@ namespace Sirh3e.Steamer.Cli
                 .SetKey("") //ToDo add your key here
                 .SetSteamIds(76561198220146080)
                 .Build()
-                .ServiceCall(service);
+                .ServiceExecute(service);
 
             var end = DateTime.Now;
 

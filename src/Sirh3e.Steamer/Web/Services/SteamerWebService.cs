@@ -18,7 +18,7 @@ namespace Sirh3e.Steamer.Web.Services
         public ISteamerWebClient WebClient { get; }
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }
 
-        public IPlayerBansResponse Call(IPlayerBansRequest request)
+        public IPlayerBansResponse Execute(IPlayerBansRequest request)
         {
             var response = new PlayerBansResponse();
 
