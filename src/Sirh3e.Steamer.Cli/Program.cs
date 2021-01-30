@@ -3,6 +3,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Clients;
+using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Net.Http;
 using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Utilities.Serializer.Json;

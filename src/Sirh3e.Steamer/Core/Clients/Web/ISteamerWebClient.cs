@@ -2,7 +2,7 @@
 using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Web.Builders;
 
-namespace Sirh3e.Steamer.Core.Clients
+namespace Sirh3e.Steamer.Core.Clients.Web
 {
     public interface ISteamerWebClient : ISteamerWebInterfaceBuilder
     {
