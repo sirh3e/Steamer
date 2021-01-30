@@ -4,6 +4,7 @@ using System.Net.Http;
 using Sirh3e.Steamer.Core.Interface;
 using Sirh3e.Steamer.Core.Method;
 using Sirh3e.Steamer.Core.Parameter;
+using Sirh3e.Steamer.Core.Parameter.Types;
 using Sirh3e.Steamer.Core.Parameters;
 
 namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans

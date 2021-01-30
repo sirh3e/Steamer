@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sirh3e.Steamer.Core.Parameter
+namespace Sirh3e.Steamer.Core.Parameter.Types
 {
     public class SteamerStringParameter : ISteamerParameter<string>
     {
