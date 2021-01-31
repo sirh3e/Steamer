@@ -9,21 +9,23 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.FriendList
 {
     public class FriendListRequestBuilder : IFriendListRequestBuilder
     {
-        public ISteamerInterface Interface { get; }
-        public ISteamerMethod Method { get; protected set; }
-
         public FriendListRequestBuilder(ISteamerInterface @interface)
         {
             Interface = @interface ?? throw new ArgumentNullException(nameof(@interface));
             Method = GetDefaultMethod();
         }
 
+        public ISteamerInterface Interface { get; }
+        public ISteamerMethod Method { get; protected set; }
+
         public ISteamerMethod GetDefaultMethod()
-            => new SteamerMethod(Interface,
-            HttpMethod.Get, "GetFriendList", 1,
-        new SteamerParameters(
-        new SteamerStringParameter("key"),
-        new SteamerStringParameter("steamid")));
+        {
+            return new SteamerMethod(Interface,
+                HttpMethod.Get, "GetFriendList", 1,
+                new SteamerParameters(
+                    new SteamerStringParameter("key"),
+                    new SteamerStringParameter("steamid")));
+        }
 
         public IFriendListRequest Build()
         {

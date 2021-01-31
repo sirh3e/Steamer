@@ -5,6 +5,5 @@ namespace Sirh3e.Steamer.Web.Services.Web.SteamUser
 {
     public interface ISteamerWebServicePlayerBansBinder : ISteamerServiceBinder<IPlayerBansRequest, IPlayerBansResponse>
     {
-
     }
 }

@@ -5,6 +5,5 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.FriendList
 {
     public interface IFriendListResponse : ISteamerResponse<FriendsListModel>
     {
-
     }
 }

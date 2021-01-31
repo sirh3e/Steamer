@@ -25,6 +25,7 @@ namespace Sirh3e.Steamer.Web.Services.Web
         {
             HttpClientProvider.HttpClient?.Dispose();
         }
+
         public IFriendListResponse Execute(IFriendListRequest request)
         {
             var response = new FriendListResponse();

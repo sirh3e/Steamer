@@ -4,6 +4,5 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.FriendList
 {
     public interface IFriendListRequest : ISteamerRequest
     {
-
     }
 }

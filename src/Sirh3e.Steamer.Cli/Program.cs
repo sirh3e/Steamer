@@ -15,7 +15,7 @@ namespace Sirh3e.Steamer.Cli
     {
         private static void Main(string[] args)
         {
-            var apiKey = "";
+            var apiKey = "4651E4B7A003AF0324058260A869F432";
             var client = new SteamerWebClient.Builder()
                 .SetAuthProvider(new SteamerAuthProvider(apiKey))
                 .SetSerializerProvider(new SteamerSerializerProvider.Builder()
@@ -38,7 +38,8 @@ namespace Sirh3e.Steamer.Cli
             option.Match(
                 model =>
                 {
-                    model.FriendsList.Friends.ForEach(p => Console.WriteLine($"steamid: {p.SteamId} FriendSince: {p.FriendSince}"));
+                    model.FriendsList.Friends.ForEach(p =>
+                        Console.WriteLine($"steamid: {p.SteamId} FriendSince: {p.FriendSince}"));
                 },
                 () => { });
         }

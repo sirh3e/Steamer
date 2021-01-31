@@ -6,6 +6,5 @@ namespace Sirh3e.Steamer.Web.Services.Web.SteamUser
     public interface ISteamerWebServiceFriendListBinder
         : ISteamerServiceBinder<IFriendListRequest, IFriendListResponse>
     {
-
     }
 }
