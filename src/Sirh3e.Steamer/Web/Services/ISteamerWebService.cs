@@ -1,5 +1,4 @@
 ﻿using System;
-using Sirh3e.Steamer.Core.Clients;
 using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Net.Http;
 using Sirh3e.Steamer.Web.Services.SteamUser;

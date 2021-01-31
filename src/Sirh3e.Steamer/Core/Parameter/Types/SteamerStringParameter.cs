@@ -13,21 +13,11 @@ namespace Sirh3e.Steamer.Core.Parameter.Types
 
         public bool Required { get; }
         public string Name { get; }
-        public string Value { get; set; }
-
-        public void Deconstruct(out bool required, out string name, out string value)
-        {
-            throw new NotImplementedException();
-        }
+        public string Value { get; private set; }
 
         public string GetValueFromQueryString()
         {
             return Value;
-        }
-
-        public void Deconstruct(out bool required, out string name, out object value)
-        {
-            throw new NotImplementedException();
         }
 
         object ISteamerParameter.Value
@@ -36,18 +26,18 @@ namespace Sirh3e.Steamer.Core.Parameter.Types
             set => Value = value as string;
         }
 
-        public void Deconstruct(out string name, out string value)
+        public void Deconstruct(out bool required, out string name, out string value)
         {
-            name = Value;
+            required = Required;
+            name = Name;
             value = Value;
         }
 
-        public void Deconstruct(out string name, out object value)
+        public void Deconstruct(out bool required, out string name, out object value)
         {
-            Deconstruct(out var t, out string t1);
+            Deconstruct(out required, out name, out string tmp);
 
-            name = t;
-            value = t1;
+            value = tmp;
         }
     }
 }

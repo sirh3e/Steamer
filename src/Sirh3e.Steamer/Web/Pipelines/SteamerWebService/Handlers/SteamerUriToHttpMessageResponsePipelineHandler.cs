@@ -7,10 +7,11 @@ using Sirh3e.Steamer.Net.Http;
 
 namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 {
-    public class SteamerUriToResponsePipelineHandler : ISteamerPipelineHandler<(ISteamerRequest, Uri), (ISteamerRequest,
+    public class SteamerUriToHttpMessageResponsePipelineHandler : ISteamerPipelineHandler<(ISteamerRequest, Uri), (
+        ISteamerRequest,
         Task<HttpResponseMessage>)>
     {
-        public SteamerUriToResponsePipelineHandler(ISteamerHttpClientProvider httpClientProvider)
+        public SteamerUriToHttpMessageResponsePipelineHandler(ISteamerHttpClientProvider httpClientProvider)
         {
             HttpClientProvider = httpClientProvider ?? throw new ArgumentNullException(nameof(httpClientProvider));
         }

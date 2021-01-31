@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Sirh3e.Rust.Option;
 using Sirh3e.Rust.Result;
 using Sirh3e.Steamer.Core.Pipeline;
@@ -33,7 +34,7 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
                     new SteamerSerializerStringDataProvider(content));
 
                 return model is not null ? Option<TResponseModel>.Some(model) : Option<TResponseModel>.None;
-            }, async err => Option<TResponseModel>.None);
+            }, async err => await Task.Run(() => Option<TResponseModel>.None));
 
             option.Wait();
             var model = option.Result;

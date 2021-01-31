@@ -2,7 +2,6 @@
 using System.Net.Http;
 using Newtonsoft.Json;
 using Sirh3e.Steamer.Core.Auth;
-using Sirh3e.Steamer.Core.Clients;
 using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Net.Http;
 using Sirh3e.Steamer.Utilities.Serializer;
@@ -30,19 +29,12 @@ namespace Sirh3e.Steamer.Cli
 
 
             var response = client.SteamerUser.PlayerBans
-                .SetKey(apiKey) //ToDo add your key here
+                .SetKey(apiKey)
                 .SetSteamIds(76561198220146080)
                 .Build()
                 .ServiceExecute(service);
 
-            var builder = client.SteamerUser.PlayerBans.SetKey(apiKey).SetSteamIds(76561198220146080);
-            var request = builder.Build();
-
-            var steamerParameters = builder.Method.Parameters;
-
-            //var response = service.Call(request); //ToDo rename it to Execute
             var option = response.Model;
-            //model.Players.ForEach(p => Console.WriteLine($"steamid: {p.SteamId} vac: {p.VacBanned}"));
 
             option.Match(
                 model => { model.Players.ForEach(p => Console.WriteLine($"steamid: {p.SteamId} vac: {p.VacBanned}")); },
