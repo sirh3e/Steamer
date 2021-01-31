@@ -14,7 +14,8 @@ namespace Sirh3e.Steamer.Core.Parameters
                 throw new NotImplementedException();
         }
 
-        protected Dictionary<string, ISteamerParameter> Parameters { get; } = new();
+        private IDictionary<string, ISteamerParameter> Parameters { get; } =
+            new Dictionary<string, ISteamerParameter>();
 
         public bool TryAdd<TParameter>(string key, TParameter parameter)
             where TParameter : ISteamerParameter

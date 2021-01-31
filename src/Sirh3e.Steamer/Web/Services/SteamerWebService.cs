@@ -1,8 +1,10 @@
 ﻿using System;
 using Sirh3e.Steamer.Core.Clients.Web;
+using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
 using Sirh3e.Steamer.Net.Http;
 using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans;
+using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries;
 using Sirh3e.Steamer.Web.Pipelines.SteamerWebService;
 
 namespace Sirh3e.Steamer.Web.Services
@@ -18,21 +20,35 @@ namespace Sirh3e.Steamer.Web.Services
         public ISteamerWebClient WebClient { get; }
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }
 
-        public IPlayerBansResponse Execute(IPlayerBansRequest request)
-        {
-            var response = new PlayerBansResponse();
-
-            var pipeline = CreatePipeline(response, response.Model.Unwrap);
-            return pipeline.Process(request);
-        }
-
         public void Dispose()
         {
             HttpClientProvider.HttpClient?.Dispose();
         }
 
+        public IPlayerBansResponse Execute(IPlayerBansRequest request)
+        {
+            var response = new PlayerBansResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
+        }
+
+        public IPlayerSummariesResponse Execute(IPlayerSummariesRequest request)
+        {
+            var response = new PlayerSummariesResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
+        }
+
+        private TSteamerResponse GetResponse<TRequest, TSteamerResponse, TSteamerResponseModel>(TRequest request,
+            TSteamerResponse response, Func<TSteamerResponseModel> model)
+            where TRequest : ISteamerRequest
+            where TSteamerResponse : ISteamerResponse<TSteamerResponseModel>, new()
+        {
+            return CreatePipeline<TSteamerResponse, TSteamerResponseModel>().Process(request);
+        }
+
         private SteamerWebServicePipeline<TSteamerResponse, TSteamerResponseModel> CreatePipeline<TSteamerResponse,
-            TSteamerResponseModel>(TSteamerResponse response, Func<TSteamerResponseModel> model)
+            TSteamerResponseModel>()
             where TSteamerResponse : ISteamerResponse<TSteamerResponseModel>, new()
         {
             return new(this);
