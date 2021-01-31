@@ -1,8 +1,8 @@
 ﻿using System;
 using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans;
-using Sirh3e.Steamer.Web.Services;
+using Sirh3e.Steamer.Web.Services.Web;
 
-namespace Sirh3e.Steamer.Web.Extensions.Requests
+namespace Sirh3e.Steamer.Web.Extensions.Requests.SteamUser
 {
     public static class PlayerBansRequestExtension
     {

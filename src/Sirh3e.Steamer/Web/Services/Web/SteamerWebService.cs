@@ -7,7 +7,7 @@ using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans;
 using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries;
 using Sirh3e.Steamer.Web.Pipelines.SteamerWebService;
 
-namespace Sirh3e.Steamer.Web.Services
+namespace Sirh3e.Steamer.Web.Services.Web
 {
     public class SteamerWebService : ISteamerWebService
     {

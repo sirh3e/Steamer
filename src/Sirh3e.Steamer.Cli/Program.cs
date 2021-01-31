@@ -6,8 +6,8 @@ using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Net.Http;
 using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Utilities.Serializer.Json;
-using Sirh3e.Steamer.Web.Extensions.Requests;
-using Sirh3e.Steamer.Web.Services;
+using Sirh3e.Steamer.Web.Extensions.Requests.SteamUser;
+using Sirh3e.Steamer.Web.Services.Web;
 
 namespace Sirh3e.Steamer.Cli
 {
@@ -15,7 +15,7 @@ namespace Sirh3e.Steamer.Cli
     {
         private static void Main(string[] args)
         {
-            var apiKey = "";
+            var apiKey = "6FF21763BCEFC7BA5201A205D52BB397";
             var client = new SteamerWebClient.Builder()
                 .SetAuthProvider(new SteamerAuthProvider(apiKey))
                 .SetSerializerProvider(new SteamerSerializerProvider.Builder()
