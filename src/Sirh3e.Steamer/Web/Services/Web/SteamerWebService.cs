@@ -3,6 +3,7 @@ using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
 using Sirh3e.Steamer.Net.Http;
+using Sirh3e.Steamer.Web.Builders.SteamUser.FriendList;
 using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans;
 using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries;
 using Sirh3e.Steamer.Web.Pipelines.SteamerWebService;
@@ -23,6 +24,12 @@ namespace Sirh3e.Steamer.Web.Services.Web
         public void Dispose()
         {
             HttpClientProvider.HttpClient?.Dispose();
+        }
+        public IFriendListResponse Execute(IFriendListRequest request)
+        {
+            var response = new FriendListResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
         }
 
         public IPlayerBansResponse Execute(IPlayerBansRequest request)
