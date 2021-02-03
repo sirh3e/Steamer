@@ -6,7 +6,7 @@ namespace Sirh3e.Steamer.Core.Response
 {
     public interface ISteamerResponse
     {
-        public ISteamerRequest Request { get; set; }
+        public ISteamerRequest Request { get; set; } //Change Request Type
         public ISteamerSerializerDataProvider Provider { get; }
         public Option<object> Model { get; set; }
     }

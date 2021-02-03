@@ -6,7 +6,6 @@ using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Net.Http;
 using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Utilities.Serializer.Json;
-using Sirh3e.Steamer.Web.Extensions.Requests.SteamUser;
 using Sirh3e.Steamer.Web.Services.Web;
 
 namespace Sirh3e.Steamer.Cli
@@ -27,21 +26,23 @@ namespace Sirh3e.Steamer.Cli
             var service = new SteamerWebService(client, httpClientProvider);
 
 
-            var response = client.SteamerUser.FriendList
+            var request = client.SteamerUser.PlayerSummaries
                 .SetKey(apiKey)
-                .SetSteamId(76561198220146080)
-                .Build()
-                .ServiceExecute(service);
+                .SetSteamIds(76561198220146080)
+                .Build();
+                //.ServieExecute(service);
+
+            var response =  service.Execute(request);
 
             var option = response.Model;
-
+            
             option.Match(
                 model =>
                 {
-                    model.FriendsList.Friends.ForEach(p =>
-                        Console.WriteLine($"steamid: {p.SteamId} FriendSince: {p.FriendSince}"));
+                    model.Response.Players.ForEach(p =>
+                        Console.WriteLine($"steamid: {p.SteamId} url: {p.PrimaryClanId}"));
                 },
-                () => { });
+                () => { Console.WriteLine("some error"); });
         }
     }
 }
