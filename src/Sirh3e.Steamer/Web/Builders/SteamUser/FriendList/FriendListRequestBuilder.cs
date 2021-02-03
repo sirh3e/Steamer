@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Net.Http;
+
 using Sirh3e.Steamer.Core.Interface;
 using Sirh3e.Steamer.Core.Method;
 using Sirh3e.Steamer.Core.Parameter.Types;
 using Sirh3e.Steamer.Core.Parameters;
 
-namespace Sirh3e.Steamer.Web.Builders.SteamUser.FriendList
-{
-    public class FriendListRequestBuilder : IFriendListRequestBuilder
-    {
-        public FriendListRequestBuilder(ISteamerInterface @interface)
-        {
+namespace Sirh3e.Steamer.Web.Builders.SteamUser.FriendList {
+    public class FriendListRequestBuilder : IFriendListRequestBuilder {
+        public FriendListRequestBuilder(ISteamerInterface @interface) {
             Interface = @interface ?? throw new ArgumentNullException(nameof(@interface));
             Method = GetDefaultMethod();
         }
@@ -18,8 +16,7 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.FriendList
         public ISteamerInterface Interface { get; }
         public ISteamerMethod Method { get; protected set; }
 
-        public ISteamerMethod GetDefaultMethod()
-        {
+        public ISteamerMethod GetDefaultMethod() {
             return new SteamerMethod(Interface,
                 HttpMethod.Get, "GetFriendList", 1,
                 new SteamerParameters(
@@ -27,10 +24,8 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.FriendList
                     new SteamerStringParameter("steamid")));
         }
 
-        public IFriendListRequest Build()
-        {
-            var request = new FriendListRequest
-            {
+        public IFriendListRequest Build() {
+            var request = new FriendListRequest {
                 Method = Method
             };
 
@@ -38,8 +33,7 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.FriendList
             return request;
         }
 
-        public IFriendListRequestBuilder SetKey(string key)
-        {
+        public IFriendListRequestBuilder SetKey(string key) {
             _ = key ?? throw new ArgumentNullException(nameof(key));
 
             Method.Parameters.SetValue("key", key);
@@ -47,8 +41,7 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.FriendList
             return this;
         }
 
-        public IFriendListRequestBuilder SetSteamId(ulong steamId)
-        {
+        public IFriendListRequestBuilder SetSteamId(ulong steamId) {
             Method.Parameters.SetValue("steamid", steamId.ToString());
 
             return this;

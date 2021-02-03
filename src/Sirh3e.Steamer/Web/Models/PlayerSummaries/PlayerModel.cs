@@ -1,10 +1,9 @@
 ﻿using System;
+
 using Newtonsoft.Json;
 
-namespace Sirh3e.Steamer.Web.Models.PlayerSummaries
-{
-    public class PlayerModel
-    {
+namespace Sirh3e.Steamer.Web.Models.PlayerSummaries {
+    public class PlayerModel {
         [JsonProperty("steamid")] public string SteamId { get; set; }
 
         [JsonProperty("communityvisibilitystate")]

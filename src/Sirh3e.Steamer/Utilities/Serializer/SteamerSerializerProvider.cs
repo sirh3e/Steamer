@@ -1,28 +1,22 @@
 ﻿using System;
 
-namespace Sirh3e.Steamer.Utilities.Serializer
-{
-    public class SteamerSerializerProvider : ISteamerSerializerProvider
-    {
-        public SteamerSerializerProvider(ISteamerSerializer serializer)
-        {
+namespace Sirh3e.Steamer.Utilities.Serializer {
+    public class SteamerSerializerProvider : ISteamerSerializerProvider {
+        public SteamerSerializerProvider(ISteamerSerializer serializer) {
             Serializer = serializer ?? throw new ArgumentNullException(nameof(serializer));
         }
 
         public ISteamerSerializer Serializer { get; }
 
-        public class Builder
-        {
+        public class Builder {
             protected ISteamerSerializer Serializer { get; set; }
 
-            public Builder SetSerializer(ISteamerSerializer serializer)
-            {
+            public Builder SetSerializer(ISteamerSerializer serializer) {
                 Serializer = serializer ?? throw new ArgumentNullException(nameof(serializer));
                 return this;
             }
 
-            public ISteamerSerializerProvider Build()
-            {
+            public ISteamerSerializerProvider Build() {
                 return new SteamerSerializerProvider(Serializer ?? throw new ArgumentNullException(nameof(Serializer)));
             }
         }

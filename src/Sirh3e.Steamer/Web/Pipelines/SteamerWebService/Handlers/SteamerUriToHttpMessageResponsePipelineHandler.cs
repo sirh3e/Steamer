@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+
 using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Net.Http;
 
-namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
-{
+namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers {
     public class SteamerUriToHttpMessageResponsePipelineHandler : ISteamerPipelineHandler<(ISteamerRequest, Uri), (
         ISteamerRequest,
-        Task<HttpResponseMessage>)>
-    {
-        public SteamerUriToHttpMessageResponsePipelineHandler(ISteamerHttpClientProvider httpClientProvider)
-        {
+        Task<HttpResponseMessage>)> {
+        public SteamerUriToHttpMessageResponsePipelineHandler(ISteamerHttpClientProvider httpClientProvider) {
             HttpClientProvider = httpClientProvider ?? throw new ArgumentNullException(nameof(httpClientProvider));
         }
 
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }
 
-        public (ISteamerRequest, Task<HttpResponseMessage>) Process((ISteamerRequest, Uri) input)
-        {
+        public (ISteamerRequest, Task<HttpResponseMessage>) Process((ISteamerRequest, Uri) input) {
             var (request, uri) = input;
 
             _ = request ?? throw new ArgumentNullException(nameof(request));

@@ -1,19 +1,17 @@
 ﻿using System;
+
 using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
 using Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers;
 using Sirh3e.Steamer.Web.Services.Web;
 
-namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService
-{
+namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService {
     public class
         SteamerWebServicePipeline<TSteamerResponse, TSteamerResponseModel> : SteamerPipeline<ISteamerRequest,
             TSteamerResponse>
-        where TSteamerResponse : ISteamerResponse<TSteamerResponseModel>, new()
-    {
-        public SteamerWebServicePipeline(ISteamerWebService service)
-        {
+        where TSteamerResponse : ISteamerResponse<TSteamerResponseModel>, new() {
+        public SteamerWebServicePipeline(ISteamerWebService service) {
             Service = service ?? throw new ArgumentNullException(nameof(service));
             PipelineHandlers = request => request
                 .AddHandler(new SteamerRequestToUriPipelineHandler())

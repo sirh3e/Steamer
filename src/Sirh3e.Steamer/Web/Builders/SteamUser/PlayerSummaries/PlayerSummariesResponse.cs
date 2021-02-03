@@ -5,10 +5,8 @@ using Sirh3e.Steamer.Utilities.Serializer;
 using Sirh3e.Steamer.Web.Models;
 using Sirh3e.Steamer.Web.Models.PlayerSummaries;
 
-namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries
-{
-    public class PlayerSummariesResponse : IPlayerSummariesResponse
-    {
+namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries {
+    public class PlayerSummariesResponse : IPlayerSummariesResponse {
         public ISteamerRequest Request { get; set; }
 
         public ISteamerSerializerDataProvider Provider { get; set; }

@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 
-namespace Sirh3e.Steamer.Web.Models.SteamUser
-{
-    public class PlayerModel
-    {
+namespace Sirh3e.Steamer.Web.Models.SteamUser {
+    public class PlayerModel {
         [JsonProperty("SteamId")] public string SteamId { get; set; }
 
         [JsonProperty("CommunityBanned")] public bool CommunityBanned { get; set; }

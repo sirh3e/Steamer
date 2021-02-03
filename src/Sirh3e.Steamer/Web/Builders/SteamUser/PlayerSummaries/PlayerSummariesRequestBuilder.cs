@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Linq;
 using System.Net.Http;
+
 using Sirh3e.Steamer.Core.Interface;
 using Sirh3e.Steamer.Core.Method;
 using Sirh3e.Steamer.Core.Parameter.Types;
 using Sirh3e.Steamer.Core.Parameters;
 
-namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries
-{
-    public class PlayerSummariesRequestBuilder : IPlayerSummariesRequestBuilder
-    {
-        public PlayerSummariesRequestBuilder(ISteamerInterface @interface)
-        {
+namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries {
+    public class PlayerSummariesRequestBuilder : IPlayerSummariesRequestBuilder {
+        public PlayerSummariesRequestBuilder(ISteamerInterface @interface) {
             Interface = @interface ?? throw new ArgumentNullException(nameof(@interface));
             Method = GetDefaultMethod();
         }
@@ -19,8 +17,7 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries
         public ISteamerInterface Interface { get; }
         public ISteamerMethod Method { get; protected set; }
 
-        public ISteamerMethod GetDefaultMethod()
-        {
+        public ISteamerMethod GetDefaultMethod() {
             return new SteamerMethod(Interface,
                 HttpMethod.Get, "GetPlayerSummaries", 2,
                 new SteamerParameters(
@@ -28,8 +25,7 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries
                     new SteamerStringParameter("steamids")));
         }
 
-        public IPlayerSummariesRequestBuilder SetKey(string key)
-        {
+        public IPlayerSummariesRequestBuilder SetKey(string key) {
             _ = key ?? throw new ArgumentNullException(nameof(key));
 
             Method.Parameters.SetValue("key", key);
@@ -37,8 +33,7 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries
             return this;
         }
 
-        public IPlayerSummariesRequestBuilder SetSteamIds(params ulong[] steamIds)
-        {
+        public IPlayerSummariesRequestBuilder SetSteamIds(params ulong[] steamIds) {
             _ = steamIds ?? throw new ArgumentNullException(nameof(steamIds));
 
             var value = string.Join(",", steamIds.Select(steamId => steamId.ToString()).ToList());
@@ -48,10 +43,8 @@ namespace Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries
             return this;
         }
 
-        public IPlayerSummariesRequest Build()
-        {
-            var request = new PlayerSummariesRequest
-            {
+        public IPlayerSummariesRequest Build() {
+            var request = new PlayerSummariesRequest {
                 Method = Method
             };
 
