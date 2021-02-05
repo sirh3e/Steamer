@@ -1,28 +1,28 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Sirh3e.Steamer.Web.Models.SteamUser
 {
     public class PlayerModel
     {
-        [JsonProperty("SteamId")]
+        [JsonPropertyName("SteamId")]
         public string SteamId { get; set; }
 
-        [JsonProperty("CommunityBanned")]
+        [JsonPropertyName("CommunityBanned")]
         public bool CommunityBanned { get; set; }
 
-        [JsonProperty("VACBanned")]
+        [JsonPropertyName("VACBanned")]
         public bool VacBanned { get; set; }
 
-        [JsonProperty("NumberOfVACBans")]
+        [JsonPropertyName("NumberOfVACBans")]
         public long NumberOfVacBans { get; set; }
 
-        [JsonProperty("DaysSinceLastBan")]
+        [JsonPropertyName("DaysSinceLastBan")]
         public long DaysSinceLastBan { get; set; }
 
-        [JsonProperty("NumberOfGameBans")]
+        [JsonPropertyName("NumberOfGameBans")]
         public long NumberOfGameBans { get; set; }
 
-        [JsonProperty("EconomyBan")]
+        [JsonPropertyName("EconomyBan")]
         public string EconomyBan { get; set; }
     }
 }

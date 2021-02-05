@@ -7,10 +7,9 @@ using Sirh3e.Steamer.Core.Request;
 
 namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 {
-    public class SteamerWebServiceUriToHttpMessageResponsePipelineHandler : ISteamerPipelineHandler<(ISteamerRequest,
-        Uri), (
-        ISteamerRequest,
-        Task<HttpResponseMessage>)>
+    public class SteamerWebServiceUriToHttpMessageResponsePipelineHandler<TSteamerRequest> :
+        ISteamerPipelineHandler<(TSteamerRequest, Uri), (TSteamerRequest, Task<HttpResponseMessage>)>
+        where TSteamerRequest : ISteamerRequest
     {
         public SteamerWebServiceUriToHttpMessageResponsePipelineHandler(ISteamerHttpClientProvider httpClientProvider)
         {
@@ -19,7 +18,7 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }
 
-        public (ISteamerRequest, Task<HttpResponseMessage>) Process((ISteamerRequest, Uri) input)
+        public (TSteamerRequest, Task<HttpResponseMessage>) Process((TSteamerRequest, Uri) input)
         {
             var (request, uri) = input;
 

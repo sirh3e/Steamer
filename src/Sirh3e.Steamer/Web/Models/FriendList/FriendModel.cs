@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Sirh3e.Steamer.Web.Models.FriendList
 {
@@ -6,13 +6,13 @@ namespace Sirh3e.Steamer.Web.Models.FriendList
     {
         public class Friend
         {
-            [JsonProperty("steamid")]
+            [JsonPropertyName("steamid")]
             public string SteamId { get; set; }
 
-            [JsonProperty("relationship")]
+            [JsonPropertyName("relationship")]
             public string Relationship { get; set; }
 
-            [JsonProperty("friend_since")]
+            [JsonPropertyName("friend_since")]
             public long FriendSince { get; set; }
         }
     }

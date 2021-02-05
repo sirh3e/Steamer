@@ -3,7 +3,7 @@ using Sirh3e.Steamer.Web.Builders.SteamUser.FriendList.Request;
 using Sirh3e.Steamer.Web.Builders.SteamUser.FriendList.Response;
 using Sirh3e.Steamer.Web.Services;
 
-namespace Sirh3e.Steamer.Web.Extensions.Requests.SteamUser
+namespace Sirh3e.Steamer.Web.Extensions.SteamUser.Request
 {
     public static class FriendListRequestExtension
     {

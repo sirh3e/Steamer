@@ -1,53 +1,53 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sirh3e.Steamer.Web.Models.PlayerSummaries
 {
     public class PlayerModel
     {
-        [JsonProperty("steamid")]
+        [JsonPropertyName("steamid")]
         public string SteamId { get; set; }
 
-        [JsonProperty("communityvisibilitystate")]
+        [JsonPropertyName("communityvisibilitystate")]
         public long CommunityVisibilityState { get; set; }
 
-        [JsonProperty("profilestate")]
+        [JsonPropertyName("profilestate")]
         public long ProfileState { get; set; }
 
-        [JsonProperty("personaname")]
+        [JsonPropertyName("personaname")]
         public string PersonaName { get; set; }
 
-        [JsonProperty("lastlogoff")]
+        [JsonPropertyName("lastlogoff")]
         public long LastLogoff { get; set; }
 
-        [JsonProperty("commentpermission")]
+        [JsonPropertyName("commentpermission")]
         public long CommentPermission { get; set; }
 
-        [JsonProperty("profileurl")]
+        [JsonPropertyName("profileurl")]
         public Uri ProfileUrl { get; set; }
 
-        [JsonProperty("avatar")]
+        [JsonPropertyName("avatar")]
         public Uri Avatar { get; set; }
 
-        [JsonProperty("avatarmedium")]
+        [JsonPropertyName("avatarmedium")]
         public Uri AvatarMedium { get; set; }
 
-        [JsonProperty("avatarfull")]
+        [JsonPropertyName("avatarfull")]
         public Uri AvatarFull { get; set; }
 
-        [JsonProperty("personastate")]
+        [JsonPropertyName("personastate")]
         public long Personastate { get; set; }
 
-        [JsonProperty("primaryclanid")]
+        [JsonPropertyName("primaryclanid")]
         public string PrimaryClanId { get; set; }
 
-        [JsonProperty("timecreated")]
+        [JsonPropertyName("timecreated")]
         public long TimeCreated { get; set; }
 
-        [JsonProperty("personastateflags")]
+        [JsonPropertyName("personastateflags")]
         public long PersonaStateFlags { get; set; }
 
-        [JsonProperty("loccountrycode")]
+        [JsonPropertyName("loccountrycode")]
         public string LocCountryCode { get; set; }
     }
 }

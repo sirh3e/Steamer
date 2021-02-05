@@ -13,7 +13,7 @@ namespace Sirh3e.Steamer.Web.Serializers.Json
             SerializeFunc = serializeFunc ?? throw new ArgumentNullException(nameof(serializeFunc));
         }
 
-        public T Serialize<T>(ISteamerSerializerDataProvider provider)
+        public T? Serialize<T>(ISteamerSerializerDataProvider provider)
         {
             _ = provider ?? throw new ArgumentNullException(nameof(provider));
             var data = provider.GetData() ?? throw new ArgumentNullException(nameof(provider.GetData));

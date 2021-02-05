@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sirh3e.Steamer.Web.Models.FriendList
 {
     public class FriendsModel
     {
-        [JsonProperty("friends")]
+        [JsonPropertyName("friends")]
         public List<FriendModel.Friend> Friends { get; set; } = new();
     }
 }

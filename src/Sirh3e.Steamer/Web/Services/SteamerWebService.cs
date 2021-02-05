@@ -26,7 +26,7 @@ namespace Sirh3e.Steamer.Web.Services
 
         public void Dispose()
         {
-            HttpClientProvider.HttpClient?.Dispose();
+            HttpClientProvider.HttpClient.Dispose();
         }
 
         public IFriendListResponse Execute(IFriendListRequest request)
@@ -50,17 +50,18 @@ namespace Sirh3e.Steamer.Web.Services
             return GetResponse(request, response, response.Model.Unwrap);
         }
 
-        private TSteamerResponse GetResponse<TRequest, TSteamerResponse, TSteamerResponseModel>(TRequest request,
-            TSteamerResponse response, Func<TSteamerResponseModel> model)
+        private TSteamerResponse GetResponse<TRequest, TSteamerResponse, TSteamerResponseModel>
+            (TRequest request, TSteamerResponse response, Func<TSteamerResponseModel> model)
             where TRequest : ISteamerRequest
-            where TSteamerResponse : ISteamerResponse<TSteamerResponseModel>, new()
+            where TSteamerResponse : ISteamerResponse<TRequest, TSteamerResponseModel>, new()
         {
-            return CreatePipeline<TSteamerResponse, TSteamerResponseModel>().Process(request);
+            return CreatePipeline<TRequest, TSteamerResponse, TSteamerResponseModel>().Process(request);
         }
 
-        private SteamerWebServicePipeline<TSteamerResponse, TSteamerResponseModel> CreatePipeline<TSteamerResponse,
-            TSteamerResponseModel>()
-            where TSteamerResponse : ISteamerResponse<TSteamerResponseModel>, new()
+        private SteamerWebServicePipeline<TRequest, TSteamerResponse, TSteamerResponseModel> CreatePipeline
+            <TRequest, TSteamerResponse, TSteamerResponseModel>()
+            where TRequest : ISteamerRequest
+            where TSteamerResponse : ISteamerResponse<TRequest, TSteamerResponseModel>, new()
         {
             return new(this);
         }

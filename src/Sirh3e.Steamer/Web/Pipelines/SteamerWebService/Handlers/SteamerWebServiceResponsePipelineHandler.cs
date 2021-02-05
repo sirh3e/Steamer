@@ -6,12 +6,12 @@ using Sirh3e.Steamer.Core.Response;
 
 namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 {
-    public class SteamerWebServiceResponsePipelineHandler<TSteamerResponse, TSteamerResponseModel> :
-        ISteamerPipelineHandler<(
-            ISteamerRequest, Option<TSteamerResponseModel>), TSteamerResponse>
-        where TSteamerResponse : ISteamerResponse<TSteamerResponseModel>, new()
+    public class SteamerWebServiceResponsePipelineHandler<TSteamerRequest, TSteamerResponse, TSteamerResponseModel> :
+        ISteamerPipelineHandler<(TSteamerRequest, Option<TSteamerResponseModel>), TSteamerResponse>
+        where TSteamerResponse : ISteamerResponse<TSteamerRequest, TSteamerResponseModel>, new()
+        where TSteamerRequest : ISteamerRequest
     {
-        public TSteamerResponse Process((ISteamerRequest, Option<TSteamerResponseModel>) input)
+        public TSteamerResponse Process((TSteamerRequest, Option<TSteamerResponseModel>) input)
         {
             var (request, model) = input;
 

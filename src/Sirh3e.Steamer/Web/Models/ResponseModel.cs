@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Sirh3e.Steamer.Web.Models
 {
     public class ResponseModel<TResponseModel>
     {
-        [JsonProperty("response")]
+        [JsonPropertyName("response")]
         public TResponseModel Response { get; set; }
     }
 }

@@ -9,22 +9,28 @@ using Sirh3e.Steamer.Web.Services;
 namespace Sirh3e.Steamer.Web.Pipelines
 {
     public class
-        SteamerWebServicePipeline<TSteamerResponse, TSteamerResponseModel> : SteamerPipeline<ISteamerRequest,
-            TSteamerResponse>
-        where TSteamerResponse : ISteamerResponse<TSteamerResponseModel>, new()
+        SteamerWebServicePipeline<TSteamerRequest, TSteamerResponse, TSteamerResponseModel> : SteamerPipeline<
+            TSteamerRequest, TSteamerResponse>
+        where TSteamerResponse : ISteamerResponse<TSteamerRequest, TSteamerResponseModel>, new()
+        where TSteamerRequest : ISteamerRequest
     {
         public SteamerWebServicePipeline(ISteamerWebService service)
         {
             Service = service ?? throw new ArgumentNullException(nameof(service));
             PipelineHandlers = request => request
-                .AddHandler(new SteamerWebServiceRequestToUriPipelineHandler())
-                .AddHandler(new SteamerWebServiceUriToHttpMessageResponsePipelineHandler(Service.HttpClientProvider))
-                .AddHandler(new SteamerWebServiceHttpResponseMessageCatcherPipelineHandler())
-                .AddHandler(new SteamerWebServiceHttpResponseMessageHandlerPipelineHandler())
+                .AddHandler(new SteamerWebServiceRequestToUriPipelineHandler<TSteamerRequest>())
                 .AddHandler(
-                    new SteamerWebServiceResponseModelPipelineHandler<TSteamerResponseModel>(Service.WebClient
+                    new SteamerWebServiceUriToHttpMessageResponsePipelineHandler<TSteamerRequest>(
+                        Service.HttpClientProvider))
+                .AddHandler(new SteamerWebServiceHttpResponseMessageCatcherPipelineHandler<TSteamerRequest>())
+                .AddHandler(new SteamerWebServiceHttpResponseMessageHandlerPipelineHandler<TSteamerRequest>())
+                .AddHandler(
+                    new SteamerWebServiceResponseModelPipelineHandler<TSteamerRequest, TSteamerResponseModel>(Service
+                        .WebClient
                         .SerializerProvider))
-                .AddHandler(new SteamerWebServiceResponsePipelineHandler<TSteamerResponse, TSteamerResponseModel>());
+                .AddHandler(
+                    new SteamerWebServiceResponsePipelineHandler<TSteamerRequest, TSteamerResponse,
+                        TSteamerResponseModel>());
         }
 
         public ISteamerWebService Service { get; set; }

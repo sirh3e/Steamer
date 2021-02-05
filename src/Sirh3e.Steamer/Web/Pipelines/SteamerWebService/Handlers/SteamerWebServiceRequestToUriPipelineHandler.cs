@@ -6,9 +6,11 @@ using Sirh3e.Steamer.Core.Request;
 namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 {
     public class
-        SteamerWebServiceRequestToUriPipelineHandler : ISteamerPipelineHandler<ISteamerRequest, (ISteamerRequest, Uri)>
+        SteamerWebServiceRequestToUriPipelineHandler<TSteamerRequest> :
+            ISteamerPipelineHandler<TSteamerRequest, (TSteamerRequest, Uri)>
+            where TSteamerRequest : ISteamerRequest
     {
-        public (ISteamerRequest, Uri) Process(ISteamerRequest input)
+        public (TSteamerRequest, Uri) Process(TSteamerRequest input)
         {
             _ = input ?? throw new ArgumentNullException(nameof(input));
             _ = input.Method ?? throw new ArgumentNullException(nameof(input.Method));

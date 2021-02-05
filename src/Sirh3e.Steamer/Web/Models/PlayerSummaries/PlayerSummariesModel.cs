@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sirh3e.Steamer.Web.Models.PlayerSummaries
 {
     public class PlayerSummariesModel
     {
-        [JsonProperty("players")]
+        [JsonPropertyName("players")]
         public List<PlayerModel> Players { get; set; } = new();
     }
 }

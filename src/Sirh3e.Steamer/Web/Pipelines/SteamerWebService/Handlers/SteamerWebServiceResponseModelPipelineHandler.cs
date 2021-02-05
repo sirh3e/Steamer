@@ -9,9 +9,9 @@ using Sirh3e.Steamer.Core.Serializer.Providers;
 
 namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 {
-    public class SteamerWebServiceResponseModelPipelineHandler<TResponseModel> : ISteamerPipelineHandler<(
-        ISteamerRequest,
-        Result<HttpResponseMessage, string>), (ISteamerRequest, Option<TResponseModel>)>
+    public class SteamerWebServiceResponseModelPipelineHandler<TSteamerRequest, TResponseModel> :
+        ISteamerPipelineHandler<(TSteamerRequest, Result<HttpResponseMessage, string>), (TSteamerRequest, Option<TResponseModel>)>
+        where TSteamerRequest : ISteamerRequest
     {
         public SteamerWebServiceResponseModelPipelineHandler(ISteamerSerializerProvider serializerProvider)
         {
@@ -20,8 +20,8 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 
         public ISteamerSerializerProvider SerializerProvider { get; set; }
 
-        public (ISteamerRequest, Option<TResponseModel>) Process(
-            (ISteamerRequest, Result<HttpResponseMessage, string>) input)
+        public (TSteamerRequest, Option<TResponseModel>) Process(
+            (TSteamerRequest, Result<HttpResponseMessage, string>) input)
         {
             var (request, result) = input;
 

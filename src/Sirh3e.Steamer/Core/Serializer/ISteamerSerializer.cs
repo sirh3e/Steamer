@@ -4,6 +4,6 @@ namespace Sirh3e.Steamer.Core.Serializer
 {
     public interface ISteamerSerializer
     {
-        public T Serialize<T>(ISteamerSerializerDataProvider provider);
+        public T? Serialize<T>(ISteamerSerializerDataProvider provider);
     }
 }
