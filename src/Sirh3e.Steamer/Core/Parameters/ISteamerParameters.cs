@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
-
 using Sirh3e.Steamer.Core.Parameter;
 
-namespace Sirh3e.Steamer.Core.Parameters {
-    public interface ISteamerParameters : IEnumerable<ISteamerParameter> {
+namespace Sirh3e.Steamer.Core.Parameters
+{
+    public interface ISteamerParameters : IEnumerable<ISteamerParameter>
+    {
         public bool TryAdd<TParameter>(string key, TParameter parameter)
             where TParameter : ISteamerParameter;
 

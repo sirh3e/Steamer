@@ -2,11 +2,17 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
       <PackageReference Include="Sirh3e.Rust" Version="1.0.0-preview-0002" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Web\Pipelines\SteamerWebService" />
+      <Folder Include="Web\Serializers" />
     </ItemGroup>
 
 </Project>

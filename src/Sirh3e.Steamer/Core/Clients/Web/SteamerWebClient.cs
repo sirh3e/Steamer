@@ -1,12 +1,14 @@
 ﻿using System;
-
 using Sirh3e.Steamer.Core.Auth;
-using Sirh3e.Steamer.Utilities.Serializer;
+using Sirh3e.Steamer.Core.Serializer.Providers;
 using Sirh3e.Steamer.Web.Builders.SteamUser;
 
-namespace Sirh3e.Steamer.Core.Clients.Web {
-    public class SteamerWebClient : ISteamerWebClient {
-        public SteamerWebClient(ISteamerAuthProvider authProvider, ISteamerSerializerProvider serializerProvider) {
+namespace Sirh3e.Steamer.Core.Clients.Web
+{
+    public class SteamerWebClient : ISteamerWebClient
+    {
+        public SteamerWebClient(ISteamerAuthProvider authProvider, ISteamerSerializerProvider serializerProvider)
+        {
             AuthProvider = authProvider ?? throw new ArgumentNullException(nameof(authProvider));
             SerializerProvider = serializerProvider ?? throw new ArgumentNullException(nameof(serializerProvider));
             SteamerUser = new SteamerUserInterfaceBuilder();
@@ -16,21 +18,25 @@ namespace Sirh3e.Steamer.Core.Clients.Web {
         public ISteamerSerializerProvider SerializerProvider { get; }
         public ISteamerUserInterfaceBuilder SteamerUser { get; }
 
-        public class Builder {
+        public class Builder
+        {
             public ISteamerAuthProvider AuthProvider { get; set; }
             public ISteamerSerializerProvider SerializerProvider { get; set; }
 
-            public Builder SetAuthProvider(ISteamerAuthProvider authProvider) {
+            public Builder SetAuthProvider(ISteamerAuthProvider authProvider)
+            {
                 AuthProvider = authProvider ?? throw new ArgumentNullException(nameof(authProvider));
                 return this;
             }
 
-            public Builder SetSerializerProvider(ISteamerSerializerProvider serializerProvider) {
+            public Builder SetSerializerProvider(ISteamerSerializerProvider serializerProvider)
+            {
                 SerializerProvider = serializerProvider ?? throw new ArgumentNullException(nameof(serializerProvider));
                 return this;
             }
 
-            public SteamerWebClient Build() {
+            public SteamerWebClient Build()
+            {
                 return new(AuthProvider ?? throw new ArgumentNullException(nameof(AuthProvider)),
                     SerializerProvider ?? throw new ArgumentNullException(nameof(SerializerProvider)));
             }
