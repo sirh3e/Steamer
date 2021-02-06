@@ -8,7 +8,8 @@ using Sirh3e.Steamer.Core.Request;
 namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 {
     public class SteamerWebServiceHttpResponseMessageHandlerPipelineHandler<TSteamerRequest> :
-        ISteamerPipelineHandler<(TSteamerRequest, HttpResponseMessage), (TSteamerRequest, Result<HttpResponseMessage, string>)>
+        ISteamerPipelineHandler<(TSteamerRequest, HttpResponseMessage), (TSteamerRequest,
+            Result<HttpResponseMessage, string>)>
         where TSteamerRequest : ISteamerRequest
     {
         public (TSteamerRequest, Result<HttpResponseMessage, string>) Process(

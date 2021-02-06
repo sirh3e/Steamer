@@ -8,7 +8,7 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
     public class
         SteamerWebServiceRequestToUriPipelineHandler<TSteamerRequest> :
             ISteamerPipelineHandler<TSteamerRequest, (TSteamerRequest, Uri)>
-            where TSteamerRequest : ISteamerRequest
+        where TSteamerRequest : ISteamerRequest
     {
         public (TSteamerRequest, Uri) Process(TSteamerRequest input)
         {

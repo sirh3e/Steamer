@@ -2,7 +2,7 @@
 
 namespace Sirh3e.Steamer.Web.Serializers.Json
 {
-    public interface IJsonSerializerDeserializeOptionsProvider
+    public interface ISteamerSystemTextJsonSerializerOptionsProvider
     {
         public JsonSerializerOptions Options { get; }
     }

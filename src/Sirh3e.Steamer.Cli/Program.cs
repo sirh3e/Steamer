@@ -20,7 +20,8 @@ namespace Sirh3e.Steamer.Cli
             var client = new SteamerWebClient.Builder()
                 .SetAuthProvider(new SteamerAuthProvider(apiKey))
                 .SetSerializerProvider(new SteamerSerializerProvider.Builder()
-                    .SetSerializer(new SystemTextJsonSerializer(new JsonSerializerDeserializeOptionsProvider(new JsonSerializerOptions())))
+                    .SetSerializer(new SteamerSystemTextJsonSerializer(
+                        new SteamerSystemTextJsonSerializerOptionsProvider(new JsonSerializerOptions())))
                     .Build())
                 .Build();
 
