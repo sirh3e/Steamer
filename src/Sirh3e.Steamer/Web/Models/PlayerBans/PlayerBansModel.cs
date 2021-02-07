@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Sirh3e.Steamer.Web.Models.SteamUser
+namespace Sirh3e.Steamer.Web.Models.PlayerBans
 {
     public class PlayerBansModel
     {
