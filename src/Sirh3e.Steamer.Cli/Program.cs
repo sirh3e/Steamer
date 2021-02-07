@@ -7,6 +7,7 @@ using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
 using Sirh3e.Steamer.Core.Serializers.Json;
 using Sirh3e.Steamer.Core.Serializers.Providers;
 using Sirh3e.Steamer.Web;
+using Sirh3e.Steamer.Web.Extensions.Model;
 using Sirh3e.Steamer.Web.Extensions.SteamUser.Request;
 using Sirh3e.Steamer.Web.Extensions.SteamUser.Response;
 
@@ -37,7 +38,10 @@ namespace Sirh3e.Steamer.Cli
                 .RetryServiceExecute(service);
 
             var option = response.Model;
-            option.Match(model => { model.Response.Groups.ForEach(g => Console.WriteLine($"{g.Gid}"));},
+            option.Match(responseModel =>
+                         {
+                             responseModel.GetModel().Groups.ForEach(g => Console.WriteLine($"{g.Gid}"));
+                         },
                          () => { Console.WriteLine("some error"); });
         }
     }
