@@ -9,13 +9,11 @@ namespace Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Request
 {
     public class PlayerBansRequest : SteamerRequest, IPlayerBansRequest
     {
-        public ISteamerMethod Method { get; set; }
-
         public PlayerBansRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                            HttpMethod.Get, "GetPlayerBans", 1,
-                                                            new SteamerParameters(
-                                                                                  new SteamerStringParameter("key"),
-                                                                                  new SteamerStringParameter("steamids"))))
+                                                                                        HttpMethod.Get, "GetPlayerBans", 1,
+                                                                                        new SteamerParameters(
+                                                                                         new SteamerStringParameter("key"),
+                                                                                         new SteamerStringParameter("steamids"))))
         {
         }
     }

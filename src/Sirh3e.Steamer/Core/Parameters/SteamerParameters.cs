@@ -31,7 +31,13 @@ namespace Sirh3e.Steamer.Core.Parameters
 
         public void SetValue<TValue>(string key, TValue value)
         {
-            if (Parameters.TryGetValue(key, out var parameter)) parameter.Value = value;
+            _ = value ?? throw new ArgumentNullException(nameof(value));
+
+            if (Parameters.TryGetValue(key, out var parameter))
+            {
+                parameter.Value = value;
+            }
+
         }
 
         public IEnumerator<ISteamerParameter> GetEnumerator() => Parameters.Values.GetEnumerator();

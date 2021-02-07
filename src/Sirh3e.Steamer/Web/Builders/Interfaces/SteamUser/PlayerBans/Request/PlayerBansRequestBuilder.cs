@@ -17,7 +17,7 @@ namespace Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Request
 
         //ToDo change parameter to / create a parameter for list
         public IPlayerBansRequestBuilder SetSteamIds(params ulong[] steamIds)
-            => SetValue("key", string.Join(",", steamIds.Select(steamId => steamId.ToString()).ToList() ?? throw new ArgumentNullException(nameof(steamIds))));
+            => SetValue("steamids", string.Join(",", steamIds.Select(steamId => steamId.ToString()).ToList() ?? throw new ArgumentNullException(nameof(steamIds))));
 
         public override IPlayerBansRequest Build()
         {

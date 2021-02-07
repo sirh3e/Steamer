@@ -30,9 +30,9 @@ namespace Sirh3e.Steamer.Cli
             var service = new SteamerWebService(client, httpClientProvider);
 
             var start = DateTime.Now;
-            var response = client.SteamerUser.FriendList
+            var response = client.SteamerUser.PlayerBans
                 .SetKey(apiKey)
-                .SetSteamId(76561198220146080)
+                .SetSteamIds(76561198220146080)
                 .Build()
                 .ServiceExecute(service)
                 .RetryServiceExecute(service);
@@ -44,10 +44,10 @@ namespace Sirh3e.Steamer.Cli
             var option = response.Model;
             option.Match(model =>
                          {
-                             model.FriendsList.Friends.ForEach(f => { }
-                                                              //Console
-                                                              //    .WriteLine($"steamid: {f.SteamId} url: {f.FriendSince}")
-                                                              );
+                             model.Players.ForEach(p =>
+                             {
+                                 Console.WriteLine($"{p.SteamId}: {p.VacBanned}");
+                             });
                          },
                          () => { Console.WriteLine("some error"); });
         }
