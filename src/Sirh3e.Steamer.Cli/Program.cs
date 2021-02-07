@@ -5,9 +5,7 @@ using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
 using Sirh3e.Steamer.Core.Serializers.Json;
-using Sirh3e.Steamer.Core.Serializers.Providers;
-using Sirh3e.Steamer.SteamerWebService.Extensions.SteamUser.Request;
-using Sirh3e.Steamer.SteamerWebService.Extensions.SteamUser.Response;
+using Sirh3e.Steamer.Core.Serializers.Providers; //ToDo text see line 3
 
 namespace Sirh3e.Steamer.Cli
 {
@@ -28,12 +26,14 @@ namespace Sirh3e.Steamer.Cli
             var httpClientProvider = new SteamerHttpClientProvider(new HttpClient());
             var service = new SteamerWebService.SteamerWebService(client, httpClientProvider);
 
-            var response = client.SteamerWebUser.SteamerWebResolveVanityUrl
+            var request = client.SteamUser.ResolveVanityUrl
                 .SetKey(apiKey)
-                .SetVanityUrl("sirh3e")
-                .Build()
-                .ServiceExecute(service)
-                .RetryServiceExecute(service);
+                .SetVanityUrl("xtrivax")
+                .Build();
+            //.ServiceExecute(service);
+            //.RetryServiceExecute(service);
+
+            var response = service.Execute(request);
 
             var option = response.Model;
             option.Match(model => { Console.WriteLine(model.Response.SteamId); },
