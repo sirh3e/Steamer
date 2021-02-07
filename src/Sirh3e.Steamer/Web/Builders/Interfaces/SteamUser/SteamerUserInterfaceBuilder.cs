@@ -8,10 +8,11 @@ namespace Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser
     public class SteamerUserInterfaceBuilder : SteamerInterface, ISteamerUserInterfaceBuilder
     {
         public SteamerUserInterfaceBuilder() : base("ISteamUser")
-            => FriendList = new FriendListRequestBuilder(this);
+        {
+            FriendList = new FriendListRequestBuilder(this);
+            PlayerBans = new PlayerBansRequestRequestBuilder(this);
+        }
 
-        //PlayerBans = new PlayerBansRequestRequestBuilder(this);
-        //PlayerSummaries = new PlayerSummariesRequestRequestBuilder(this);
         public IFriendListRequestBuilder FriendList { get; }
         public IPlayerBansRequestRequestBuilder PlayerBans { get; }
         public IPlayerSummariesRequestRequestBuilder PlayerSummaries { get; }

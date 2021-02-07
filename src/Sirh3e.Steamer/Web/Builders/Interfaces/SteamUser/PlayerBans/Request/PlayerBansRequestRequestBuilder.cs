@@ -1,52 +1,31 @@
-﻿namespace Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Request
-{
-    /*
-    public class PlayerBansRequestRequestBuilder : IPlayerBansRequestRequestBuilder //ToDo rename SteamerMethod
-    {
-        public PlayerBansRequestRequestBuilder(ISteamerInterface @interface)
-        {
-            Interface = @interface;
-            Method = GetDefaultMethod();
-        }
+﻿using System;
+using System.Linq;
+using Sirh3e.Steamer.Core.Builder;
+using Sirh3e.Steamer.Core.Interface;
 
-        public ISteamerMethod GetDefaultMethod()
+namespace Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Request
+{
+    public class PlayerBansRequestRequestBuilder : SteamerRequestBuilder<PlayerBansRequestRequestBuilder, IPlayerBansRequest>, IPlayerBansRequestRequestBuilder //ToDo rename SteamerMethod
+    {
+        public PlayerBansRequestRequestBuilder(ISteamerInterface @interface) : base(@interface)
         {
-            return new SteamerMethod(Interface,
-                HttpMethod.Get, "GetPlayerBans", 1,
-                new SteamerParameters(
-                    new SteamerStringParameter("key"),
-                    new SteamerStringParameter("steamids")));
+            Request = new PlayerBansRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
         }
 
         public IPlayerBansRequestRequestBuilder SetKey(string key)
-        {
-            _ = key ?? throw new ArgumentNullException(nameof(key));
+            => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
 
-            Method.Parameters.SetValue("key", key);
-
-            return this;
-        }
-
+        //ToDo change parameter to / create a parameter for list
         public IPlayerBansRequestRequestBuilder SetSteamIds(params ulong[] steamIds)
+            => SetValue("key", string.Join(",", steamIds.Select(steamId => steamId.ToString()).ToList() ?? throw new ArgumentNullException(nameof(steamIds))));
+
+        public override IPlayerBansRequest Build()
         {
-            _ = steamIds ?? throw new ArgumentNullException(nameof(steamIds));
+            var request = Request;
 
-            var value = string.Join(",", steamIds.Select(steamId => steamId.ToString()).ToList());
+            Request = new PlayerBansRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
 
-            Method.Parameters.SetValue("steamids", value);
-
-            return this;
-        }
-
-        public IPlayerBansRequest Request { get; }
-
-        public IPlayerBansRequest Build()
-        {
-            var request = new PlayerBansRequest { Method = Method };
-
-            Method = GetDefaultMethod();
             return request;
         }
     }
-    */
 }
