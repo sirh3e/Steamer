@@ -1,7 +1,7 @@
 ﻿using System;
 using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Serializers.Providers;
-using Sirh3e.Steamer.SteamerWebService.Requests.Builders.Interfaces.SteamUser;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser;
 
 namespace Sirh3e.Steamer.Core.Clients.Web
 {

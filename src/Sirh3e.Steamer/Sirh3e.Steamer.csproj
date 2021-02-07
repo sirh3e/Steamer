@@ -10,7 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="SteamerWebService\Requests" />
+      <Folder Include="Web\Requests" />
     </ItemGroup>
 
 </Project>
