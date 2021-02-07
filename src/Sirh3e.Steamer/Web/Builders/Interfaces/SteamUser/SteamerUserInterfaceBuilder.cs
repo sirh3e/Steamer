@@ -2,6 +2,7 @@
 using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.FriendList.Request;
 using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Request;
 using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerSummaries.Request;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.ResolveVanityUrl.Request;
 
 namespace Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser
 {
@@ -12,10 +13,12 @@ namespace Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser
             FriendList = new FriendListRequestBuilder(this);
             PlayerBans = new PlayerBansRequestBuilder(this);
             PlayerSummaries = new PlayerSummariesRequestBuilder(this);
+            ResolveVanityUrl = new ResolveVanityUrlRequestBuilder(this);
         }
 
         public IFriendListRequestBuilder FriendList { get; }
         public IPlayerBansRequestBuilder PlayerBans { get; }
         public IPlayerSummariesRequestBuilder PlayerSummaries { get; }
+        public IResolveVanityUrlRequestBuilder ResolveVanityUrl { get; }
     }
 }

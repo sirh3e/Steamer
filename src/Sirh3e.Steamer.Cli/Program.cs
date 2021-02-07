@@ -6,6 +6,7 @@ using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http;
 using Sirh3e.Steamer.Core.Serializer.Providers;
 using Sirh3e.Steamer.Web.Extensions.SteamUser.Request;
+using Sirh3e.Steamer.Web.Extensions.SteamUser.Response;
 using Sirh3e.Steamer.Web.Serializers.Json;
 using Sirh3e.Steamer.Web.Services;
 
@@ -28,19 +29,17 @@ namespace Sirh3e.Steamer.Cli
             var httpClientProvider = new SteamerHttpClientProvider(new HttpClient());
             var service = new SteamerWebService(client, httpClientProvider);
 
-            var response = client.SteamerUser.PlayerSummaries
+            var response = client.SteamerUser.ResolveVanityUrl
                 .SetKey(apiKey)
-                .SetSteamIds(76561198220146080)
+                .SetVanityUrl("sirh3e")
                 .Build()
-                .ServiceExecute(service);
+                .ServiceExecute(service)
+                .RetryServiceExecute(service);
 
             var option = response.Model;
             option.Match(model =>
                          {
-                             model.Response.Players.ForEach(p =>
-                             {
-                                 Console.WriteLine($"{p.SteamId}: {p.Avatar}");
-                             });
+                             Console.WriteLine(model.Response.SteamId);
                          },
                          () => { Console.WriteLine("some error"); });
         }
