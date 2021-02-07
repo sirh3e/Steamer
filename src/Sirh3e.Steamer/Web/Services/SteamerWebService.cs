@@ -9,6 +9,8 @@ using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Request;
 using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Response;
 using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerSummaries.Request;
 using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerSummaries.Response;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.ResolveVanityUrl.Request;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.ResolveVanityUrl.Response;
 using Sirh3e.Steamer.Web.Pipelines;
 
 namespace Sirh3e.Steamer.Web.Services
@@ -43,6 +45,13 @@ namespace Sirh3e.Steamer.Web.Services
         public IPlayerSummariesResponse Execute(IPlayerSummariesRequest request)
         {
             var response = new PlayerSummariesResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
+        }
+
+        public IResolveVanityUrlResponse Execute(IResolveVanityUrlRequest request)
+        {
+            var response = new ResolveVanityUrlResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }

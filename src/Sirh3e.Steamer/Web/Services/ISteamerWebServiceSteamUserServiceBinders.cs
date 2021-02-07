@@ -5,7 +5,8 @@ namespace Sirh3e.Steamer.Web.Services
     public interface ISteamerWebServiceSteamUserServiceBinders :
         ISteamerWebServiceFriendListBinder,
         ISteamerWebServicePlayerBansBinder,
-        ISteamerWebServicePlayerSummariesBinder
+        ISteamerWebServicePlayerSummariesBinder,
+        ISteamerWebServiceResolveVanityUrlBinder
     {
     }
 }
