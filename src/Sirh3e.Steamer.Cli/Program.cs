@@ -28,7 +28,7 @@ namespace Sirh3e.Steamer.Cli
             var httpClientProvider = new SteamerHttpClientProvider(new HttpClient());
             var service = new SteamerWebService.SteamerWebService(client, httpClientProvider);
 
-            var response = client.SteamerUser.ResolveVanityUrl
+            var response = client.SteamerWebUser.SteamerWebResolveVanityUrl
                 .SetKey(apiKey)
                 .SetVanityUrl("sirh3e")
                 .Build()
@@ -36,10 +36,7 @@ namespace Sirh3e.Steamer.Cli
                 .RetryServiceExecute(service);
 
             var option = response.Model;
-            option.Match(model =>
-                         {
-                             Console.WriteLine(model.Response.SteamId);
-                         },
+            option.Match(model => { Console.WriteLine(model.Response.SteamId); },
                          () => { Console.WriteLine("some error"); });
         }
     }

@@ -4,7 +4,7 @@ using Sirh3e.Steamer.SteamerWebService.Builders.Interfaces.SteamUser.PlayerBans.
 
 namespace Sirh3e.Steamer.SteamerWebService.Services.SteamUser
 {
-    public interface ISteamerWebServicePlayerBansBinder : ISteamerServiceBinder<IPlayerBansRequest, IPlayerBansResponse>
+    public interface ISteamerWebServicePlayerBansBinder : ISteamerServiceBinder<ISteamerWebPlayerBansRequest, ISteamerWebPlayerBansResponse>
     {
     }
 }

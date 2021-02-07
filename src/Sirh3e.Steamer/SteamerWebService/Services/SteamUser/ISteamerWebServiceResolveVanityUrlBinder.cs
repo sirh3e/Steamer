@@ -4,9 +4,8 @@ using Sirh3e.Steamer.SteamerWebService.Builders.Interfaces.SteamUser.ResolveVani
 
 namespace Sirh3e.Steamer.SteamerWebService.Services.SteamUser
 {
-    public interface ISteamerWebServiceResolveVanityUrlBinder : ISteamerServiceBinder<IResolveVanityUrlRequest,
-        IResolveVanityUrlResponse>
+    public interface ISteamerWebServiceResolveVanityUrlBinder : ISteamerServiceBinder<ISteamerWebResolveVanityUrlRequest,
+        ISteamerWebResolveVanityUrlResponse>
     {
-
     }
 }

@@ -28,30 +28,30 @@ namespace Sirh3e.Steamer.SteamerWebService
 
         public void Dispose() => HttpClientProvider.HttpClient.Dispose();
 
-        public IFriendListResponse Execute(IFriendListRequest request)
+        public ISteamerWebFriendListResponse Execute(ISteamerWebFriendListRequest request)
         {
-            var response = new FriendListResponse();
+            var response = new SteamerWebFriendListResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
 
-        public IPlayerBansResponse Execute(IPlayerBansRequest request)
+        public ISteamerWebPlayerBansResponse Execute(ISteamerWebPlayerBansRequest request)
         {
-            var response = new PlayerBansResponse();
+            var response = new SteamerWebPlayerBansResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
 
-        public IPlayerSummariesResponse Execute(IPlayerSummariesRequest request)
+        public ISteamerWebPlayerSummariesResponse Execute(ISteamerWebPlayerSummariesRequest request)
         {
-            var response = new PlayerSummariesResponse();
+            var response = new SteamerWebPlayerSummariesResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
 
-        public IResolveVanityUrlResponse Execute(IResolveVanityUrlRequest request)
+        public ISteamerWebResolveVanityUrlResponse Execute(ISteamerWebResolveVanityUrlRequest request)
         {
-            var response = new ResolveVanityUrlResponse();
+            var response = new SteamerWebResolveVanityUrlResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }

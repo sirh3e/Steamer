@@ -5,7 +5,7 @@ using Sirh3e.Steamer.SteamerWebService.Builders.Interfaces.SteamUser.FriendList.
 namespace Sirh3e.Steamer.SteamerWebService.Services.SteamUser
 {
     public interface ISteamerWebServiceFriendListBinder
-        : ISteamerServiceBinder<IFriendListRequest, IFriendListResponse>
+        : ISteamerServiceBinder<ISteamerWebFriendListRequest, ISteamerWebFriendListResponse>
     {
     }
 }

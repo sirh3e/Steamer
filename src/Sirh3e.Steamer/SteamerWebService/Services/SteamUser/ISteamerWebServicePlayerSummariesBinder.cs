@@ -5,8 +5,8 @@ using Sirh3e.Steamer.SteamerWebService.Builders.Interfaces.SteamUser.PlayerSumma
 namespace Sirh3e.Steamer.SteamerWebService.Services.SteamUser
 {
     public interface
-        ISteamerWebServicePlayerSummariesBinder : ISteamerServiceBinder<IPlayerSummariesRequest,
-            IPlayerSummariesResponse>
+        ISteamerWebServicePlayerSummariesBinder : ISteamerServiceBinder<ISteamerWebPlayerSummariesRequest,
+            ISteamerWebPlayerSummariesResponse>
     {
     }
 }
