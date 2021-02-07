@@ -1,6 +1,6 @@
 ﻿using System;
 using Sirh3e.Steamer.Core.Clients.Web;
-using Sirh3e.Steamer.Core.Net.Http;
+using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
 
 namespace Sirh3e.Steamer.Web.Services
 {

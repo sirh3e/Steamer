@@ -1,6 +1,6 @@
 ﻿using System;
 using Sirh3e.Steamer.Core.Clients.Web;
-using Sirh3e.Steamer.Core.Net.Http;
+using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
 using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
 using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.FriendList.Request;

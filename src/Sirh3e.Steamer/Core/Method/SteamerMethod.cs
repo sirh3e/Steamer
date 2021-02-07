@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Net.Http;
 using Sirh3e.Steamer.Core.Interface;
+using Sirh3e.Steamer.Core.Net.Http.Methods;
 using Sirh3e.Steamer.Core.Parameters;
 
 namespace Sirh3e.Steamer.Core.Method
@@ -10,7 +10,7 @@ namespace Sirh3e.Steamer.Core.Method
         public const string SteamWebApiHostUrl = "https://api.steampowered.com";
 
         public SteamerMethod(ISteamerInterface @interface,
-                             HttpMethod httpMethod,
+                             ISteamerHttpMethod httpMethod,
                              string name,
                              ulong version,
                              ISteamerParameters parameters)
@@ -22,7 +22,7 @@ namespace Sirh3e.Steamer.Core.Method
             Parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
         }
 
-        public HttpMethod HttpMethod { get; }
+        public ISteamerHttpMethod HttpMethod { get; }
         public ISteamerInterface Interface { get; }
         public string Name { get; }
         public ulong Version { get; }

@@ -10,6 +10,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Core\Net\Http\Extension" />
+      <Folder Include="Extensions\Internal" />
       <Folder Include="Web\Builders\Parameters" />
       <Folder Include="Web\Pipelines\SteamerWebService" />
       <Folder Include="Web\Serializers" />
