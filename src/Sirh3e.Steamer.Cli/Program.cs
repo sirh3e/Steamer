@@ -4,11 +4,10 @@ using System.Text.Json;
 using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
-using Sirh3e.Steamer.Core.Serializer.Providers;
-using Sirh3e.Steamer.Web.Extensions.SteamUser.Request;
-using Sirh3e.Steamer.Web.Extensions.SteamUser.Response;
-using Sirh3e.Steamer.Web.Serializers.Json;
-using Sirh3e.Steamer.Web.Services;
+using Sirh3e.Steamer.Core.Serializers.Json;
+using Sirh3e.Steamer.Core.Serializers.Providers;
+using Sirh3e.Steamer.SteamerWebService.Extensions.SteamUser.Request;
+using Sirh3e.Steamer.SteamerWebService.Extensions.SteamUser.Response;
 
 namespace Sirh3e.Steamer.Cli
 {
@@ -27,7 +26,7 @@ namespace Sirh3e.Steamer.Cli
                 .Build();
 
             var httpClientProvider = new SteamerHttpClientProvider(new HttpClient());
-            var service = new SteamerWebService(client, httpClientProvider);
+            var service = new SteamerWebService.SteamerWebService(client, httpClientProvider);
 
             var response = client.SteamerUser.ResolveVanityUrl
                 .SetKey(apiKey)

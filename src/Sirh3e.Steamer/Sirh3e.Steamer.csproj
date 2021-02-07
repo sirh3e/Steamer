@@ -9,12 +9,4 @@
       <PackageReference Include="Sirh3e.Rust" Version="1.0.0-preview-0002" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Core\Net\Http\Extension" />
-      <Folder Include="Extensions\Internal" />
-      <Folder Include="Web\Builders\Parameters" />
-      <Folder Include="Web\Pipelines\SteamerWebService" />
-      <Folder Include="Web\Serializers" />
-    </ItemGroup>
-
 </Project>
