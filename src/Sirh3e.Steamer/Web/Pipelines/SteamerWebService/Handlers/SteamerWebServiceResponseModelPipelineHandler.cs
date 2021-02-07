@@ -14,10 +14,8 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
             Option<TResponseModel>)>
         where TSteamerRequest : ISteamerRequest
     {
-        public SteamerWebServiceResponseModelPipelineHandler(ISteamerSerializerProvider serializerProvider)
-        {
+        public SteamerWebServiceResponseModelPipelineHandler(ISteamerSerializerProvider serializerProvider) =>
             SerializerProvider = serializerProvider ?? throw new ArgumentNullException(nameof(serializerProvider));
-        }
 
         public ISteamerSerializerProvider SerializerProvider { get; set; }
 
@@ -32,16 +30,16 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
             {
                 var content = await ok.Content.ReadAsStringAsync();
 
-                var model = SerializerProvider.Serializer.Serialize<TResponseModel>(
-                    new SteamerSerializerStringDataProvider(content));
+                var responseModel =
+                    SerializerProvider.Serializer
+                        .Serialize<TResponseModel>(new SteamerSerializerStringDataProvider(content));
 
-                return model is not null ? Option<TResponseModel>.Some(model) : Option<TResponseModel>.None;
-            }, async err => await Task.Run(() => Option<TResponseModel>.None));
+                return responseModel is not null
+                    ? Option<TResponseModel>.Some(responseModel)
+                    : Option<TResponseModel>.None;
+            }, async err => await Task.Run(() => Option<TResponseModel>.None)).Result;
 
-            option.Wait();
-            var model = option.Result;
-
-            return (request, model);
+            return (request, option);
         }
     }
 }

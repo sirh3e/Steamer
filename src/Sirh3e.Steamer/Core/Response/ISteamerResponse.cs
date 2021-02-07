@@ -6,7 +6,7 @@ namespace Sirh3e.Steamer.Core.Response
     public interface ISteamerResponse<TRequest, TModel>
         where TRequest : ISteamerRequest
     {
-        public TRequest Request { get; set; } //Change Request Type
-        public Option<TModel> Model { get; set; }
+        public TRequest Request { get; init; } //Change Request Type
+        public Option<TModel> Model { get; init; }
     }
 }

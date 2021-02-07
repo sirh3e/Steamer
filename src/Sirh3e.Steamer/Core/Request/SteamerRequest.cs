@@ -5,11 +5,9 @@ namespace Sirh3e.Steamer.Core.Request
 {
     public class SteamerRequest : ISteamerRequest
     {
-        public SteamerRequest(ISteamerMethod method)
-        {
+        public SteamerRequest(ISteamerMethod method) =>
             Method = method ?? throw new ArgumentNullException(nameof(method));
-        }
 
-        public ISteamerMethod Method { get; }
+        public ISteamerMethod Method { get; set; }
     }
 }

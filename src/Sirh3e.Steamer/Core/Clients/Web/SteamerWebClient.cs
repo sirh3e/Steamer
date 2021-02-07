@@ -1,7 +1,7 @@
 ﻿using System;
 using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Serializer.Providers;
-using Sirh3e.Steamer.Web.Builders.SteamUser;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser;
 
 namespace Sirh3e.Steamer.Core.Clients.Web
 {
@@ -35,11 +35,9 @@ namespace Sirh3e.Steamer.Core.Clients.Web
                 return this;
             }
 
-            public SteamerWebClient Build()
-            {
-                return new(AuthProvider ?? throw new ArgumentNullException(nameof(AuthProvider)),
+            public SteamerWebClient Build() =>
+                new(AuthProvider ?? throw new ArgumentNullException(nameof(AuthProvider)),
                     SerializerProvider ?? throw new ArgumentNullException(nameof(SerializerProvider)));
-            }
         }
     }
 }

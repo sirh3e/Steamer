@@ -6,6 +6,6 @@ namespace Sirh3e.Steamer.Web.Models.FriendList
     public class FriendsModel
     {
         [JsonPropertyName("friends")]
-        public List<FriendModel.Friend> Friends { get; set; } = new();
+        public List<FriendModel> Friends { get; set; } = new();
     }
 }

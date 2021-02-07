@@ -10,6 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Web\Builders\Parameters" />
       <Folder Include="Web\Pipelines\SteamerWebService" />
       <Folder Include="Web\Serializers" />
     </ItemGroup>

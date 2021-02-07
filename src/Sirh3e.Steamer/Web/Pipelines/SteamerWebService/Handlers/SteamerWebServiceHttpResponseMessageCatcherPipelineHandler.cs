@@ -17,7 +17,6 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
             _ = request ?? throw new ArgumentNullException(nameof(request));
             _ = taskHttpResponseMessage ?? throw new ArgumentNullException(nameof(taskHttpResponseMessage));
 
-            taskHttpResponseMessage.Wait();
             var httpResponseMessage = taskHttpResponseMessage.Result;
 
             return (request, httpResponseMessage);

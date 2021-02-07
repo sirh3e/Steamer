@@ -10,7 +10,7 @@ namespace Sirh3e.Steamer.Core.Parameters
     {
         public SteamerParameters(params ISteamerParameter[] parameters)
         {
-            if ( parameters.Any(parameter => TryAdd(parameter.Name, parameter).Equals(false)) )
+            if (parameters.Any(parameter => TryAdd(parameter.Name, parameter).Equals(false)))
                 throw new NotImplementedException();
         }
 
@@ -18,10 +18,7 @@ namespace Sirh3e.Steamer.Core.Parameters
             new Dictionary<string, ISteamerParameter>();
 
         public bool TryAdd<TParameter>(string key, TParameter parameter)
-            where TParameter : ISteamerParameter
-        {
-            return Parameters.TryAdd(key, parameter);
-        }
+            where TParameter : ISteamerParameter => Parameters.TryAdd(key, parameter);
 
         public bool TryGetValue<TParameter>(string key, out TParameter parameter)
             where TParameter : ISteamerParameter
@@ -34,18 +31,11 @@ namespace Sirh3e.Steamer.Core.Parameters
 
         public void SetValue<TValue>(string key, TValue value)
         {
-            if ( Parameters.TryGetValue(key, out var parameter) )
-                parameter.Value = value;
+            if (Parameters.TryGetValue(key, out var parameter)) parameter.Value = value;
         }
 
-        public IEnumerator<ISteamerParameter> GetEnumerator()
-        {
-            return Parameters.Values.GetEnumerator();
-        }
+        public IEnumerator<ISteamerParameter> GetEnumerator() => Parameters.Values.GetEnumerator();
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

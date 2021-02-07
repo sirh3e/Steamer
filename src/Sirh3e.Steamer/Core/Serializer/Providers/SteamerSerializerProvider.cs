@@ -4,10 +4,8 @@ namespace Sirh3e.Steamer.Core.Serializer.Providers
 {
     public class SteamerSerializerProvider : ISteamerSerializerProvider
     {
-        public SteamerSerializerProvider(ISteamerSerializer serializer)
-        {
+        public SteamerSerializerProvider(ISteamerSerializer serializer) =>
             Serializer = serializer ?? throw new ArgumentNullException(nameof(serializer));
-        }
 
         public ISteamerSerializer Serializer { get; }
 
@@ -21,10 +19,8 @@ namespace Sirh3e.Steamer.Core.Serializer.Providers
                 return this;
             }
 
-            public ISteamerSerializerProvider Build()
-            {
-                return new SteamerSerializerProvider(Serializer ?? throw new ArgumentNullException(nameof(Serializer)));
-            }
+            public ISteamerSerializerProvider Build() =>
+                new SteamerSerializerProvider(Serializer ?? throw new ArgumentNullException(nameof(Serializer)));
         }
     }
 }

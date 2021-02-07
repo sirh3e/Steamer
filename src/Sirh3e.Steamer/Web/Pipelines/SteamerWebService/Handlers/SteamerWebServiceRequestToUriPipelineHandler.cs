@@ -17,8 +17,10 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
 
             var queryNameValueCollection = HttpUtility.ParseQueryString(string.Empty);
 
-            foreach ( var parameter in input.Method.Parameters )
+            foreach (var parameter in input.Method.Parameters)
+            {
                 queryNameValueCollection.Set(parameter.Name, parameter.GetValueFromQueryString());
+            }
 
             var builder = new UriBuilder(input.Method.GetUriHost())
             {

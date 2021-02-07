@@ -9,10 +9,10 @@
         public void Deconstruct(out bool required, out string name, out object value);
     }
 
-    public interface ISteamerParameter<T> : ISteamerParameter
+    public interface ISteamerParameter<TValue> : ISteamerParameter
     {
-        public new T Value { get; }
+        public new TValue Value { get; }
 
-        public void Deconstruct(out bool required, out string name, out T value);
+        public void Deconstruct(out bool required, out string name, out TValue value);
     }
 }

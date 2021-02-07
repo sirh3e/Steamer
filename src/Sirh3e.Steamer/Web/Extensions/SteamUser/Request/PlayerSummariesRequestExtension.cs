@@ -1,6 +1,6 @@
 ﻿using System;
-using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries.Request;
-using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries.Response;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerSummaries.Request;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerSummaries.Response;
 using Sirh3e.Steamer.Web.Services;
 
 namespace Sirh3e.Steamer.Web.Extensions.SteamUser.Request
@@ -8,7 +8,7 @@ namespace Sirh3e.Steamer.Web.Extensions.SteamUser.Request
     public static class PlayerSummariesRequestExtension
     {
         public static IPlayerSummariesResponse ServiceExecute(this IPlayerSummariesRequest request,
-            ISteamerWebService service)
+                                                              ISteamerWebService service)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request));
             _ = service ?? throw new ArgumentNullException(nameof(service));

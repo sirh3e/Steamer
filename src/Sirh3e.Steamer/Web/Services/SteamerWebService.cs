@@ -3,12 +3,12 @@ using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http;
 using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
-using Sirh3e.Steamer.Web.Builders.SteamUser.FriendList.Request;
-using Sirh3e.Steamer.Web.Builders.SteamUser.FriendList.Response;
-using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans.Request;
-using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans.Response;
-using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries.Request;
-using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerSummaries.Response;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.FriendList.Request;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.FriendList.Response;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Request;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Response;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerSummaries.Request;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerSummaries.Response;
 using Sirh3e.Steamer.Web.Pipelines;
 
 namespace Sirh3e.Steamer.Web.Services
@@ -24,10 +24,7 @@ namespace Sirh3e.Steamer.Web.Services
         public ISteamerWebClient WebClient { get; }
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }
 
-        public void Dispose()
-        {
-            HttpClientProvider.HttpClient.Dispose();
-        }
+        public void Dispose() => HttpClientProvider.HttpClient.Dispose();
 
         public IFriendListResponse Execute(IFriendListRequest request)
         {
@@ -50,20 +47,17 @@ namespace Sirh3e.Steamer.Web.Services
             return GetResponse(request, response, response.Model.Unwrap);
         }
 
-        private TSteamerResponse GetResponse<TRequest, TSteamerResponse, TSteamerResponseModel>
-            (TRequest request, TSteamerResponse response, Func<TSteamerResponseModel> model)
+        private TSteamerResponse GetResponse<TRequest, TSteamerResponse, TSteamerResponseModel>(
+            TRequest request,
+            TSteamerResponse response,
+            Func<TSteamerResponseModel> model)
             where TRequest : ISteamerRequest
-            where TSteamerResponse : ISteamerResponse<TRequest, TSteamerResponseModel>, new()
-        {
-            return CreatePipeline<TRequest, TSteamerResponse, TSteamerResponseModel>().Process(request);
-        }
+            where TSteamerResponse : ISteamerResponse<TRequest, TSteamerResponseModel>, new() =>
+            CreatePipeline<TRequest, TSteamerResponse, TSteamerResponseModel>().Process(request);
 
         private SteamerWebServicePipeline<TRequest, TSteamerResponse, TSteamerResponseModel> CreatePipeline
             <TRequest, TSteamerResponse, TSteamerResponseModel>()
             where TRequest : ISteamerRequest
-            where TSteamerResponse : ISteamerResponse<TRequest, TSteamerResponseModel>, new()
-        {
-            return new(this);
-        }
+            where TSteamerResponse : ISteamerResponse<TRequest, TSteamerResponseModel>, new() => new(this);
     }
 }

@@ -19,18 +19,16 @@ namespace Sirh3e.Steamer.Web.Pipelines
             Service = service ?? throw new ArgumentNullException(nameof(service));
             PipelineHandlers = request => request
                 .AddHandler(new SteamerWebServiceRequestToUriPipelineHandler<TSteamerRequest>())
-                .AddHandler(
-                    new SteamerWebServiceUriToHttpMessageResponsePipelineHandler<TSteamerRequest>(
-                        Service.HttpClientProvider))
+                .AddHandler(new SteamerWebServiceUriToHttpMessageResponsePipelineHandler<TSteamerRequest>(Service
+                                .HttpClientProvider))
                 .AddHandler(new SteamerWebServiceHttpResponseMessageCatcherPipelineHandler<TSteamerRequest>())
                 .AddHandler(new SteamerWebServiceHttpResponseMessageHandlerPipelineHandler<TSteamerRequest>())
-                .AddHandler(
-                    new SteamerWebServiceResponseModelPipelineHandler<TSteamerRequest, TSteamerResponseModel>(Service
-                        .WebClient
-                        .SerializerProvider))
-                .AddHandler(
-                    new SteamerWebServiceResponsePipelineHandler<TSteamerRequest, TSteamerResponse,
-                        TSteamerResponseModel>());
+                .AddHandler(new SteamerWebServiceResponseModelPipelineHandler<TSteamerRequest, TSteamerResponseModel
+                            >(Service
+                                  .WebClient
+                                  .SerializerProvider))
+                .AddHandler(new SteamerWebServiceResponsePipelineHandler<TSteamerRequest, TSteamerResponse,
+                                TSteamerResponseModel>());
         }
 
         public ISteamerWebService Service { get; set; }

@@ -20,43 +20,36 @@ namespace Sirh3e.Steamer.Cli
             var client = new SteamerWebClient.Builder()
                 .SetAuthProvider(new SteamerAuthProvider(apiKey))
                 .SetSerializerProvider(new SteamerSerializerProvider.Builder()
-                    .SetSerializer(new SteamerSystemTextJsonSerializer(
-                        new SteamerSystemTextJsonSerializerOptionsProvider(new JsonSerializerOptions())))
-                    .Build())
+                                           .SetSerializer(new SteamerSystemTextJsonSerializer(new
+                                                                                                  SteamerSystemTextJsonSerializerOptionsProvider(new
+                                                                                                      JsonSerializerOptions())))
+                                           .Build())
                 .Build();
 
             var httpClientProvider = new SteamerHttpClientProvider(new HttpClient());
             var service = new SteamerWebService(client, httpClientProvider);
 
-
-            var response = client.SteamerUser.PlayerSummaries
+            var start = DateTime.Now;
+            var response = client.SteamerUser.FriendList
                 .SetKey(apiKey)
-                .SetSteamIds(76561198220146080)
+                .SetSteamId(76561198220146080)
                 .Build()
                 .ServiceExecute(service)
-                .RetryServiceExecute(service)
                 .RetryServiceExecute(service);
+            //.RetryServiceExecute(service);
+
+            var end = DateTime.Now;
+            Console.WriteLine($"{(end - start).TotalSeconds}s");
 
             var option = response.Model;
-
-            option.Match(
-                model =>
-                {
-                    model.Response.Players.ForEach(p =>
-                        Console.WriteLine($"steamid: {p.SteamId} url: {p.PrimaryClanId}"));
-                },
-                () => { Console.WriteLine("some error"); });
-
-            response = response.Request.ServiceExecute(service);
-            option = response.Model;
-
-            option.Match(
-                model =>
-                {
-                    model.Response.Players.ForEach(p =>
-                        Console.WriteLine($"steamid: {p.SteamId} url: {p.PrimaryClanId}"));
-                },
-                () => { Console.WriteLine("some error"); });
+            option.Match(model =>
+                         {
+                             model.FriendsList.Friends.ForEach(f => { }
+                                                              //Console
+                                                              //    .WriteLine($"steamid: {f.SteamId} url: {f.FriendSince}")
+                                                              );
+                         },
+                         () => { Console.WriteLine("some error"); });
         }
     }
 }

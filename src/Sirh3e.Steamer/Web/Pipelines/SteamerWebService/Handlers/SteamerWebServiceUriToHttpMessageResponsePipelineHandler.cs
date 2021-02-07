@@ -11,10 +11,9 @@ namespace Sirh3e.Steamer.Web.Pipelines.SteamerWebService.Handlers
         ISteamerPipelineHandler<(TSteamerRequest, Uri), (TSteamerRequest, Task<HttpResponseMessage>)>
         where TSteamerRequest : ISteamerRequest
     {
-        public SteamerWebServiceUriToHttpMessageResponsePipelineHandler(ISteamerHttpClientProvider httpClientProvider)
-        {
+        public
+            SteamerWebServiceUriToHttpMessageResponsePipelineHandler(ISteamerHttpClientProvider httpClientProvider) =>
             HttpClientProvider = httpClientProvider ?? throw new ArgumentNullException(nameof(httpClientProvider));
-        }
 
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }
 

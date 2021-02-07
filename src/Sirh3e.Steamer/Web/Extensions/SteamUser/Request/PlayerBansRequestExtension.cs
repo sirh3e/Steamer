@@ -1,6 +1,6 @@
 ﻿using System;
-using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans.Request;
-using Sirh3e.Steamer.Web.Builders.SteamUser.PlayerBans.Response;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Request;
+using Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser.PlayerBans.Response;
 using Sirh3e.Steamer.Web.Services;
 
 namespace Sirh3e.Steamer.Web.Extensions.SteamUser.Request
