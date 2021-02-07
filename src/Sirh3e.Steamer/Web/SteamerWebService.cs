@@ -12,6 +12,8 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummaries.
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummaries.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.ResolveVanityUrl.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.ResolveVanityUrl.Response;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupList.Request;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupList.Response;
 
 namespace Sirh3e.Steamer.Web
 {
@@ -52,6 +54,13 @@ namespace Sirh3e.Steamer.Web
         public ISteamerWebResolveVanityUrlResponse Execute(ISteamerWebResolveVanityUrlRequest request)
         {
             var response = new SteamerWebResolveVanityUrlResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
+        }
+
+        public ISteamerWebUserGroupListResponse Execute(ISteamerWebUserGroupListRequest request)
+        {
+            var response = new SteamerWebUserGroupListResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }

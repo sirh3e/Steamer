@@ -1,6 +1,6 @@
 ﻿using Sirh3e.Rust.Option;
 using Sirh3e.Steamer.Web.Models;
-using Sirh3e.Steamer.Web.Models.PlayerSummaries;
+using Sirh3e.Steamer.Web.Models.SteamUser.PlayerSummaries;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummaries.Request;
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummaries.Response

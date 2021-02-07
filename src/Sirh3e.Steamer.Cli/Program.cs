@@ -6,7 +6,9 @@ using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
 using Sirh3e.Steamer.Core.Serializers.Json;
 using Sirh3e.Steamer.Core.Serializers.Providers;
-using Sirh3e.Steamer.Web; //ToDo text see line 3
+using Sirh3e.Steamer.Web;
+using Sirh3e.Steamer.Web.Extensions.SteamUser.Request;
+using Sirh3e.Steamer.Web.Extensions.SteamUser.Response;
 
 namespace Sirh3e.Steamer.Cli
 {
@@ -27,17 +29,15 @@ namespace Sirh3e.Steamer.Cli
             var httpClientProvider = new SteamerHttpClientProvider(new HttpClient());
             var service = new SteamerWebService(client, httpClientProvider);
 
-            var request = client.SteamUser.ResolveVanityUrl
+            var response = client.SteamUser.UserGroupList
                 .SetKey(apiKey)
-                .SetVanityUrl("xtrivax")
-                .Build();
-            //.ServiceExecute(service);
-            //.RetryServiceExecute(service);
-
-            var response = service.Execute(request);
+                .SetSteamId(76561198220146080)
+                .Build()
+                .ServiceExecute(service)
+                .RetryServiceExecute(service);
 
             var option = response.Model;
-            option.Match(model => { Console.WriteLine(model.Response.SteamId); },
+            option.Match(model => { model.Response.Groups.ForEach(g => Console.WriteLine($"{g.Gid}"));},
                          () => { Console.WriteLine("some error"); });
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Sirh3e.Steamer.Web.Models.FriendList
+namespace Sirh3e.Steamer.Web.Models.SteamUser.FriendList
 {
     public class SteamerWebFriendModel
     {

@@ -6,7 +6,8 @@ namespace Sirh3e.Steamer.Web.Services
         ISteamerWebServiceFriendListBinder,
         ISteamerWebServicePlayerBansBinder,
         ISteamerWebServicePlayerSummariesBinder,
-        ISteamerWebServiceResolveVanityUrlBinder
+        ISteamerWebServiceResolveVanityUrlBinder,
+        ISteamerWebServiceUserGroupListBinder
     {
     }
 }
