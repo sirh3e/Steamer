@@ -11,10 +11,11 @@ namespace Sirh3e.Steamer.Web.Builders.Interfaces.SteamUser
         {
             FriendList = new FriendListRequestBuilder(this);
             PlayerBans = new PlayerBansRequestBuilder(this);
+            PlayerSummaries = new PlayerSummariesRequestBuilder(this);
         }
 
         public IFriendListRequestBuilder FriendList { get; }
         public IPlayerBansRequestBuilder PlayerBans { get; }
-        public IPlayerSummariesRequestRequestBuilder PlayerSummaries { get; }
+        public IPlayerSummariesRequestBuilder PlayerSummaries { get; }
     }
 }

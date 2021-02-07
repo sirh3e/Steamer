@@ -6,7 +6,6 @@ using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http;
 using Sirh3e.Steamer.Core.Serializer.Providers;
 using Sirh3e.Steamer.Web.Extensions.SteamUser.Request;
-using Sirh3e.Steamer.Web.Extensions.SteamUser.Response;
 using Sirh3e.Steamer.Web.Serializers.Json;
 using Sirh3e.Steamer.Web.Services;
 
@@ -29,24 +28,18 @@ namespace Sirh3e.Steamer.Cli
             var httpClientProvider = new SteamerHttpClientProvider(new HttpClient());
             var service = new SteamerWebService(client, httpClientProvider);
 
-            var start = DateTime.Now;
-            var response = client.SteamerUser.PlayerBans
+            var response = client.SteamerUser.PlayerSummaries
                 .SetKey(apiKey)
                 .SetSteamIds(76561198220146080)
                 .Build()
-                .ServiceExecute(service)
-                .RetryServiceExecute(service);
-            //.RetryServiceExecute(service);
-
-            var end = DateTime.Now;
-            Console.WriteLine($"{(end - start).TotalSeconds}s");
+                .ServiceExecute(service);
 
             var option = response.Model;
             option.Match(model =>
                          {
-                             model.Players.ForEach(p =>
+                             model.Response.Players.ForEach(p =>
                              {
-                                 Console.WriteLine($"{p.SteamId}: {p.VacBanned}");
+                                 Console.WriteLine($"{p.SteamId}: {p.Avatar}");
                              });
                          },
                          () => { Console.WriteLine("some error"); });
