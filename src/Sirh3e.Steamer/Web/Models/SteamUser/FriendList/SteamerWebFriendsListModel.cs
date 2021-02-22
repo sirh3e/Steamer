@@ -5,6 +5,6 @@ namespace Sirh3e.Steamer.Web.Models.SteamUser.FriendList
     public class SteamerWebFriendsListModel
     {
         [JsonPropertyName("friendslist")]
-        public SteamerWebFriendsModel SteamerWebFriendsList { get; set; }
+        public SteamerWebFriendsModel FriendsList { get; set; }
     }
 }

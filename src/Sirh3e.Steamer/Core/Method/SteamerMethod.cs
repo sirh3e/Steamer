@@ -7,7 +7,7 @@ namespace Sirh3e.Steamer.Core.Method
 {
     public class SteamerMethod : ISteamerMethod
     {
-        public const string SteamWebApiHostUrl = "https://api.steampowered.com";
+        public const string SteamWebApiHostUrl = "https://api.steampowered.com"; //ToDo
 
         public SteamerMethod(ISteamerInterface @interface,
                              ISteamerHttpMethod httpMethod,
