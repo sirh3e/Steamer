@@ -4,7 +4,8 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.Reque
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.Response
 {
-    public interface ISteamerWebFriendListResponse : ISteamerResponse<ISteamerWebFriendListRequest, SteamerWebFriendsListModel>
+    public interface
+        ISteamerWebFriendListResponse : ISteamerResponse<ISteamerWebFriendListRequest, SteamerWebFriendsListModel>
     {
     }
 }

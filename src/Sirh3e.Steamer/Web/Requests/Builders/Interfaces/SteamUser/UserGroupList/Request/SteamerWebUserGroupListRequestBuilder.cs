@@ -20,10 +20,8 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupLis
             return request;
         }
 
-        public ISteamerWebUserGroupListRequestBuilder SetKey(string key)
-            => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
+        public ISteamerWebUserGroupListRequestBuilder SetKey(string key) => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
 
-        public ISteamerWebUserGroupListRequestBuilder SetSteamId(ulong steamId)
-            => SetValue("steamid", steamId);
+        public ISteamerWebUserGroupListRequestBuilder SetSteamId(ulong steamId) => SetValue("steamid", steamId);
     }
 }

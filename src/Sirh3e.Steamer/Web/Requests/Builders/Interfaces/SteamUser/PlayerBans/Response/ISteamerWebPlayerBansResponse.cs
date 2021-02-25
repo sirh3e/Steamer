@@ -4,7 +4,8 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerBans.Reque
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerBans.Response
 {
-    public interface ISteamerWebPlayerBansResponse : ISteamerResponse<ISteamerWebPlayerBansRequest, SteamerWebPlayerBansModel>
+    public interface
+        ISteamerWebPlayerBansResponse : ISteamerResponse<ISteamerWebPlayerBansRequest, SteamerWebPlayerBansModel>
     {
     }
 }

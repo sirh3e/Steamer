@@ -26,7 +26,8 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
             _ = uri ?? throw new ArgumentNullException(nameof(uri));
 
             //ToDo create a httpcontainer container and pass it if not GET
-            var responseTask = HttpClientProvider.HttpClient.GetHttpResponseMessageAsync(request.Method.HttpMethod, uri);
+            var responseTask =
+                HttpClientProvider.HttpClient.GetHttpResponseMessageAsync(request.Method.HttpMethod, uri);
 
             return (request, responseTask);
         }
