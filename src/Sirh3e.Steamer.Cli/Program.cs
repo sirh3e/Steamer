@@ -18,7 +18,7 @@ namespace Sirh3e.Steamer.Cli
     {
         private static void Main(string[] args)
         {
-            var apiKey = "";
+            var apiKey = "4BBB0ECB41D910368C4586A498598524";
             var client = new SteamerWebClient.Builder()
                 .SetAuthProvider(new SteamerAuthProvider(apiKey))
                 .SetSerializerProvider(new SteamerSerializerProvider.Builder()
