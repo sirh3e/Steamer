@@ -3,8 +3,6 @@ using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
 using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
-using Sirh3e.Steamer.Web.Models;
-using Sirh3e.Steamer.Web.Models.SteamUser.UserGroupList;
 using Sirh3e.Steamer.Web.Pipelines;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.Response;

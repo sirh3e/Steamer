@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net.Http;
 using System.Text.Json;
-using System.Threading.Channels;
 using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
