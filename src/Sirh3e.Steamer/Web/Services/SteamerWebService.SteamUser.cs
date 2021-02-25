@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
 using Sirh3e.Steamer.Core.Request;

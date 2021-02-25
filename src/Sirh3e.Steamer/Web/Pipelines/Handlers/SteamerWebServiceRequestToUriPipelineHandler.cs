@@ -19,7 +19,9 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
 
             foreach (var parameter in input.Method.Parameters)
             {
-                if (parameter.Required.Equals(false) && string.IsNullOrWhiteSpace(parameter.GetValueFromQueryString())) continue;
+                if (parameter.Required.Equals(false) &&
+                    string.IsNullOrWhiteSpace(parameter.GetValueFromQueryString())) continue;
+
                 queryNameValueCollection.Set(parameter.Name, parameter.GetValueFromQueryString());
             }
 

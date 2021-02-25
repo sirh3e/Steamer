@@ -1,6 +1,7 @@
 ﻿using System;
 using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Serializers.Providers;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser;
 
 namespace Sirh3e.Steamer.Core.Clients.Web
@@ -11,11 +12,15 @@ namespace Sirh3e.Steamer.Core.Clients.Web
         {
             AuthProvider = authProvider ?? throw new ArgumentNullException(nameof(authProvider));
             SerializerProvider = serializerProvider ?? throw new ArgumentNullException(nameof(serializerProvider));
+
+            //Builders
+            EconService = new SteamerWebEconServiceInterfaceBuilder();
             SteamUser = new SteamerWebUserInterfaceBuilder();
         }
 
         public ISteamerAuthProvider AuthProvider { get; }
         public ISteamerSerializerProvider SerializerProvider { get; }
+        public ISteamerWebEconServiceInterfaceBuilder EconService { get; }
         public ISteamerWebUserInterfaceBuilder SteamUser { get; }
 
         public class Builder

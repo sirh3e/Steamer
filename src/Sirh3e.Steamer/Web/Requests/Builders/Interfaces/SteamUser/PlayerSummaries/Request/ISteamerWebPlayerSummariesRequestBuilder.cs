@@ -2,7 +2,8 @@
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummaries.Request
 {
-    public interface ISteamerWebPlayerSummariesRequestBuilder : ISteamerRequestBuilder<ISteamerWebPlayerSummariesRequest>
+    public interface
+        ISteamerWebPlayerSummariesRequestBuilder : ISteamerRequestBuilder<ISteamerWebPlayerSummariesRequest>
     {
         public ISteamerWebPlayerSummariesRequestBuilder SetKey(string key);
         public ISteamerWebPlayerSummariesRequestBuilder SetSteamIds(params ulong[] steamIds);

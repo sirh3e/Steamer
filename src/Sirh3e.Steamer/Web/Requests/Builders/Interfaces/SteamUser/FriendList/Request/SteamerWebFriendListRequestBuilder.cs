@@ -4,17 +4,16 @@ using Sirh3e.Steamer.Core.Interface;
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.Request
 {
-    public class SteamerWebFriendListRequestBuilder : SteamerRequestBuilder<SteamerWebFriendListRequestBuilder, ISteamerWebFriendListRequest>,
-                                                      ISteamerWebFriendListRequestBuilder
+    public class SteamerWebFriendListRequestBuilder :
+        SteamerRequestBuilder<SteamerWebFriendListRequestBuilder, ISteamerWebFriendListRequest>,
+        ISteamerWebFriendListRequestBuilder
     {
         public SteamerWebFriendListRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
             Request = new SteamerWebFriendListRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
 
-        public ISteamerWebFriendListRequestBuilder SetKey(string key)
-            => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
+        public ISteamerWebFriendListRequestBuilder SetKey(string key) => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
 
-        public ISteamerWebFriendListRequestBuilder SetSteamId(ulong steamId)
-            => SetValue("steamid", steamId);
+        public ISteamerWebFriendListRequestBuilder SetSteamId(ulong steamId) => SetValue("steamid", steamId);
 
         public override ISteamerWebFriendListRequest Build()
         {
