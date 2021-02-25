@@ -10,7 +10,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Core\Serializers\Json\Converters" />
       <Folder Include="Web\Requests" />
     </ItemGroup>
 

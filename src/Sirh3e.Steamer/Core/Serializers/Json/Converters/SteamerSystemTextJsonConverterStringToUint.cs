@@ -1,0 +1,17 @@
+﻿using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace Sirh3e.Steamer.Core.Serializers.Json.Converters
+{
+    public class SteamerSystemTextJsonConverterStringToUint : JsonConverter<uint>
+    {
+        public override uint Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+            => reader.TokenType == JsonTokenType.Null
+                    ? default
+                    : reader.GetUInt32();
+
+        public override void Write(Utf8JsonWriter writer, uint value, JsonSerializerOptions options)
+            => writer.WriteStringValue(value.ToString());
+    }
+}
