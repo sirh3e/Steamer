@@ -1,6 +1,7 @@
 ﻿using System;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummaries.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummaries.Response;
+using Sirh3e.Steamer.Web.Services;
 
 namespace Sirh3e.Steamer.Web.Extensions.SteamUser.Request
 {

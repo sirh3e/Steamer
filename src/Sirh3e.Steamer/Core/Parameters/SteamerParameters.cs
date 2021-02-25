@@ -18,7 +18,8 @@ namespace Sirh3e.Steamer.Core.Parameters
             new Dictionary<string, ISteamerParameter>();
 
         public bool TryAdd<TParameter>(string key, TParameter parameter)
-            where TParameter : ISteamerParameter => Parameters.TryAdd(key, parameter);
+            where TParameter : ISteamerParameter =>
+            Parameters.TryAdd(key, parameter);
 
         public bool TryGetValue<TParameter>(string key, out TParameter parameter)
             where TParameter : ISteamerParameter

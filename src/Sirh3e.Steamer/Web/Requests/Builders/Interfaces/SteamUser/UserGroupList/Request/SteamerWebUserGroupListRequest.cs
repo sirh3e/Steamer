@@ -9,11 +9,12 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupLis
 {
     public class SteamerWebUserGroupListRequest : SteamerRequest, ISteamerWebUserGroupListRequest
     {
-        public SteamerWebUserGroupListRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface, new SteamerHttpMethodGet(),
+        public SteamerWebUserGroupListRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
+                                                                                       new SteamerHttpMethodGet(),
                                                                                        "GetUserGroupList", 1,
                                                                                        new
                                                                                            SteamerParameters(new SteamerStringParameter("key"),
-                                                                                               new SteamerUlongParameter("steamid"))))
+                                                                                               new SteamerU64Parameter("steamid"))))
         {
         }
     }

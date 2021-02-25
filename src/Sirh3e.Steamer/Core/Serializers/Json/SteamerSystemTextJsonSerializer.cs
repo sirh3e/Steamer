@@ -7,9 +7,10 @@ namespace Sirh3e.Steamer.Core.Serializers.Json
     public class SteamerSystemTextJsonSerializer : ISteamerSerializer
     {
         public SteamerSystemTextJsonSerializer(
-            ISteamerSystemTextJsonSerializerOptionsProvider serializerOptionsProvider) => SerializerOptionsProvider =
-            serializerOptionsProvider ??
-            throw new ArgumentNullException(nameof(serializerOptionsProvider));
+            ISteamerSystemTextJsonSerializerOptionsProvider serializerOptionsProvider) =>
+            SerializerOptionsProvider =
+                serializerOptionsProvider ??
+                throw new ArgumentNullException(nameof(serializerOptionsProvider));
 
         public ISteamerSystemTextJsonSerializerOptionsProvider SerializerOptionsProvider { get; set; }
 

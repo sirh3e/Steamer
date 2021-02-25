@@ -23,18 +23,8 @@ namespace Sirh3e.Steamer.Core.Parameter
 
         public abstract string GetValueFromQueryString();
 
-        public void Deconstruct(out bool required, out string name, out TType value)
-        {
-            Deconstruct(out required, out name, out object tmp);
+        public void Deconstruct(out bool required, out string name, out TType value) => (required, name, value) = (Required, Name, Value);
 
-            value = (TType)tmp;
-        }
-
-        public void Deconstruct(out bool required, out string name, out object value)
-        {
-            required = Required;
-            name = Name;
-            value = Value;
-        }
+        public void Deconstruct(out bool required, out string name, out object value) => (required, name, value) = (Required, Name, Value);
     }
 }
