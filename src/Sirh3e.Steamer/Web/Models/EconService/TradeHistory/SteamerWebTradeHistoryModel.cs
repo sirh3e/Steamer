@@ -7,7 +7,7 @@ namespace Sirh3e.Steamer.Web.Models.EconService.TradeHistory
     {
         [JsonPropertyName("total_trades")]
         public ulong TotalTrades { get; set; }
-        
+
         [JsonPropertyName("more")]
         public bool More { get; set; }
 

@@ -6,9 +6,9 @@ using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
 using Sirh3e.Steamer.Core.Serializers.Json;
 using Sirh3e.Steamer.Core.Serializers.Providers;
-using Sirh3e.Steamer.Web;
 using Sirh3e.Steamer.Web.Extensions.SteamUser.Request;
 using Sirh3e.Steamer.Web.Extensions.SteamUser.Response;
+using Sirh3e.Steamer.Web.Services;
 
 namespace Sirh3e.Steamer.Cli
 {
