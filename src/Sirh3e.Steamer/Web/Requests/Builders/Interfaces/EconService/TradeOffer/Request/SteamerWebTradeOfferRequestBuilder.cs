@@ -26,7 +26,7 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer
             => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
 
         public ISteamerWebTradeOfferRequestBuilder SetTradeOfferId(ulong tradeOfferId)
-            => SetValue("tradeOfferId", tradeOfferId);
+            => SetValue("tradeofferid", tradeOfferId);
 
         public ISteamerWebTradeOfferRequestBuilder SetLanguage(string language)
             => SetValue("language", language ?? throw new ArgumentNullException(nameof(language)));
