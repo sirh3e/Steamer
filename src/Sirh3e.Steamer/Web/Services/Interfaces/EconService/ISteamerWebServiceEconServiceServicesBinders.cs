@@ -1,8 +1,8 @@
-﻿using Sirh3e.Steamer.Web.Services.Binders.EconService;
+﻿using Sirh3e.Steamer.Web.Services.EconService.Binders;
 
-namespace Sirh3e.Steamer.Web.Services.Binders
+namespace Sirh3e.Steamer.Web.Services.EconService
 {
-    public interface ISteamerWebServiceEconServiceServicesBinder :
+    public interface ISteamerWebServiceEconServiceServicesBinders :
             ISteamerWebServiceCancelTradeOfferBinder,
         ISteamerWebServiceDeclineTradeOfferBinder,
         ISteamerWebServiceTradeHistoryBinder,
