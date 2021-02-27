@@ -1,4 +1,6 @@
-﻿using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeHistory.Request;
+﻿using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Request;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Response;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeHistory.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeHistory.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer.Response;
@@ -11,6 +13,12 @@ namespace Sirh3e.Steamer.Web.Services
 {
     public partial class SteamerWebService
     {
+        public ISteamerWebDeclineTradeOfferResponse Execute(ISteamerWebDeclineTradeOfferRequest request)
+        {
+            var response = new SteamerWebDeclineTradeOfferResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
+        }
         public ISteamerWebTradeHistoryResponse Execute(ISteamerWebTradeHistoryRequest request)
         {
             var response = new SteamerWebTradeHistoryResponse();
