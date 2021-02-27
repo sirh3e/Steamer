@@ -4,6 +4,8 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer.Req
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffers.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffers.Response;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffersSummary.Request;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffersSummary.Response;
 
 namespace Sirh3e.Steamer.Web.Services
 {
@@ -26,6 +28,13 @@ namespace Sirh3e.Steamer.Web.Services
         public ISteamerWebTradeOffersResponse Execute(ISteamerWebTradeOffersRequest request)
         {
             var response = new SteamerWebTradeOffersResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
+        }
+
+        public ISteamerWebTradeOffersSummaryResponse Execute(ISteamerWebTradeOffersSummaryRequest request)
+        {
+            var response = new SteamerWebTradeOffersSummaryResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
