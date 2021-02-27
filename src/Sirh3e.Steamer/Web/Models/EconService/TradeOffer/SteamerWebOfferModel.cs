@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Sirh3e.Steamer.Core.Serializers.Json.Converters;
-using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService;
 
 namespace Sirh3e.Steamer.Web.Models.EconService.TradeOffer
 {
@@ -46,6 +45,7 @@ namespace Sirh3e.Steamer.Web.Models.EconService.TradeOffer
         public ulong EscrowEndDate { get; set; }
 
         [JsonPropertyName("confirmation_method")]
-        public ulong ConfirmationMethod { get; set; }
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public SteamerWebEconServiceTradeOfferConfirmationMethod ConfirmationMethod { get; set; }
     }
 }
