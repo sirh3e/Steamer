@@ -1,5 +1,7 @@
 ﻿using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeHistory.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeHistory.Response;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer.Request;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer.Response;
 
 namespace Sirh3e.Steamer.Web.Services
 {
@@ -8,6 +10,13 @@ namespace Sirh3e.Steamer.Web.Services
         public ISteamerWebTradeHistoryResponse Execute(ISteamerWebTradeHistoryRequest request)
         {
             var response = new SteamerWebTradeHistoryResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
+        }
+
+        public ISteamerWebTradeOfferResponse Execute(ISteamerWebTradeOfferRequest request)
+        {
+            var response = new SteamerWebTradeOfferResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }

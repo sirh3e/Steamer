@@ -3,7 +3,8 @@
 namespace Sirh3e.Steamer.Web.Services.Binders
 {
     public interface ISteamerWebServiceEconServiceServicesBinder :
-        ISteamerWebServiceTradeHistoryBinder
+        ISteamerWebServiceTradeHistoryBinder,
+        ISteamerWebServiceTradeOfferBinder
     {
     }
 }
