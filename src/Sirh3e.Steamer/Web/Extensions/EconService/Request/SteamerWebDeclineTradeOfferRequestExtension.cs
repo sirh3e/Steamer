@@ -14,6 +14,6 @@ namespace Sirh3e.Steamer.Web.Extensions.EconService.Request
             _ = service ?? throw new ArgumentNullException(nameof(service));
 
             return service.Execute(request);
-        } 
+        }
     }
 }
