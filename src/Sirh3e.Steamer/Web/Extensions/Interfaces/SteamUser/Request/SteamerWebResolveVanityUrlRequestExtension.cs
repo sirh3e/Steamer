@@ -3,7 +3,7 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.ResolveVanityUrl
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.ResolveVanityUrl.Response;
 using Sirh3e.Steamer.Web.Services;
 
-namespace Sirh3e.Steamer.Web.Extensions.SteamUser.Request
+namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUser.Request
 {
     public static class SteamerWebResolveVanityUrlRequestExtension
     {

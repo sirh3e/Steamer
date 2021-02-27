@@ -3,7 +3,7 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOf
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Response;
 using Sirh3e.Steamer.Web.Services;
 
-namespace Sirh3e.Steamer.Web.Extensions.EconService.Request
+namespace Sirh3e.Steamer.Web.Extensions.Interfaces.EconService.Request
 {
     public static class SteamerWebDeclineTradeOfferRequestExtension
     {

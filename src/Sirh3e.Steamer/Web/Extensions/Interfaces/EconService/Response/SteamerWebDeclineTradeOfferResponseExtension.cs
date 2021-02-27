@@ -1,9 +1,9 @@
 ﻿using System;
-using Sirh3e.Steamer.Web.Extensions.EconService.Request;
+using Sirh3e.Steamer.Web.Extensions.Interfaces.EconService.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Response;
 using Sirh3e.Steamer.Web.Services;
 
-namespace Sirh3e.Steamer.Web.Extensions.EconService.Response
+namespace Sirh3e.Steamer.Web.Extensions.Interfaces.EconService.Response
 {
     public static class SteamerWebDeclineTradeOfferResponseExtension
     {

@@ -1,9 +1,9 @@
 ﻿using System;
-using Sirh3e.Steamer.Web.Extensions.SteamUser.Request;
+using Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUser.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerBans.Response;
 using Sirh3e.Steamer.Web.Services;
 
-namespace Sirh3e.Steamer.Web.Extensions.SteamUser.Response
+namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUser.Response
 {
     //ToDo find a better name for it
     public static class SteamerWebPlayerBansResponseExtension
