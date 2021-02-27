@@ -1,4 +1,5 @@
 ﻿using Sirh3e.Steamer.Core.Interface;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.CancelTradeOffer.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeHistory.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer.Request;
@@ -11,6 +12,7 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService
     {
         public SteamerWebEconServiceInterfaceBuilder() : base("IEconService")
         {
+            CancelTradeOffer = new SteamerWebCancelTradeOfferRequestBuilder(this);
             DeclineTradeOffer = new SteamerWebDeclineTradeOfferRequestBuilder(this);
             TradeHistory = new SteamerWebTradeHistoryRequestBuilder(this);
             TradeOffer = new SteamerWebTradeOfferRequestBuilder(this);
@@ -18,6 +20,7 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService
             TradeOffersSummary = new SteamerWebTradeOffersSummaryRequestBuilder(this);
         }
 
+        public ISteamerWebCancelTradeOfferRequestBuilder CancelTradeOffer { get; }
         public ISteamerWebDeclineTradeOfferRequestBuilder DeclineTradeOffer { get; }
         public ISteamerWebTradeHistoryRequestBuilder TradeHistory { get; }
         public ISteamerWebTradeOfferRequestBuilder TradeOffer { get; }
