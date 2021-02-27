@@ -12,6 +12,7 @@
     <ItemGroup>
       <Folder Include="Web\Requests" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\CancelTradeOffer\Request" />
+      <Folder Include="Web\Requests\Builders\Interfaces\EconService\CancelTradeOffer\Response" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\DeclineTradeOffer\Response" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\TradeOffersSummary\Request" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\TradeOffersSummary\Response" />
