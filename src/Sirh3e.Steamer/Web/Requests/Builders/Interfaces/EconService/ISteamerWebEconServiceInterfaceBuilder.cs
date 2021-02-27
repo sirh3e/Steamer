@@ -7,6 +7,6 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService
     public interface ISteamerWebEconServiceInterfaceBuilder : ISteamerInterface
     {
         public ISteamerWebTradeHistoryRequestBuilder TradeHistory { get; }
-        public ISteamerWebTradeOfferRequestBuilder TradeOffer { get;}
+        public ISteamerWebTradeOfferRequestBuilder TradeOffer { get; }
     }
 }

@@ -44,6 +44,6 @@ namespace Sirh3e.Steamer.Web.Models.EconService.TradeOffer
         public ulong EscrowEndDate { get; set; }
 
         [JsonPropertyName("confirmation_method")]
-        public ulong ConfirmationMethod { get; set; } 
+        public ulong ConfirmationMethod { get; set; }
     }
 }

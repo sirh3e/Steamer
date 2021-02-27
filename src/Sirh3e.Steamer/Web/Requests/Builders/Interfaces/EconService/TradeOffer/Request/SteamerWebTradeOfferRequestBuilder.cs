@@ -22,13 +22,13 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer
             return request;
         }
 
-        public ISteamerWebTradeOfferRequestBuilder SetKey(string key) 
+        public ISteamerWebTradeOfferRequestBuilder SetKey(string key)
             => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
 
-        public ISteamerWebTradeOfferRequestBuilder SetTradeOfferId(ulong tradeOfferId) 
+        public ISteamerWebTradeOfferRequestBuilder SetTradeOfferId(ulong tradeOfferId)
             => SetValue("tradeOfferId", tradeOfferId);
 
-        public ISteamerWebTradeOfferRequestBuilder SetLanguage(string language) 
+        public ISteamerWebTradeOfferRequestBuilder SetLanguage(string language)
             => SetValue("language", language ?? throw new ArgumentNullException(nameof(language)));
     }
 }

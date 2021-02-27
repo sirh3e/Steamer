@@ -33,6 +33,6 @@ namespace Sirh3e.Steamer.Web.Models.EconService.TradeOffer
 
         [JsonPropertyName("est_usd")]
         [JsonConverter(typeof(SteamerSystemTextJsonConverterStringToUlong))]
-        public ulong EstUsd { get; set; } 
+        public ulong EstUsd { get; set; }
     }
 }

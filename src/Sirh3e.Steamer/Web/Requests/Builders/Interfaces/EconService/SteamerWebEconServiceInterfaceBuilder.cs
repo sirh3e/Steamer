@@ -13,6 +13,6 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService
         }
 
         public ISteamerWebTradeHistoryRequestBuilder TradeHistory { get; }
-        public ISteamerWebTradeOfferRequestBuilder TradeOffer { get;}
+        public ISteamerWebTradeOfferRequestBuilder TradeOffer { get; }
     }
 }
