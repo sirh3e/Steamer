@@ -11,6 +11,8 @@
 
     <ItemGroup>
       <Folder Include="Web\Requests" />
+      <Folder Include="Web\Requests\Builders\Interfaces\EconService\TradeOffers\Request" />
+      <Folder Include="Web\Requests\Builders\Interfaces\EconService\TradeOffers\Response" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\TradeOffer\Response" />
     </ItemGroup>
 
