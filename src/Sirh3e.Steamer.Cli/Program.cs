@@ -41,15 +41,10 @@ namespace Sirh3e.Steamer.Cli
 
             Console.WriteLine($"{(end - start).TotalSeconds}");
 
-            response.Model.Match(some =>
-            {
+            response.Model.Match(some => { }, () => { });
 
-            }, () => { });
-
-            response.Model.Match(some =>
-            {
-                Console.WriteLine($"{nameof(some.Response.SteamId)}: '{some.Response.SteamId}'");
-            }, () => { });
+            response.Model.Match(some => { Console.WriteLine($"{nameof(some.Response.SteamId)}: '{some.Response.SteamId}'"); },
+                                 () => { });
         }
     }
 }

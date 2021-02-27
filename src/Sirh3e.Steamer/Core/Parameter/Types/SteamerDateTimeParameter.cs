@@ -9,9 +9,6 @@ namespace Sirh3e.Steamer.Core.Parameter.Types
         {
         }
 
-        public override string GetValueFromQueryString()
-        {
-            return Value.ToUnixTimeStamp().ToString();
-        }
+        public override string GetValueFromQueryString() => Value.ToUnixTimeStamp().ToString();
     }
 }

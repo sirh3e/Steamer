@@ -5,12 +5,12 @@ using Sirh3e.Steamer.Core.Interface;
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffers.Request
 {
     public class SteamerWebTradeOffersRequestBuilder : SteamerRequestBuilder<SteamerWebTradeOffersRequestBuilder,
-                                                            ISteamerWebTradeOffersRequest>,
-                                                        ISteamerWebTradeOffersRequestBuilder
+                                                           ISteamerWebTradeOffersRequest>,
+                                                       ISteamerWebTradeOffersRequestBuilder
     {
         public SteamerWebTradeOffersRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
             Request = new SteamerWebTradeOffersRequest(Interface ??
-                                                               throw new ArgumentNullException(nameof(Interface)));
+                                                       throw new ArgumentNullException(nameof(Interface)));
 
         public override ISteamerWebTradeOffersRequest Build()
         {
@@ -22,18 +22,18 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer
             return request;
         }
 
-        public ISteamerWebTradeOffersRequestBuilder SetKey(string key) 
+        public ISteamerWebTradeOffersRequestBuilder SetKey(string key)
             => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
-        
+
         public ISteamerWebTradeOffersRequestBuilder SetGetSentOffers(bool getSentOffers)
-         => SetValue("get_sent_offers", getSentOffers);
+            => SetValue("get_sent_offers", getSentOffers);
 
         public ISteamerWebTradeOffersRequestBuilder SetGetReceivedOffers(bool getReceivedOffers)
             => SetValue("get_received_offers", getReceivedOffers);
 
         public ISteamerWebTradeOffersRequestBuilder SetGetDescriptions(bool getDescriptions)
             => SetValue("get_descriptions", getDescriptions);
-         
+
 
         public ISteamerWebTradeOffersRequestBuilder SetLanguage(string language)
             => SetValue("language", language);
