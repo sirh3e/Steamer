@@ -2,7 +2,7 @@
 using Sirh3e.Steamer.Core.Builder;
 using Sirh3e.Steamer.Core.Interface;
 
-namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Request.Request
+namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Request
 {
     public class SteamerWebDeclineTradeOfferRequestBuilder : SteamerRequestBuilder<SteamerWebDeclineTradeOfferRequestBuilder,
                                                                  ISteamerWebDeclineTradeOfferRequest>,

@@ -5,7 +5,7 @@ using Sirh3e.Steamer.Core.Parameter.Types;
 using Sirh3e.Steamer.Core.Parameters;
 using Sirh3e.Steamer.Core.Request;
 
-namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Request.Request
+namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Request
 {
     public class SteamerWebDeclineTradeOfferRequest : SteamerRequest, ISteamerWebDeclineTradeOfferRequest
     {
