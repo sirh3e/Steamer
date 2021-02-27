@@ -1,4 +1,4 @@
-﻿namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService
+﻿namespace Sirh3e.Steamer.Web.Models.EconService
 {
     //https://developer.valvesoftware.com/wiki/Steam_Web_API/IEconService#ETradeOfferState
     public enum SteamerWebEconServiceTradeOfferState
