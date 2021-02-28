@@ -4,11 +4,11 @@ using Sirh3e.Steamer.Core.Interface;
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.SchemaForGame.Request
 {
-    public class SteamerWebSchemaForGameBuilder
-        : SteamerRequestBuilder<SteamerWebSchemaForGameBuilder, ISteamerWebSchemaForGameRequest>,
-            ISteamerWebSchemaForGameBuilder
+    public class SteamerWebSchemaForGameRequestBuilder
+        : SteamerRequestBuilder<SteamerWebSchemaForGameRequestBuilder, ISteamerWebSchemaForGameRequest>,
+            ISteamerWebSchemaForGameRequestBuilder
     {
-        public SteamerWebSchemaForGameBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebSchemaForGameRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
             Request = new SteamerWebSchemaForGameRequest(Interface ??
                                                              throw new ArgumentNullException(nameof(Interface)));
 
@@ -22,13 +22,13 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.SchemaF
             return request;
         }
 
-        public ISteamerWebSchemaForGameBuilder SetKey(string key)
+        public ISteamerWebSchemaForGameRequestBuilder SetKey(string key)
             => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
 
-        public ISteamerWebSchemaForGameBuilder SetAppId(uint appId)
+        public ISteamerWebSchemaForGameRequestBuilder SetAppId(uint appId)
             => SetValue("appid", appId);
 
-        public ISteamerWebSchemaForGameBuilder SetLanguage(string language)
+        public ISteamerWebSchemaForGameRequestBuilder SetLanguage(string language)
             => SetValue("l", language ?? throw new ArgumentNullException(nameof(language)));
     }
 }
