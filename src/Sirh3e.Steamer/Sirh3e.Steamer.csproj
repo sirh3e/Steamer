@@ -10,7 +10,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Web\Models\SteamUserStats\PlayerAchievements\Request" />
       <Folder Include="Web\Requests" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\CancelTradeOffer\Request" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\CancelTradeOffer\Response" />
