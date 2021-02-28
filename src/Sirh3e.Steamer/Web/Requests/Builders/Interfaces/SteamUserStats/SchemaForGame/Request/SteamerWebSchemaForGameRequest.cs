@@ -14,7 +14,7 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.SchemaF
                                                                                            "GetSchemaForGame", 2,
                                                                                            new
                                                                                                SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new SteamerU32Parameter("appid"), new SteamerStringParameter("l"))))
+                                                                                                   new SteamerU32Parameter("appid"), new SteamerStringParameter("l", false))))
         {
         }
     }
