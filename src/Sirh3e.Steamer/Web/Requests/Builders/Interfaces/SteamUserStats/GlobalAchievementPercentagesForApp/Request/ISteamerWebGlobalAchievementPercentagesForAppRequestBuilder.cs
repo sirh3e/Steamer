@@ -4,6 +4,6 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.GlobalA
 {
     public interface ISteamerWebGlobalAchievementPercentagesForAppRequestBuilder : ISteamerRequestBuilder<ISteamerWebGlobalAchievementPercentagesForAppRequest>
     {
-        public ISteamerWebGlobalAchievementPercentagesForAppRequestBuilder SetGameId(ulong gameId);
+        public ISteamerWebGlobalAchievementPercentagesForAppRequestBuilder SetGameId(uint gameId);
     }
 }

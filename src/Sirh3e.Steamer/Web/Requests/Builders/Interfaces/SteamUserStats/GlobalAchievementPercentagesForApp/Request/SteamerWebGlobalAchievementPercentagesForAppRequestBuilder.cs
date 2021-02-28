@@ -22,7 +22,7 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.GlobalA
             return request;
         }
 
-        public ISteamerWebGlobalAchievementPercentagesForAppRequestBuilder SetGameId(ulong gameId)
-            => SetValue("gamid", gameId);
+        public ISteamerWebGlobalAchievementPercentagesForAppRequestBuilder SetGameId(uint gameId)
+            => SetValue("gameid", gameId);
     }
 }

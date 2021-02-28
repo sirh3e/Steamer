@@ -14,7 +14,7 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.GlobalA
                                                                                            "GetGlobalAchievementPercentagesForApp", 2,
                                                                                            new
                                                                                                SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new SteamerU64Parameter("gameid"))))
+                                                                                                   new SteamerU32Parameter("gameid"))))
         {
         }
     }

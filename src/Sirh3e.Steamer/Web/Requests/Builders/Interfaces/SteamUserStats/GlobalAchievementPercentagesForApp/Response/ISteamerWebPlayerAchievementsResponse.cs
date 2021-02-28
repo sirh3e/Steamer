@@ -8,7 +8,7 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.PlayerAchie
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.GlobalAchievementPercentagesForApp.Response
 {
     public interface ISteamerWebGlobalAchievementPercentagesForAppResponse : ISteamerResponse<ISteamerWebGlobalAchievementPercentagesForAppRequest,
-        SteamerWebResponseModel<SteamerWebGlobalAchievementPercentagesForAppModel>>
+        SteamerWebSteamerWebGlobalAchievementPercentagesForAppModelResponseModel>
     {
     }
 }

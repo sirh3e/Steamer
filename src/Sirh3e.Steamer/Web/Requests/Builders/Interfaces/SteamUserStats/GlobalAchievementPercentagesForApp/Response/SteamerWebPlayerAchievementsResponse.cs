@@ -10,6 +10,6 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.GlobalA
     public class SteamerWebGlobalAchievementPercentagesForAppResponse : ISteamerWebGlobalAchievementPercentagesForAppResponse
     {
         public ISteamerWebGlobalAchievementPercentagesForAppRequest Request { get; init; }
-        public Option<SteamerWebResponseModel<SteamerWebGlobalAchievementPercentagesForAppModel>> Model { get; init; }
+        public Option<SteamerWebSteamerWebGlobalAchievementPercentagesForAppModelResponseModel> Model { get; init; }
     }
 }
