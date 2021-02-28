@@ -1,5 +1,6 @@
 ﻿using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats;
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces
 {
@@ -7,5 +8,6 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces
     {
         public ISteamerWebEconServiceInterfaceBuilder EconService { get; }
         public ISteamerWebUserInterfaceBuilder SteamUser { get; }
+        public ISteamerWebSteamUserStatsInterfaceBuilder SteamUserStats { get; }
     }
 }
