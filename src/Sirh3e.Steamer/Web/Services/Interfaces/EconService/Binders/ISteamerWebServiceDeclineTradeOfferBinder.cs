@@ -7,6 +7,5 @@ namespace Sirh3e.Steamer.Web.Services.EconService.Binders
     public interface ISteamerWebServiceDeclineTradeOfferBinder
         : ISteamerServiceBinder<ISteamerWebDeclineTradeOfferRequest, ISteamerWebDeclineTradeOfferResponse>
     {
-
     }
 }

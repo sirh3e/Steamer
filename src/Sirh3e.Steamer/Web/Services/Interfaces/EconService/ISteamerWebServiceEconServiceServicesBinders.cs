@@ -3,7 +3,7 @@
 namespace Sirh3e.Steamer.Web.Services.EconService
 {
     public interface ISteamerWebServiceEconServiceServicesBinders :
-            ISteamerWebServiceCancelTradeOfferBinder,
+        ISteamerWebServiceCancelTradeOfferBinder,
         ISteamerWebServiceDeclineTradeOfferBinder,
         ISteamerWebServiceTradeHistoryBinder,
         ISteamerWebServiceTradeOfferBinder,
