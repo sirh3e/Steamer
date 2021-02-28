@@ -6,8 +6,7 @@ using Sirh3e.Steamer.Core.Request;
 namespace Sirh3e.Steamer.Web.Pipelines.Handlers
 {
     public class
-        SteamerWebServiceRequestToUriPipelineHandler<TSteamerRequest> :
-            ISteamerPipelineHandler<TSteamerRequest, (TSteamerRequest, Uri)>
+        SteamerWebServiceRequestToUriPipelineHandler<TSteamerRequest> : ISteamerPipelineHandler<TSteamerRequest, (TSteamerRequest, Uri)>
         where TSteamerRequest : ISteamerRequest
     {
         public (TSteamerRequest, Uri) Process(TSteamerRequest input)
