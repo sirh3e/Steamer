@@ -7,6 +7,5 @@ namespace Sirh3e.Steamer.Web.Services.SteamUserStats.Binders
     public interface ISteamerWebServiceUserStatsForGameBinder
         : ISteamerServiceBinder<ISteamerWebUserStatsForGameRequest, ISteamerWebUserStatsForGameResponse>
     {
-
     }
 }
