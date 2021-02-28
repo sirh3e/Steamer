@@ -10,14 +10,14 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.PlayerA
     {
         public SteamerWebPlayerAchievementsRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
             Request = new SteamerWebPlayerAchievementsRequest(Interface ??
-                                                             throw new ArgumentNullException(nameof(Interface)));
+                                                              throw new ArgumentNullException(nameof(Interface)));
 
         public override ISteamerWebPlayerAchievementsRequest Build()
         {
             var request = Request;
 
             Request = new SteamerWebPlayerAchievementsRequest(Interface ??
-                                                             throw new ArgumentNullException(nameof(Interface)));
+                                                              throw new ArgumentNullException(nameof(Interface)));
 
             return request;
         }
