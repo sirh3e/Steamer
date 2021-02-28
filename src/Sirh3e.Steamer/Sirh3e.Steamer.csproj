@@ -19,6 +19,8 @@
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\TradeOffers\Request" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\TradeOffers\Response" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\TradeOffer\Response" />
+      <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\NumberOfCurrentPlayers\Request" />
+      <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\NumberOfCurrentPlayers\Response" />
       <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\PlayerAchievements\Request" />
       <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\PlayerAchievements\Response" />
       <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\SchemaForGame\Request" />
