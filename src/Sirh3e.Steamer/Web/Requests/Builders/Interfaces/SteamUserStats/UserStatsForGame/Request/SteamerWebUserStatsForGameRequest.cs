@@ -10,8 +10,8 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.UserSta
     public class SteamerWebUserStatsForGameRequest : SteamerRequest, ISteamerWebUserStatsForGameRequest
     {
         public SteamerWebUserStatsForGameRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodPost(),
-                                                                                           "GetUserStatsForGame", 1,
+                                                                                           new SteamerHttpMethodGet(),
+                                                                                           "GetUserStatsForGame", 2,
                                                                                            new
                                                                                                SteamerParameters(new SteamerStringParameter("key"),
                                                                                                    new
