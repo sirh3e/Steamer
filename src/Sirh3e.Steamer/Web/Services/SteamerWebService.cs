@@ -18,7 +18,8 @@ namespace Sirh3e.Steamer.Web.Services
         public ISteamerWebClient WebClient { get; }
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }
 
-        public void Dispose() => HttpClientProvider.HttpClient.Dispose();
+        public void Dispose()
+            => HttpClientProvider.HttpClient.Dispose();
 
         private TSteamerResponse GetResponse<TRequest, TSteamerResponse, TSteamerResponseModel>(
             TRequest request,

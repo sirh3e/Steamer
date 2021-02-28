@@ -21,12 +21,14 @@ namespace Sirh3e.Steamer.Web.Services
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
+
         public ISteamerWebDeclineTradeOfferResponse Execute(ISteamerWebDeclineTradeOfferRequest request)
         {
             var response = new SteamerWebDeclineTradeOfferResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
+
         public ISteamerWebTradeHistoryResponse Execute(ISteamerWebTradeHistoryRequest request)
         {
             var response = new SteamerWebTradeHistoryResponse();
@@ -54,7 +56,5 @@ namespace Sirh3e.Steamer.Web.Services
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
-
-
     }
 }
