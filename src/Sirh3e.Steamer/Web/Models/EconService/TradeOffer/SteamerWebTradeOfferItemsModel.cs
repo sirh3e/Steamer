@@ -3,7 +3,7 @@ using Sirh3e.Steamer.Core.Serializers.Json.Converters;
 
 namespace Sirh3e.Steamer.Web.Models.EconService.TradeOffer
 {
-    public class SteamerWebTradeOfferItems
+    public class SteamerWebTradeOfferItemsModel
     {
         [JsonPropertyName("appid")]
         public ulong AppId { get; set; }

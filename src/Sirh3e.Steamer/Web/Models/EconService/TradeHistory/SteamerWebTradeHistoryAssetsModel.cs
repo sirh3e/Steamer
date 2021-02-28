@@ -3,7 +3,7 @@ using Sirh3e.Steamer.Core.Serializers.Json.Converters;
 
 namespace Sirh3e.Steamer.Web.Models.EconService.TradeHistory
 {
-    public class SteamerWebAssetsModel
+    public class SteamerWebTradeHistoryAssetsModel
     {
         [JsonPropertyName("appid")]
         public long Appid { get; set; }

@@ -4,7 +4,7 @@ using Sirh3e.Steamer.Core.Serializers.Json.Converters;
 
 namespace Sirh3e.Steamer.Web.Models.EconService.TradeHistory
 {
-    public class SteamerWebTradeModel
+    public class SteamerWebTradeHistoryTradeModel
     {
         [JsonPropertyName("tradeid")]
         [JsonConverter(typeof(SteamerSystemTextJsonConverterStringToUlong))]
@@ -21,13 +21,13 @@ namespace Sirh3e.Steamer.Web.Models.EconService.TradeHistory
         public ulong Status { get; set; }
 
         [JsonPropertyName("assets_received")] //ToDo add default value for null handling
-        public List<SteamerWebAssetsModel>? AssetsReceived { get; set; }
+        public List<SteamerWebTradeHistoryAssetsModel>? AssetsReceived { get; set; }
 
         [JsonPropertyName("time_escrow_end")]
         [JsonConverter(typeof(SteamerSystemTextJsonConverterStringToUlong))]
         public ulong? TimeEscrowEnd { get; set; }
 
         [JsonPropertyName("assets_given")]
-        public List<SteamerWebAssetsModel>? AssetsGiven { get; set; }
+        public List<SteamerWebTradeHistoryAssetsModel>? AssetsGiven { get; set; }
     }
 }

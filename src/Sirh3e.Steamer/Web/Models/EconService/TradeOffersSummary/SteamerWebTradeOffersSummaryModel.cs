@@ -32,6 +32,6 @@ namespace Sirh3e.Steamer.Web.Models.EconService.TradeOffersSummary
         public long EscrowReceivedCount { get; set; }
 
         [JsonPropertyName("escrow_sent_count")]
-        public long EscrowSentCount { get; set; }
+        public ulong EscrowSentCount { get; set; }
     }
 }
