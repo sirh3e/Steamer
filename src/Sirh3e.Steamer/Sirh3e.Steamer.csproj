@@ -20,6 +20,7 @@
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\TradeOffers\Response" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\TradeOffer\Response" />
       <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\SchemaForGame\Request" />
+      <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\SchemaForGame\Response" />
       <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\UserStatsForGame\Request" />
       <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\UserStatsForGame\Response" />
     </ItemGroup>
