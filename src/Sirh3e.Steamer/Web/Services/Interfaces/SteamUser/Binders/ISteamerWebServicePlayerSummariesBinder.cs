@@ -4,9 +4,8 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummaries.
 
 namespace Sirh3e.Steamer.Web.Services.SteamUser.Binders
 {
-    public interface
-        ISteamerWebServicePlayerSummariesBinder : ISteamerServiceBinder<ISteamerWebPlayerSummariesRequest,
-            ISteamerWebPlayerSummariesResponse>
+    public interface ISteamerWebServicePlayerSummariesBinder
+        : ISteamerServiceBinder<ISteamerWebPlayerSummariesRequest, ISteamerWebPlayerSummariesResponse>
     {
     }
 }

@@ -4,8 +4,8 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupList.Re
 
 namespace Sirh3e.Steamer.Web.Services.SteamUser.Binders
 {
-    public interface ISteamerWebServiceUserGroupListBinder : ISteamerServiceBinder<ISteamerWebUserGroupListRequest,
-        ISteamerWebUserGroupListResponse>
+    public interface ISteamerWebServiceUserGroupListBinder
+        : ISteamerServiceBinder<ISteamerWebUserGroupListRequest, ISteamerWebUserGroupListResponse>
     {
     }
 }

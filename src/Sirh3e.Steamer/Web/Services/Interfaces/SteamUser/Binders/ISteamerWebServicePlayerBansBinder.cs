@@ -4,9 +4,8 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerBans.Respo
 
 namespace Sirh3e.Steamer.Web.Services.SteamUser.Binders
 {
-    public interface
-        ISteamerWebServicePlayerBansBinder : ISteamerServiceBinder<ISteamerWebPlayerBansRequest,
-            ISteamerWebPlayerBansResponse>
+    public interface ISteamerWebServicePlayerBansBinder
+        : ISteamerServiceBinder<ISteamerWebPlayerBansRequest, ISteamerWebPlayerBansResponse>
     {
     }
 }
