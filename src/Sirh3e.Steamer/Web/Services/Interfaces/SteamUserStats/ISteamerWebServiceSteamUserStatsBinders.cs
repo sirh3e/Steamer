@@ -3,7 +3,8 @@
 namespace Sirh3e.Steamer.Web.Services.SteamUserStats
 {
     public interface ISteamerWebServiceSteamUserStatsBinders
-        : ISteamerWebServiceNumberOfCurrentPlayersBinder,
+        : ISteamerWebServiceGlobalAchievementPercentagesForAppBinder,
+            ISteamerWebServiceNumberOfCurrentPlayersBinder,
             ISteamerWebServicePlayerAchievementsBinder,
             ISteamerWebServiceSchemaForGameBinder,
             ISteamerWebServiceUserStatsForGameBinder
