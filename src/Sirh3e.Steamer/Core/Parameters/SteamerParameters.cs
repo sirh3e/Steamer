@@ -18,8 +18,8 @@ namespace Sirh3e.Steamer.Core.Parameters
             new Dictionary<string, ISteamerParameter>();
 
         public bool TryAdd<TParameter>(string key, TParameter parameter)
-            where TParameter : ISteamerParameter =>
-            Parameters.TryAdd(key, parameter);
+            where TParameter : ISteamerParameter
+            => Parameters.TryAdd(key, parameter);
 
         public bool TryGetValue<TParameter>(string key, out TParameter parameter)
             where TParameter : ISteamerParameter
@@ -34,11 +34,16 @@ namespace Sirh3e.Steamer.Core.Parameters
         {
             _ = value ?? throw new ArgumentNullException(nameof(value));
 
-            if (Parameters.TryGetValue(key, out var parameter)) parameter.Value = value;
+            if (Parameters.TryGetValue(key, out var parameter))
+            {
+                parameter.Value = value;
+            }
         }
 
-        public IEnumerator<ISteamerParameter> GetEnumerator() => Parameters.Values.GetEnumerator();
+        public IEnumerator<ISteamerParameter> GetEnumerator()
+            => Parameters.Values.GetEnumerator();
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator()
+            => GetEnumerator();
     }
 }
