@@ -14,15 +14,5 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeHisto
         public ISteamerWebTradeHistoryRequestBuilder SetIncludeFailed(bool includeFailed);
 
         public ISteamerWebTradeHistoryRequestBuilder SetIncludeTotal(bool includeTotal);
-        /*
-        new SteamerU32Parameter("max_trades"),
-        new SteamerU32Parameter("start_after_time"),
-        new SteamerU64Parameter("start_after_tradeid"),
-        new SteamerBooleanParameter("navigating_back"),
-        new SteamerBooleanParameter("get_descriptions"),
-        new SteamerStringParameter("language"),
-        new SteamerBooleanParameter("include_failed"),
-        new SteamerBooleanParameter("include_total")
-        */
     }
 }

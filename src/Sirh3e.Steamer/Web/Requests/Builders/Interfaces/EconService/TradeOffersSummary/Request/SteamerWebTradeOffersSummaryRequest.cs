@@ -8,7 +8,8 @@ using Sirh3e.Steamer.Core.Request;
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffersSummary.Request
 {
-    public class SteamerWebTradeOffersSummaryRequest : SteamerRequest, ISteamerWebTradeOffersSummaryRequest
+    public class SteamerWebTradeOffersSummaryRequest
+        : SteamerRequest, ISteamerWebTradeOffersSummaryRequest
     {
         public SteamerWebTradeOffersSummaryRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
                                                                                       new SteamerHttpMethodGet(),

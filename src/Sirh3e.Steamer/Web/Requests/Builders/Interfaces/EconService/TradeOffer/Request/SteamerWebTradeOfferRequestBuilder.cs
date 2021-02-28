@@ -4,9 +4,9 @@ using Sirh3e.Steamer.Core.Interface;
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer.Request
 {
-    public class SteamerWebTradeOfferRequestBuilder : SteamerRequestBuilder<SteamerWebTradeOfferRequestBuilder,
-                                                            ISteamerWebTradeOfferRequest>,
-                                                        ISteamerWebTradeOfferRequestBuilder
+    public class SteamerWebTradeOfferRequestBuilder
+        : SteamerRequestBuilder<SteamerWebTradeOfferRequestBuilder, ISteamerWebTradeOfferRequest>,
+            ISteamerWebTradeOfferRequestBuilder
     {
         public SteamerWebTradeOfferRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
             Request = new SteamerWebTradeOfferRequest(Interface ??

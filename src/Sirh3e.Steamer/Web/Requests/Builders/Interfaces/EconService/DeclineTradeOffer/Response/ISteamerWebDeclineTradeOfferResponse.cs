@@ -4,8 +4,8 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOf
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Response
 {
-    public interface ISteamerWebDeclineTradeOfferResponse : ISteamerResponse<ISteamerWebDeclineTradeOfferRequest,
-        SteamerWebDeclineTradeOfferModel>
+    public interface ISteamerWebDeclineTradeOfferResponse
+        : ISteamerResponse<ISteamerWebDeclineTradeOfferRequest, SteamerWebDeclineTradeOfferModel>
     {
     }
 }
