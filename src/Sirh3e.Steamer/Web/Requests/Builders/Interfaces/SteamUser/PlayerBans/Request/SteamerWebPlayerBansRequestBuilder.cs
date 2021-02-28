@@ -9,17 +9,8 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerBans.R
         SteamerRequestBuilder<SteamerWebPlayerBansRequestBuilder, ISteamerWebPlayerBansRequest>,
         ISteamerWebPlayerBansRequestBuilder //ToDo rename SteamerMethod
     {
-        public SteamerWebPlayerBansRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
-            Request = new SteamerWebPlayerBansRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
-
-        public ISteamerWebPlayerBansRequestBuilder SetKey(string key) => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
-
-        //ToDo change parameter to / create a parameter for list
-        public ISteamerWebPlayerBansRequestBuilder SetSteamIds(params ulong[] steamIds) =>
-            SetValue("steamids",
-                     string.Join(",",
-                                 steamIds.Select(steamId => steamId.ToString()).ToList() ??
-                                 throw new ArgumentNullException(nameof(steamIds))));
+        public SteamerWebPlayerBansRequestBuilder(ISteamerInterface @interface) : base(@interface)
+            => Request = new SteamerWebPlayerBansRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
 
         public override ISteamerWebPlayerBansRequest Build()
         {
@@ -29,5 +20,15 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerBans.R
 
             return request;
         }
+
+        public ISteamerWebPlayerBansRequestBuilder SetKey(string key)
+            => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
+
+        //ToDo change parameter to / create a parameter for list
+        public ISteamerWebPlayerBansRequestBuilder SetSteamIds(params ulong[] steamIds) =>
+            SetValue("steamids",
+                     string.Join(",",
+                                 steamIds.Select(steamId => steamId.ToString()).ToList() ??
+                                 throw new ArgumentNullException(nameof(steamIds))));
     }
 }

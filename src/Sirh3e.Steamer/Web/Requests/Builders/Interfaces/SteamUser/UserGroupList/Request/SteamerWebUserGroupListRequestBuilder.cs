@@ -8,8 +8,8 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupLis
         SteamerRequestBuilder<SteamerWebUserGroupListRequestBuilder, ISteamerWebUserGroupListRequest>,
         ISteamerWebUserGroupListRequestBuilder
     {
-        public SteamerWebUserGroupListRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
-            Request = new SteamerWebUserGroupListRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
+        public SteamerWebUserGroupListRequestBuilder(ISteamerInterface @interface) : base(@interface)
+            => Request = new SteamerWebUserGroupListRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
 
         public override ISteamerWebUserGroupListRequest Build()
         {
@@ -20,8 +20,10 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupLis
             return request;
         }
 
-        public ISteamerWebUserGroupListRequestBuilder SetKey(string key) => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
+        public ISteamerWebUserGroupListRequestBuilder SetKey(string key)
+            => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
 
-        public ISteamerWebUserGroupListRequestBuilder SetSteamId(ulong steamId) => SetValue("steamid", steamId);
+        public ISteamerWebUserGroupListRequestBuilder SetSteamId(ulong steamId)
+            => SetValue("steamid", steamId);
     }
 }

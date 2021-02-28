@@ -8,12 +8,8 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.R
         SteamerRequestBuilder<SteamerWebFriendListRequestBuilder, ISteamerWebFriendListRequest>,
         ISteamerWebFriendListRequestBuilder
     {
-        public SteamerWebFriendListRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
-            Request = new SteamerWebFriendListRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
-
-        public ISteamerWebFriendListRequestBuilder SetKey(string key) => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
-
-        public ISteamerWebFriendListRequestBuilder SetSteamId(ulong steamId) => SetValue("steamid", steamId);
+        public SteamerWebFriendListRequestBuilder(ISteamerInterface @interface) : base(@interface)
+            => Request = new SteamerWebFriendListRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
 
         public override ISteamerWebFriendListRequest Build()
         {
@@ -23,5 +19,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.R
 
             return request;
         }
+
+        public ISteamerWebFriendListRequestBuilder SetKey(string key)
+            => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
+
+        public ISteamerWebFriendListRequestBuilder SetSteamId(ulong steamId)
+            => SetValue("steamid", steamId);
     }
 }

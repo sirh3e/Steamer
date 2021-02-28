@@ -22,13 +22,13 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.ResolveVanit
             return request;
         }
 
-        public ISteamerWebResolveVanityUrlRequestBuilder SetKey(string key) =>
-            SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
+        public ISteamerWebResolveVanityUrlRequestBuilder SetKey(string key)
+            => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
 
-        public ISteamerWebResolveVanityUrlRequestBuilder SetVanityUrl(string vanityUrl) =>
-            SetValue("vanityurl", vanityUrl ?? throw new ArgumentNullException(nameof(vanityUrl)));
+        public ISteamerWebResolveVanityUrlRequestBuilder SetVanityUrl(string vanityUrl)
+            => SetValue("vanityurl", vanityUrl ?? throw new ArgumentNullException(nameof(vanityUrl)));
 
-        public ISteamerWebResolveVanityUrlRequestBuilder SetUrlType(string urlType) =>
-            SetValue("url_type", urlType ?? throw new ArgumentNullException(nameof(urlType)));
+        public ISteamerWebResolveVanityUrlRequestBuilder SetUrlType(string urlType)
+            => SetValue("url_type", urlType ?? throw new ArgumentNullException(nameof(urlType)));
     }
 }
