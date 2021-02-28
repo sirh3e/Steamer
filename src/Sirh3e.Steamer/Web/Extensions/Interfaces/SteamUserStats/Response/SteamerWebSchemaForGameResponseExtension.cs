@@ -14,6 +14,6 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUserStats.Response
             _ = service ?? throw new ArgumentNullException(nameof(service));
 
             return response.Request.ServiceExecute(service);
-        } 
+        }
     }
 }
