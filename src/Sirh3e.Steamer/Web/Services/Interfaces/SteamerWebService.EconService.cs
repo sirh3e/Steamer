@@ -13,7 +13,7 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffersSum
 
 namespace Sirh3e.Steamer.Web.Services
 {
-    public partial class SteamerWebService
+    public partial class SteamerWebService : ISteamerWebService
     {
         public ISteamerWebCancelTradeOfferResponse Execute(ISteamerWebCancelTradeOfferRequest request)
         {
