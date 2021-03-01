@@ -10,12 +10,12 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Recently
     public class SteamerWebRecentlyPlayedGamesRequest : SteamerRequest, ISteamerWebRecentlyPlayedGamesRequest
     {
         public SteamerWebRecentlyPlayedGamesRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodPost(),
-                                                                                           "CancelTradeOffer", 1,
+                                                                                           new SteamerHttpMethodGet(),
+                                                                                           "GetRecentlyPlayedGames", 1,
                                                                                            new
                                                                                                SteamerParameters(new SteamerStringParameter("key"),
                                                                                                    new
-                                                                                                       SteamerU64Parameter("tradeofferid"))))
+                                                                                                       SteamerU64Parameter("steamid"), new SteamerU32Parameter("count", false))))
         {
         }
     }
