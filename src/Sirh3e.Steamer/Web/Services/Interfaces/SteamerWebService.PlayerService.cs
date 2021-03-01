@@ -2,6 +2,8 @@
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.OwnedGames.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.RecentlyPlayedGames.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.RecentlyPlayedGames.Response;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.SteamLevel.Request;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.SteamLevel.Response;
 
 namespace Sirh3e.Steamer.Web.Services
 {
@@ -17,6 +19,13 @@ namespace Sirh3e.Steamer.Web.Services
         public ISteamerWebRecentlyPlayedGamesResponse Execute(ISteamerWebRecentlyPlayedGamesRequest request)
         {
             var response = new SteamerWebRecentlyPlayedGamesResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
+        }
+
+        public ISteamerWebSteamLevelResponse Execute(ISteamerWebSteamLevelRequest request)
+        {
+            var response = new SteamerWebSteamLevelResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }

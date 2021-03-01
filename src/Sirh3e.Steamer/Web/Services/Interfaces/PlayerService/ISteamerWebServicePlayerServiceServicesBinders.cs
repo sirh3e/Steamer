@@ -4,7 +4,8 @@ namespace Sirh3e.Steamer.Web.Services.PlayerService
 {
     public interface ISteamerWebServicePlayerServiceServicesBinders
         : ISteamerWebServiceOwnedGamesGamesBinder,
-            ISteamerWebServiceRecentlyPlayedGamesBinder
+            ISteamerWebServiceRecentlyPlayedGamesBinder,
+            ISteamerWebServiceSteamLevelBinder
     {
     }
 }
