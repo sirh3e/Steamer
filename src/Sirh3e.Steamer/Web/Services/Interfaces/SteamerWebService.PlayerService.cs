@@ -1,5 +1,7 @@
 ﻿using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.Response;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.CommunityBadgeProgress.Request;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.CommunityBadgeProgress.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.OwnedGames.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.OwnedGames.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.RecentlyPlayedGames.Request;
@@ -15,6 +17,13 @@ namespace Sirh3e.Steamer.Web.Services
         public ISteamerWebBadgesResponse Execute(ISteamerWebBadgesRequest request)
         {
             var response = new SteamerWebBadgesResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
+        }
+
+        public ISteamerWebCommunityBadgeProgressResponse Execute(ISteamerWebCommunityBadgeProgressRequest request)
+        {
+            var response = new SteamerWebCommunityBadgeProgressResponse();
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
