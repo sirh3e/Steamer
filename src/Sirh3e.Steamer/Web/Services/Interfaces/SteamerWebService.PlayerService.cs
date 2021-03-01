@@ -37,6 +37,5 @@ namespace Sirh3e.Steamer.Web.Services
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
-
     }
 }
