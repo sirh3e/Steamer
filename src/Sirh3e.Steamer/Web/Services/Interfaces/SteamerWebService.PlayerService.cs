@@ -14,7 +14,9 @@ namespace Sirh3e.Steamer.Web.Services
 
         public ISteamerWebBadgesResponse Execute(ISteamerWebBadgesRequest request)
         {
-            throw new System.NotImplementedException();
+            var response = new SteamerWebBadgesResponse();
+
+            return GetResponse(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebOwnedGamesResponse Execute(ISteamerWebOwnedGamesRequest request)
