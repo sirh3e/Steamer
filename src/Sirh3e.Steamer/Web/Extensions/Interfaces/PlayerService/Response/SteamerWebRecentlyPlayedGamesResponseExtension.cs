@@ -1,5 +1,4 @@
 ﻿using System;
-using Sirh3e.Steamer.Web.Extensions.Interfaces.PlayerService.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.RecentlyPlayedGames.Response;
 using Sirh3e.Steamer.Web.Services;
 
