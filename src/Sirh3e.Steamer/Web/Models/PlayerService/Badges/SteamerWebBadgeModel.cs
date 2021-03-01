@@ -21,7 +21,7 @@ namespace Sirh3e.Steamer.Web.Models.PlayerService.Badges
         public ulong Scarcity { get; set; }
 
         [JsonPropertyName("appid")]
-        public uint? Appid { get; set; }
+        public uint? AppId { get; set; }
 
         [JsonPropertyName("communityitemid")]
         [JsonConverter(typeof(SteamerSystemTextJsonConverterStringToUlong))]
