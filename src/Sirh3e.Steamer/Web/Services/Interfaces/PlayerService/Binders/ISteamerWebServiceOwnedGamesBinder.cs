@@ -4,7 +4,7 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.OwnedGames.R
 
 namespace Sirh3e.Steamer.Web.Services.PlayerService.Binders
 {
-    public interface ISteamerWebServiceOwnedGamesGamesBinder
+    public interface ISteamerWebServiceOwnedGamesBinder
         : ISteamerServiceBinder<ISteamerWebOwnedGamesRequest, ISteamerWebOwnedGamesResponse>
     {
     }

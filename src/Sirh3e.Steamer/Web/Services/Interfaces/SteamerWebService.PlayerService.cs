@@ -1,4 +1,6 @@
-﻿using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.OwnedGames.Request;
+﻿using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.Request;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.Response;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.OwnedGames.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.OwnedGames.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.RecentlyPlayedGames.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.RecentlyPlayedGames.Response;
@@ -9,6 +11,12 @@ namespace Sirh3e.Steamer.Web.Services
 {
     public partial class SteamerWebService : ISteamerWebService
     {
+
+        public ISteamerWebBadgesResponse Execute(ISteamerWebBadgesRequest request)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public ISteamerWebOwnedGamesResponse Execute(ISteamerWebOwnedGamesRequest request)
         {
             var response = new SteamerWebOwnedGamesResponse();
@@ -29,5 +37,6 @@ namespace Sirh3e.Steamer.Web.Services
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
+
     }
 }
