@@ -7,9 +7,9 @@ using Sirh3e.Steamer.Core.Request;
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.RecentlyPlayedGames.Request
 {
-    public class SteamerWebSteamLevelRequest : SteamerRequest, ISteamerWebSteamLevelRequest
+    public class SteamerWebRecentlyPlayedGamesRequest : SteamerRequest, ISteamerWebRecentlyPlayedGamesRequest
     {
-        public SteamerWebSteamLevelRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
+        public SteamerWebRecentlyPlayedGamesRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
                                                                                            new SteamerHttpMethodGet(),
                                                                                            "GetRecentlyPlayedGames", 1,
                                                                                            new
