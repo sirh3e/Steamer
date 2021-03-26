@@ -21,18 +21,18 @@ namespace Sirh3e.Steamer.Web.Services
         public void Dispose()
             => HttpClientProvider.HttpClient.Dispose();
 
-        private TSteamerResponse GetResponse<TRequest, TSteamerResponse, TSteamerResponseModel>(
-            TRequest request,
+        private TSteamerResponse GetResponse<TSteamerRequest, TSteamerResponse, TSteamerResponseModel>(
+            TSteamerRequest request,
             TSteamerResponse response,
             Func<TSteamerResponseModel> model)
-            where TRequest : ISteamerRequest
-            where TSteamerResponse : ISteamerResponse<TRequest, TSteamerResponseModel>, new() =>
-            CreatePipeline<TRequest, TSteamerResponse, TSteamerResponseModel>().Process(request);
+            where TSteamerRequest : ISteamerRequest
+            where TSteamerResponse : ISteamerResponse<TSteamerRequest, TSteamerResponseModel>, new() =>
+            CreatePipeline<TSteamerRequest, TSteamerResponse, TSteamerResponseModel>().Process(request);
 
-        private SteamerWebServicePipeline<TRequest, TSteamerResponse, TSteamerResponseModel> CreatePipeline
-            <TRequest, TSteamerResponse, TSteamerResponseModel>()
-            where TRequest : ISteamerRequest
-            where TSteamerResponse : ISteamerResponse<TRequest, TSteamerResponseModel>, new() =>
+        private SteamerWebServicePipeline<TSteamerRequest, TSteamerResponse, TSteamerResponseModel> CreatePipeline
+            <TSteamerRequest, TSteamerResponse, TSteamerResponseModel>()
+            where TSteamerRequest : ISteamerRequest
+            where TSteamerResponse : ISteamerResponse<TSteamerRequest, TSteamerResponseModel>, new() =>
             new(this);
     }
 }
