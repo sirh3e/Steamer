@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.Json;
+using Sirh3e.Steamer.Core.Serializers.Json;
 
 namespace Sirh3e.Steamer.Core.Serializers.Providers
 {
@@ -9,18 +11,26 @@ namespace Sirh3e.Steamer.Core.Serializers.Providers
 
         public ISteamerSerializer Serializer { get; }
 
-        public class Builder
+        public class SteamerBuilder
         {
-            protected ISteamerSerializer Serializer { get; set; }
+            protected ISteamerSerializer? Serializer { get; set; }
 
-            public Builder SetSerializer(ISteamerSerializer serializer)
+            public SteamerBuilder SetSerializer(ISteamerSerializer serializer)
             {
                 Serializer = serializer ?? throw new ArgumentNullException(nameof(serializer));
                 return this;
             }
 
-            public ISteamerSerializerProvider Build() =>
-                new SteamerSerializerProvider(Serializer ?? throw new ArgumentNullException(nameof(Serializer)));
+            public SteamerSerializerProvider Build() =>
+                new(Serializer ?? throw new ArgumentNullException(nameof(Serializer)));
+        }
+
+        public static class Factory
+        {
+            public static SteamerSerializerProvider CreateDefault()
+                => new SteamerBuilder()
+                    .SetSerializer(new SteamerSystemTextJsonSerializer(new SteamerSystemTextJsonSerializerOptionsProvider(new JsonSerializerOptions())))
+                    .Build();
         }
     }
 }

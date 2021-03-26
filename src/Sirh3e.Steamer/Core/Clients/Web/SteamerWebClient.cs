@@ -9,7 +9,7 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats;
 
 namespace Sirh3e.Steamer.Core.Clients.Web
 {
-    public class SteamerWebClient : ISteamerWebClient
+    public partial class SteamerWebClient : ISteamerWebClient
     {
         public SteamerWebClient(ISteamerAuthProvider authProvider, ISteamerSerializerProvider serializerProvider)
         {
@@ -31,27 +31,5 @@ namespace Sirh3e.Steamer.Core.Clients.Web
         public ISteamerWebSteamAppsInterfaceBuilder SteamApps { get; }
         public ISteamerWebUserInterfaceBuilder SteamUser { get; }
         public ISteamerWebSteamUserStatsInterfaceBuilder SteamUserStats { get; }
-
-        public class Builder
-        {
-            public ISteamerAuthProvider AuthProvider { get; set; }
-            public ISteamerSerializerProvider SerializerProvider { get; set; }
-
-            public Builder SetAuthProvider(ISteamerAuthProvider authProvider)
-            {
-                AuthProvider = authProvider ?? throw new ArgumentNullException(nameof(authProvider));
-                return this;
-            }
-
-            public Builder SetSerializerProvider(ISteamerSerializerProvider serializerProvider)
-            {
-                SerializerProvider = serializerProvider ?? throw new ArgumentNullException(nameof(serializerProvider));
-                return this;
-            }
-
-            public SteamerWebClient Build() =>
-                new(AuthProvider ?? throw new ArgumentNullException(nameof(AuthProvider)),
-                    SerializerProvider ?? throw new ArgumentNullException(nameof(SerializerProvider)));
-        }
     }
 }
