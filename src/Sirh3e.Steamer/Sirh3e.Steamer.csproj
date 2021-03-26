@@ -10,6 +10,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Internal" />
+      <Folder Include="Web\Models\SteamEconomy\AssetPrices" />
       <Folder Include="Web\Requests" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\CancelTradeOffer\Request" />
       <Folder Include="Web\Requests\Builders\Interfaces\EconService\CancelTradeOffer\Response" />
