@@ -24,7 +24,7 @@ dotnet add package Sirh3e.Steamer --version 1.0.0-preview-0001
 ## Interfaces
 
 Currently implemented interfaces and methods:
-Interfaces:
+
 - [EconService](https://partner.steamgames.com/doc/webapi/IEconService)
   - CancelTradeOffer
   - DeclineTradeOffer
@@ -52,7 +52,8 @@ Interfaces:
   - SchemaForGame
   - UserStatsForGame
 
-Is a method or interface missing please create a [issue](https://github.com/sirh3e/Steamer/issues/new)
+Is a method or interface missing please create a [issue](https://github.com/sirh3e/Steamer/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BENHANCEMENT%5D)
+
 ## Semantic Versioning
 
 Sirh3e.Steamer project strictly adhere to a [semantic](https://semver.org/) versioning scheme.
@@ -60,9 +61,10 @@ Sirh3e.Steamer project strictly adhere to a [semantic](https://semver.org/) vers
 ## Becoming Active in Sirh3e.Steamer development
 
 New contributors are always welcome and I am happy to provide guidance if necessary.
+
 ## Authors
 
-* **Plackpegasus** - *For the name Steamer* - [Plackpegasus](https://github.com/Plackpegasus)
-* **sirh3e** - *Initial work* - [sirh3e](https://github.com/sirh3e)
+- **Plackpegasus** - *For the name Steamer* - [Plackpegasus](https://github.com/Plackpegasus)
+- **sirh3e** - *Initial work* - [sirh3e](https://github.com/sirh3e)
 
 See also the list of [contributors](https://github.com/sirh3e/Steamer/contributors) who participated in this project.
