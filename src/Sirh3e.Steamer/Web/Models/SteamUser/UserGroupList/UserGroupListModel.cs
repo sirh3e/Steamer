@@ -3,12 +3,12 @@ using System.Text.Json.Serialization;
 
 namespace Sirh3e.Steamer.Web.Models.SteamUser.UserGroupList
 {
-    public class UserGroupListModel
+    public class SteamerUserGroupListModel
     {
         [JsonPropertyName("success")]
         public bool Success { get; set; }
 
         [JsonPropertyName("groups")]
-        public List<GroupModel> Groups { get; set; }
+        public List<SteamerGroupModel> Groups { get; set; }
     }
 }
