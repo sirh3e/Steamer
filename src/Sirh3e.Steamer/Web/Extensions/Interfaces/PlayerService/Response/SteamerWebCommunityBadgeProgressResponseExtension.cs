@@ -7,7 +7,8 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.PlayerService.Response
 {
     public static class SteamerWebCommunityBadgeProgressResponseExtension
     {
-        public static ISteamerWebCommunityBadgeProgressResponse RetryServiceExecute(this ISteamerWebCommunityBadgeProgressResponse response,
+        public static ISteamerWebCommunityBadgeProgressResponse RetryServiceExecute(
+            this ISteamerWebCommunityBadgeProgressResponse response,
             ISteamerWebService service)
         {
             _ = response ?? throw new ArgumentNullException(nameof(response));

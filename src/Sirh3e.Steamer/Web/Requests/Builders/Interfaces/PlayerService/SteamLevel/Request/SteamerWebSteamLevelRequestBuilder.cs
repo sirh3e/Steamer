@@ -10,14 +10,14 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.SteamLev
     {
         public SteamerWebSteamLevelRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
             Request = new SteamerWebSteamLevelRequest(Interface ??
-                                                             throw new ArgumentNullException(nameof(Interface)));
+                                                      throw new ArgumentNullException(nameof(Interface)));
 
         public override ISteamerWebSteamLevelRequest Build()
         {
             var request = Request;
 
             Request = new SteamerWebSteamLevelRequest(Interface ??
-                                                             throw new ArgumentNullException(nameof(Interface)));
+                                                      throw new ArgumentNullException(nameof(Interface)));
 
             return request;
         }

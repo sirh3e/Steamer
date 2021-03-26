@@ -10,7 +10,7 @@ namespace Sirh3e.Steamer.Core.Parameters
     {
         public SteamerParameters(params ISteamerParameter[] parameters)
         {
-            if (parameters.Any(parameter => TryAdd(parameter.Name, parameter).Equals(false)))
+            if ( parameters.Any(parameter => TryAdd(parameter.Name, parameter).Equals(false)) )
                 throw new NotImplementedException();
         }
 
@@ -34,7 +34,7 @@ namespace Sirh3e.Steamer.Core.Parameters
         {
             _ = value ?? throw new ArgumentNullException(nameof(value));
 
-            if (Parameters.TryGetValue(key, out var parameter))
+            if ( Parameters.TryGetValue(key, out var parameter) )
             {
                 parameter.Value = value;
             }

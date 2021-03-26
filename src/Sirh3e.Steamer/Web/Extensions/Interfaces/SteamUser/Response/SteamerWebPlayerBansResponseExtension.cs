@@ -9,7 +9,7 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUser.Response
     public static class SteamerWebPlayerBansResponseExtension
     {
         public static ISteamerWebPlayerBansResponse RetryServiceExecute(this ISteamerWebPlayerBansResponse response,
-                                                                        ISteamerWebService service)
+            ISteamerWebService service)
         {
             _ = response ?? throw new ArgumentNullException(nameof(response));
             _ = service ?? throw new ArgumentNullException(nameof(service));

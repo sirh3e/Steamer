@@ -9,13 +9,14 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Communit
 {
     public class SteamerWebCommunityBadgeProgressRequest : SteamerRequest, ISteamerWebCommunityBadgeProgressRequest
     {
-        public SteamerWebCommunityBadgeProgressRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodGet(),
-                                                                                           "GetCommunityBadgeProgress", 1,
-                                                                                           new
-                                                                                               SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new
-                                                                                                       SteamerU64Parameter("steamid"), new SteamerI32Parameter("badgeid"))))
+        public SteamerWebCommunityBadgeProgressRequest(ISteamerInterface @interface) : base(new SteamerMethod(
+            @interface,
+            new SteamerHttpMethodGet(),
+            "GetCommunityBadgeProgress", 1,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new
+                        SteamerU64Parameter("steamid"), new SteamerI32Parameter("badgeid"))))
         {
         }
     }

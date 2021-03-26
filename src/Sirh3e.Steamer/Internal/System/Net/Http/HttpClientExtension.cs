@@ -8,8 +8,8 @@ namespace Sirh3e.Steamer.Internal.System.Net.Http
     internal static class SteamerHttpClientExtension
     {
         internal static Task<HttpResponseMessage> GetHttpResponseMessageAsync(this HttpClient client,
-                                                                              ISteamerHttpMethod method,
-                                                                              Uri uri)
+            ISteamerHttpMethod method,
+            Uri uri)
         {
             _ = client ?? throw new ArgumentNullException(nameof(client));
             _ = method ?? throw new ArgumentNullException(nameof(method));

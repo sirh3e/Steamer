@@ -10,14 +10,14 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer
     {
         public SteamerWebTradeOfferRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
             Request = new SteamerWebTradeOfferRequest(Interface ??
-                                                        throw new ArgumentNullException(nameof(Interface)));
+                                                      throw new ArgumentNullException(nameof(Interface)));
 
         public override ISteamerWebTradeOfferRequest Build()
         {
             var request = Request;
 
             Request = new SteamerWebTradeOfferRequest(Interface ??
-                                                        throw new ArgumentNullException(nameof(Interface)));
+                                                      throw new ArgumentNullException(nameof(Interface)));
 
             return request;
         }

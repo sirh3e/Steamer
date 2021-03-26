@@ -5,7 +5,8 @@ using Sirh3e.Steamer.Core.Interface;
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeHistory.Request
 {
     public class SteamerWebTradeHistoryRequestBuilder
-        : SteamerRequestBuilder<SteamerWebTradeHistoryRequestBuilder, ISteamerWebTradeHistoryRequest>, ISteamerWebTradeHistoryRequestBuilder
+        : SteamerRequestBuilder<SteamerWebTradeHistoryRequestBuilder, ISteamerWebTradeHistoryRequest>,
+            ISteamerWebTradeHistoryRequestBuilder
     {
         public SteamerWebTradeHistoryRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
             Request = new SteamerWebTradeHistoryRequest(Interface ??

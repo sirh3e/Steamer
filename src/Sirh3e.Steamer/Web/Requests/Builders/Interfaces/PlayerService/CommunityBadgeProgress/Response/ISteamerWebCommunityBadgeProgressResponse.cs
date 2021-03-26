@@ -5,7 +5,8 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.CommunityBad
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.CommunityBadgeProgress.Response
 {
-    public interface ISteamerWebCommunityBadgeProgressResponse : ISteamerResponse<ISteamerWebCommunityBadgeProgressRequest,
+    public interface ISteamerWebCommunityBadgeProgressResponse : ISteamerResponse<
+        ISteamerWebCommunityBadgeProgressRequest,
         SteamerWebResponseModel<SteamerWebCommunityBadgeProgressModel>>
     {
     }

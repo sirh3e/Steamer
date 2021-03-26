@@ -5,7 +5,8 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.NumberOfCur
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.NumberOfCurrentPlayers.Response
 {
-    public interface ISteamerWebNumberOfCurrentPlayersResponse : ISteamerResponse<ISteamerWebNumberOfCurrentPlayersRequest,
+    public interface ISteamerWebNumberOfCurrentPlayersResponse : ISteamerResponse<
+        ISteamerWebNumberOfCurrentPlayersRequest,
         SteamerWebResponseModel<SteamerWebNumberOfCurrentPlayersModel>>
     {
     }

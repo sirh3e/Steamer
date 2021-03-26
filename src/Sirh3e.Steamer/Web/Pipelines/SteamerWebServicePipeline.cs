@@ -20,15 +20,15 @@ namespace Sirh3e.Steamer.Web.Pipelines
             PipelineHandlers = request => request
                 .AddHandler(new SteamerWebServiceRequestToUriPipelineHandler<TSteamerRequest>())
                 .AddHandler(new SteamerWebServiceUriToHttpMessageResponsePipelineHandler<TSteamerRequest>(Service
-                                .HttpClientProvider))
+                    .HttpClientProvider))
                 .AddHandler(new SteamerWebServiceHttpResponseMessageCatcherPipelineHandler<TSteamerRequest>())
                 .AddHandler(new SteamerWebServiceHttpResponseMessageHandlerPipelineHandler<TSteamerRequest>())
                 .AddHandler(new SteamerWebServiceResponseModelPipelineHandler<TSteamerRequest, TSteamerResponseModel
-                            >(Service
-                                  .WebClient
-                                  .SerializerProvider))
+                >(Service
+                    .WebClient
+                    .SerializerProvider))
                 .AddHandler(new SteamerWebServiceResponsePipelineHandler<TSteamerRequest, TSteamerResponse,
-                                TSteamerResponseModel>());
+                    TSteamerResponseModel>());
         }
 
         public ISteamerWebService Service { get; set; }

@@ -10,14 +10,14 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Recently
     {
         public SteamerWebRecentlyPlayedGamesRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
             Request = new SteamerWebRecentlyPlayedGamesRequest(Interface ??
-                                                             throw new ArgumentNullException(nameof(Interface)));
+                                                               throw new ArgumentNullException(nameof(Interface)));
 
         public override ISteamerWebRecentlyPlayedGamesRequest Build()
         {
             var request = Request;
 
             Request = new SteamerWebRecentlyPlayedGamesRequest(Interface ??
-                                                             throw new ArgumentNullException(nameof(Interface)));
+                                                               throw new ArgumentNullException(nameof(Interface)));
 
             return request;
         }

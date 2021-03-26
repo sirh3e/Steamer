@@ -9,9 +9,9 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamApps.AppList.Requ
     public class SteamerWebAppListRequest : SteamerRequest, ISteamerWebAppListRequest
     {
         public SteamerWebAppListRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodGet(),
-                                                                                           "GetAppList", 2,
-                                                                                           new SteamerParameters()))
+            new SteamerHttpMethodGet(),
+            "GetAppList", 2,
+            new SteamerParameters()))
         {
         }
     }

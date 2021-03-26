@@ -7,7 +7,8 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.EconService.Response
 {
     public static class SteamerWebDeclineTradeOfferResponseExtension
     {
-        public static ISteamerWebDeclineTradeOfferResponse RetryServiceExecute(this ISteamerWebDeclineTradeOfferResponse response,
+        public static ISteamerWebDeclineTradeOfferResponse RetryServiceExecute(
+            this ISteamerWebDeclineTradeOfferResponse response,
             ISteamerWebService service)
         {
             _ = response ?? throw new ArgumentNullException(nameof(response));

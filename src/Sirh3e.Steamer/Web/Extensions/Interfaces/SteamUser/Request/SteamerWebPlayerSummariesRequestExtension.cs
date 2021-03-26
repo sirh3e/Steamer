@@ -8,7 +8,7 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUser.Request
     public static class SteamerWebPlayerSummariesRequestExtension
     {
         public static ISteamerWebPlayerSummariesResponse ServiceExecute(this ISteamerWebPlayerSummariesRequest request,
-                                                                        ISteamerWebService service)
+            ISteamerWebService service)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request));
             _ = service ?? throw new ArgumentNullException(nameof(service));

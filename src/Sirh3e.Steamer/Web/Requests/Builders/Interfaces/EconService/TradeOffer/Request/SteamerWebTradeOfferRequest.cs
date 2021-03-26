@@ -10,11 +10,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer
     public class SteamerWebTradeOfferRequest : SteamerRequest, ISteamerWebTradeOfferRequest
     {
         public SteamerWebTradeOfferRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                      new SteamerHttpMethodGet(),
-                                                                                      "GetTradeOffer", 1,
-                                                                                      new SteamerParameters(new SteamerStringParameter("key"),
-                                                                                          new SteamerU64Parameter("tradeofferid"),
-                                                                                          new SteamerStringParameter("language"))))
+            new SteamerHttpMethodGet(),
+            "GetTradeOffer", 1,
+            new SteamerParameters(new SteamerStringParameter("key"),
+                new SteamerU64Parameter("tradeofferid"),
+                new SteamerStringParameter("language"))))
         {
         }
     }

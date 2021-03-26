@@ -9,13 +9,14 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.NumberO
 {
     public class SteamerWebNumberOfCurrentPlayersRequest : SteamerRequest, ISteamerWebNumberOfCurrentPlayersRequest
     {
-        public SteamerWebNumberOfCurrentPlayersRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodGet(),
-                                                                                           "GetNumberOfCurrentPlayers", 1,
-                                                                                           new
-                                                                                               SteamerParameters(
-                                                                                                   new SteamerU32Parameter("appid")
-                                                                                                   )))
+        public SteamerWebNumberOfCurrentPlayersRequest(ISteamerInterface @interface) : base(new SteamerMethod(
+            @interface,
+            new SteamerHttpMethodGet(),
+            "GetNumberOfCurrentPlayers", 1,
+            new
+                SteamerParameters(
+                    new SteamerU32Parameter("appid")
+                )))
         {
         }
     }

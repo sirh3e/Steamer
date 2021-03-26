@@ -4,6 +4,5 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamEconomy.AssetPric
 {
     public interface ISteamerWebAssetPricesRequest : ISteamerRequest
     {
-
     }
 }

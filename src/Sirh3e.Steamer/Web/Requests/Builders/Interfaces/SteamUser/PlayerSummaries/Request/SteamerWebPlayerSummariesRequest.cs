@@ -10,11 +10,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummar
     public class SteamerWebPlayerSummariesRequest : SteamerRequest, ISteamerWebPlayerSummariesRequest
     {
         public SteamerWebPlayerSummariesRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                         new SteamerHttpMethodGet(), "GetPlayerSummaries", 2,
-                                                                                         new
-                                                                                             SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                 new
-                                                                                                     SteamerStringParameter("steamids"))))
+            new SteamerHttpMethodGet(), "GetPlayerSummaries", 2,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new
+                        SteamerStringParameter("steamids"))))
         {
         }
     }

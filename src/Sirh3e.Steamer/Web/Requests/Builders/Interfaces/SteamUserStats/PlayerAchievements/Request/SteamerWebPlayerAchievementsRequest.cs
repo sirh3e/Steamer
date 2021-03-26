@@ -10,13 +10,13 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.PlayerA
     public class SteamerWebPlayerAchievementsRequest : SteamerRequest, ISteamerWebPlayerAchievementsRequest
     {
         public SteamerWebPlayerAchievementsRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodGet(),
-                                                                                           "GetPlayerAchievements", 1,
-                                                                                           new
-                                                                                               SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new SteamerU64Parameter("steamid"),
-                                                                                                   new SteamerU32Parameter("appid"),
-                                                                                                   new SteamerStringParameter("l", false))))
+            new SteamerHttpMethodGet(),
+            "GetPlayerAchievements", 1,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new SteamerU64Parameter("steamid"),
+                    new SteamerU32Parameter("appid"),
+                    new SteamerStringParameter("l", false))))
         {
         }
     }

@@ -7,7 +7,8 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.PlayerService.Request
 {
     public static class SteamerWebRecentlyPlayedGamesRequestExtension
     {
-        public static ISteamerWebRecentlyPlayedGamesResponse ServiceExecute(this ISteamerWebRecentlyPlayedGamesRequest request,
+        public static ISteamerWebRecentlyPlayedGamesResponse ServiceExecute(
+            this ISteamerWebRecentlyPlayedGamesRequest request,
             ISteamerWebService service)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request));

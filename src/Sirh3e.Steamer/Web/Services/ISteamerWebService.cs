@@ -10,11 +10,11 @@ using Sirh3e.Steamer.Web.Services.SteamUserStats;
 namespace Sirh3e.Steamer.Web.Services
 {
     public interface ISteamerWebService : IDisposable,
-                                          ISteamerWebServiceEconServiceServicesBinders,
-                                          ISteamerWebServicePlayerServiceServicesBinders,
-                                          ISteamerWebServiceSteamAppsBinders,
-                                          ISteamerWebServiceSteamUserServicesBinders,
-                                          ISteamerWebServiceSteamUserStatsBinders
+        ISteamerWebServiceEconServiceServicesBinders,
+        ISteamerWebServicePlayerServiceServicesBinders,
+        ISteamerWebServiceSteamAppsBinders,
+        ISteamerWebServiceSteamUserServicesBinders,
+        ISteamerWebServiceSteamUserStatsBinders
     {
         public ISteamerWebClient WebClient { get; }
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }

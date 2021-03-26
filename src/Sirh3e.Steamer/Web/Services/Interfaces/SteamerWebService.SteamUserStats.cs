@@ -20,6 +20,7 @@ namespace Sirh3e.Steamer.Web.Services
 
             return GetResponse(request, response, response.Model.Unwrap);
         }
+
         public ISteamerWebNumberOfCurrentPlayersResponse Execute(ISteamerWebNumberOfCurrentPlayersRequest request)
         {
             var response = new SteamerWebNumberOfCurrentPlayersResponse();

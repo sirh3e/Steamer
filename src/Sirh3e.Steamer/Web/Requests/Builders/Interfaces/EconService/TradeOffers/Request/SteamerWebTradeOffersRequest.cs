@@ -11,21 +11,21 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer
     public class SteamerWebTradeOffersRequest : SteamerRequest, ISteamerWebTradeOffersRequest
     {
         public SteamerWebTradeOffersRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                     new SteamerHttpMethodGet(),
-                                                                                     "GetTradeOffers", 1,
-                                                                                     new SteamerParameters(new SteamerStringParameter("key"),
-                                                                                         new SteamerBooleanParameter("get_sent_offers"),
-                                                                                         new
-                                                                                             SteamerBooleanParameter("get_received_offers"),
-                                                                                         new SteamerBooleanParameter("get_descriptions"),
-                                                                                         new SteamerStringParameter("language", false),
-                                                                                         new SteamerBooleanParameter("active_only",
-                                                                                             false),
-                                                                                         new SteamerBooleanParameter("historical_only",
-                                                                                             false),
-                                                                                         new
-                                                                                             SteamerDateTimeParameter("time_historical_cutoff",
-                                                                                                 DateTime.Now, false))))
+            new SteamerHttpMethodGet(),
+            "GetTradeOffers", 1,
+            new SteamerParameters(new SteamerStringParameter("key"),
+                new SteamerBooleanParameter("get_sent_offers"),
+                new
+                    SteamerBooleanParameter("get_received_offers"),
+                new SteamerBooleanParameter("get_descriptions"),
+                new SteamerStringParameter("language", false),
+                new SteamerBooleanParameter("active_only",
+                    false),
+                new SteamerBooleanParameter("historical_only",
+                    false),
+                new
+                    SteamerDateTimeParameter("time_historical_cutoff",
+                        DateTime.Now, false))))
         {
         }
     }

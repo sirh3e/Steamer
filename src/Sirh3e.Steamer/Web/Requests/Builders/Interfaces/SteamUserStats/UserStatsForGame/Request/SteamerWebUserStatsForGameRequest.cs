@@ -10,12 +10,12 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.UserSta
     public class SteamerWebUserStatsForGameRequest : SteamerRequest, ISteamerWebUserStatsForGameRequest
     {
         public SteamerWebUserStatsForGameRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodGet(),
-                                                                                           "GetUserStatsForGame", 2,
-                                                                                           new
-                                                                                               SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new
-                                                                                                       SteamerU64Parameter("steamid"), new SteamerU32Parameter("appid"))))
+            new SteamerHttpMethodGet(),
+            "GetUserStatsForGame", 2,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new
+                        SteamerU64Parameter("steamid"), new SteamerU32Parameter("appid"))))
         {
         }
     }

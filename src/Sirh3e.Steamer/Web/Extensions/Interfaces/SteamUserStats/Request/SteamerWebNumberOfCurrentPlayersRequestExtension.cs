@@ -7,7 +7,8 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUserStats.Request
 {
     public static class SteamerWebNumberOfCurrentPlayersRequestExtension
     {
-        public static ISteamerWebNumberOfCurrentPlayersResponse ServiceExecute(this ISteamerWebNumberOfCurrentPlayersRequest request,
+        public static ISteamerWebNumberOfCurrentPlayersResponse ServiceExecute(
+            this ISteamerWebNumberOfCurrentPlayersRequest request,
             ISteamerWebService service)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request));

@@ -12,10 +12,10 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeOffer
         : SteamerRequest, ISteamerWebTradeOffersSummaryRequest
     {
         public SteamerWebTradeOffersSummaryRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                      new SteamerHttpMethodGet(),
-                                                                                      "GetTradeOffersSummary", 1,
-                                                                                      new SteamerParameters(new SteamerStringParameter("key"),
-                                                                                          new SteamerDateTimeParameter("time_last_visit", DateTime.Now))))
+            new SteamerHttpMethodGet(),
+            "GetTradeOffersSummary", 1,
+            new SteamerParameters(new SteamerStringParameter("key"),
+                new SteamerDateTimeParameter("time_last_visit", DateTime.Now))))
         {
         }
     }

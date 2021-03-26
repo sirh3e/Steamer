@@ -10,7 +10,8 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerBans.R
         ISteamerWebPlayerBansRequestBuilder //ToDo rename SteamerMethod
     {
         public SteamerWebPlayerBansRequestBuilder(ISteamerInterface @interface) : base(@interface)
-            => Request = new SteamerWebPlayerBansRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
+            => Request =
+                new SteamerWebPlayerBansRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
 
         public override ISteamerWebPlayerBansRequest Build()
         {
@@ -27,8 +28,8 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerBans.R
         //ToDo change parameter to / create a parameter for list
         public ISteamerWebPlayerBansRequestBuilder SetSteamIds(params ulong[] steamIds) =>
             SetValue("steamids",
-                     string.Join(",",
-                                 steamIds.Select(steamId => steamId.ToString()).ToList() ??
-                                 throw new ArgumentNullException(nameof(steamIds))));
+                string.Join(",",
+                    steamIds.Select(steamId => steamId.ToString()).ToList() ??
+                    throw new ArgumentNullException(nameof(steamIds))));
     }
 }

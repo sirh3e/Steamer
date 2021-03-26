@@ -13,7 +13,6 @@ namespace Sirh3e.Steamer.Web.Services
 {
     public partial class SteamerWebService : ISteamerWebService
     {
-
         public ISteamerWebBadgesResponse Execute(ISteamerWebBadgesRequest request)
         {
             var response = new SteamerWebBadgesResponse();

@@ -10,12 +10,12 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.CancelTrad
     public class SteamerWebCancelTradeOfferRequest : SteamerRequest, ISteamerWebCancelTradeOfferRequest
     {
         public SteamerWebCancelTradeOfferRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodPost(),
-                                                                                           "CancelTradeOffer", 1,
-                                                                                           new
-                                                                                               SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new
-                                                                                                       SteamerU64Parameter("tradeofferid"))))
+            new SteamerHttpMethodPost(),
+            "CancelTradeOffer", 1,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new
+                        SteamerU64Parameter("tradeofferid"))))
         {
         }
     }

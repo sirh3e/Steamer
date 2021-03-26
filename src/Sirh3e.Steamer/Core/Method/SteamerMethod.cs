@@ -10,10 +10,10 @@ namespace Sirh3e.Steamer.Core.Method
         public const string SteamWebApiHostUrl = "https://api.steampowered.com"; //ToDo
 
         public SteamerMethod(ISteamerInterface @interface,
-                             ISteamerHttpMethod httpMethod,
-                             string name,
-                             ulong version,
-                             ISteamerParameters parameters)
+            ISteamerHttpMethod httpMethod,
+            string name,
+            ulong version,
+            ISteamerParameters parameters)
         {
             Interface = @interface ?? throw new ArgumentNullException(nameof(@interface));
             HttpMethod = httpMethod;

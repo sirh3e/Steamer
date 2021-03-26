@@ -7,14 +7,16 @@ using Sirh3e.Steamer.Core.Request;
 
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.GlobalAchievementPercentagesForApp.Request
 {
-    public class SteamerWebGlobalAchievementPercentagesForAppRequest : SteamerRequest, ISteamerWebGlobalAchievementPercentagesForAppRequest
+    public class SteamerWebGlobalAchievementPercentagesForAppRequest : SteamerRequest,
+        ISteamerWebGlobalAchievementPercentagesForAppRequest
     {
-        public SteamerWebGlobalAchievementPercentagesForAppRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodGet(),
-                                                                                           "GetGlobalAchievementPercentagesForApp", 2,
-                                                                                           new
-                                                                                               SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new SteamerU32Parameter("gameid"))))
+        public SteamerWebGlobalAchievementPercentagesForAppRequest(ISteamerInterface @interface) : base(
+            new SteamerMethod(@interface,
+                new SteamerHttpMethodGet(),
+                "GetGlobalAchievementPercentagesForApp", 2,
+                new
+                    SteamerParameters(new SteamerStringParameter("key"),
+                        new SteamerU32Parameter("gameid"))))
         {
         }
     }

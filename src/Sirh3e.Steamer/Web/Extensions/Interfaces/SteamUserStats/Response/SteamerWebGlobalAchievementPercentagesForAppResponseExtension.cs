@@ -7,7 +7,8 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUserStats.Response
 {
     public static class SteamerWebGlobalAchievementPercentagesForAppResponseExtension
     {
-        public static ISteamerWebGlobalAchievementPercentagesForAppResponse RetryServiceExecute(this ISteamerWebGlobalAchievementPercentagesForAppResponse response,
+        public static ISteamerWebGlobalAchievementPercentagesForAppResponse RetryServiceExecute(
+            this ISteamerWebGlobalAchievementPercentagesForAppResponse response,
             ISteamerWebService service)
         {
             _ = response ?? throw new ArgumentNullException(nameof(response));

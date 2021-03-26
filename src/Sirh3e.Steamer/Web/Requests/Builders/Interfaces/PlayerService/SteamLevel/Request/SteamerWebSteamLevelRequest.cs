@@ -10,12 +10,12 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.SteamLev
     public class SteamerWebSteamLevelRequest : SteamerRequest, ISteamerWebSteamLevelRequest
     {
         public SteamerWebSteamLevelRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodGet(),
-                                                                                           "GetSteamLevel", 1,
-                                                                                           new
-                                                                                               SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new
-                                                                                                       SteamerU64Parameter("steamid"))))
+            new SteamerHttpMethodGet(),
+            "GetSteamLevel", 1,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new
+                        SteamerU64Parameter("steamid"))))
         {
         }
     }

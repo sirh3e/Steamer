@@ -19,7 +19,8 @@ namespace Sirh3e.Steamer.Web.Services
 
             public Builder SetHttpClientProvider(ISteamerHttpClientProvider steamerHttpClientProvider)
             {
-                HttpClientProvider = steamerHttpClientProvider ?? throw new ArgumentNullException(nameof(steamerHttpClientProvider));
+                HttpClientProvider = steamerHttpClientProvider ??
+                                     throw new ArgumentNullException(nameof(steamerHttpClientProvider));
                 return this;
             }
 

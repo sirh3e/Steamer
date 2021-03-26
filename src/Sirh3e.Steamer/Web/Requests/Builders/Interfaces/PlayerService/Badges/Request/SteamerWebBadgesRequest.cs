@@ -10,12 +10,12 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.R
     public class SteamerWebBadgesRequest : SteamerRequest, ISteamerWebBadgesRequest
     {
         public SteamerWebBadgesRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodGet(),
-                                                                                           "GetBadges", 1,
-                                                                                           new
-                                                                                               SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new
-                                                                                                       SteamerU64Parameter("steamid"))))
+            new SteamerHttpMethodGet(),
+            "GetBadges", 1,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new
+                        SteamerU64Parameter("steamid"))))
         {
         }
     }

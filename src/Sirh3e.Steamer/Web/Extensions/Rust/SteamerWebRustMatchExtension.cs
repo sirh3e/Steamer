@@ -8,8 +8,8 @@ namespace Sirh3e.Steamer.Web.Extensions.Rust
     public static class SteamerWebRustMatchExtension
     {
         public static void Match<TResponse>(this Option<SteamerWebResponseModel<TResponse>> option,
-                                            Action<TResponse> onOk,
-                                            Action onErr) =>
+            Action<TResponse> onOk,
+            Action onErr) =>
             option.Match(response =>
             {
                 _ = onOk ?? throw new ArgumentNullException(nameof(onOk));
@@ -20,8 +20,8 @@ namespace Sirh3e.Steamer.Web.Extensions.Rust
             }, () => { _ = onErr ?? throw new ArgumentNullException(nameof(onErr)); });
 
         public static TModel Match<TResponse, TModel>(this Option<SteamerWebResponseModel<TResponse>> option,
-                                                      Func<TResponse, TModel> onSome,
-                                                      Func<TModel> onNone) =>
+            Func<TResponse, TModel> onSome,
+            Func<TModel> onNone) =>
             option.Match(response =>
             {
                 _ = response ?? throw new ArgumentNullException(nameof(response));

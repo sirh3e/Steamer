@@ -20,15 +20,16 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
             _ = request ?? throw new ArgumentNullException(nameof(request));
             _ = httpResponseMessage ?? throw new ArgumentNullException(nameof(httpResponseMessage));
 
-            if (httpResponseMessage.IsSuccessStatusCode.Equals(false))
+            if ( httpResponseMessage.IsSuccessStatusCode.Equals(false) )
                 return (request,
-                        Result<HttpResponseMessage, string>
-                            .Err($"{nameof(httpResponseMessage.IsSuccessStatusCode)} is not {true} it is '{false}'"));
+                    Result<HttpResponseMessage, string>
+                        .Err($"{nameof(httpResponseMessage.IsSuccessStatusCode)} is not {true} it is '{false}'"));
 
-            if (httpResponseMessage.StatusCode != HttpStatusCode.OK)
+            if ( httpResponseMessage.StatusCode != HttpStatusCode.OK )
                 return (request,
-                        Result<HttpResponseMessage, string>
-                            .Err($"{nameof(httpResponseMessage.StatusCode)} is not {HttpStatusCode.OK} it is '{httpResponseMessage.StatusCode}'"));
+                    Result<HttpResponseMessage, string>
+                        .Err(
+                            $"{nameof(httpResponseMessage.StatusCode)} is not {HttpStatusCode.OK} it is '{httpResponseMessage.StatusCode}'"));
 
             return (request, Result<HttpResponseMessage, string>.Ok(httpResponseMessage));
         }

@@ -29,7 +29,8 @@ namespace Sirh3e.Steamer.Core.Serializers.Providers
         {
             public static SteamerSerializerProvider CreateDefault()
                 => new SteamerBuilder()
-                    .SetSerializer(new SteamerSystemTextJsonSerializer(new SteamerSystemTextJsonSerializerOptionsProvider(new JsonSerializerOptions())))
+                    .SetSerializer(new SteamerSystemTextJsonSerializer(
+                        new SteamerSystemTextJsonSerializerOptionsProvider(new JsonSerializerOptions())))
                     .Build();
         }
     }

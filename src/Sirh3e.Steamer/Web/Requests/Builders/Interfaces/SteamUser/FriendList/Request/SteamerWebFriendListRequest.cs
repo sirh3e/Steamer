@@ -10,12 +10,12 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.R
     public class SteamerWebFriendListRequest : SteamerRequest, ISteamerWebFriendListRequest
     {
         public SteamerWebFriendListRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                                      new SteamerHttpMethodGet(),
-                                                                                                      "GetFriendList", 1,
-                                                                                                      new
-                                                                                                          SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                              new
-                                                                                                                  SteamerU64Parameter("steamid"))))
+            new SteamerHttpMethodGet(),
+            "GetFriendList", 1,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new
+                        SteamerU64Parameter("steamid"))))
         {
         }
     }

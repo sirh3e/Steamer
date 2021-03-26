@@ -10,12 +10,12 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTra
     public class SteamerWebDeclineTradeOfferRequest : SteamerRequest, ISteamerWebDeclineTradeOfferRequest
     {
         public SteamerWebDeclineTradeOfferRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodPost(),
-                                                                                           "DeclineTradeOffer", 1,
-                                                                                           new
-                                                                                               SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new
-                                                                                                       SteamerU64Parameter("tradeofferid"))))
+            new SteamerHttpMethodPost(),
+            "DeclineTradeOffer", 1,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new
+                        SteamerU64Parameter("tradeofferid"))))
         {
         }
     }

@@ -10,12 +10,14 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.OwnedGam
     public class SteamerWebOwnedGamesRequest : SteamerRequest, ISteamerWebOwnedGamesRequest
     {
         public SteamerWebOwnedGamesRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                           new SteamerHttpMethodGet(),
-                                                                                           "GetOwnedGames", 1,
-                                                                                           new
-                                                                                               SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                   new
-                                                                                                       SteamerU64Parameter("steamid"), new SteamerBooleanParameter("include_appinfo"), new SteamerBooleanParameter("include_played_free_games"), new SteamerU32Parameter("appids_filter"))))
+            new SteamerHttpMethodGet(),
+            "GetOwnedGames", 1,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new
+                        SteamerU64Parameter("steamid"), new SteamerBooleanParameter("include_appinfo"),
+                    new SteamerBooleanParameter("include_played_free_games"),
+                    new SteamerU32Parameter("appids_filter"))))
         {
         }
     }

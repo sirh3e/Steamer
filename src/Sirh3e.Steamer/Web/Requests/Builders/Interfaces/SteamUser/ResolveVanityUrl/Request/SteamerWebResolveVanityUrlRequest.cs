@@ -10,14 +10,14 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.ResolveVanit
     public class SteamerWebResolveVanityUrlRequest : SteamerRequest, ISteamerWebResolveVanityUrlRequest
     {
         public SteamerWebResolveVanityUrlRequest(ISteamerInterface @interface) : base(new SteamerMethod(@interface,
-                                                                                          new SteamerHttpMethodGet(),
-                                                                                          "ResolveVanityUrl", 1,
-                                                                                          new
-                                                                                              SteamerParameters(new SteamerStringParameter("key"),
-                                                                                                  new
-                                                                                                      SteamerStringParameter("vanityurl"),
-                                                                                                  new SteamerStringParameter("url_type",
-                                                                                                      false))))
+            new SteamerHttpMethodGet(),
+            "ResolveVanityUrl", 1,
+            new
+                SteamerParameters(new SteamerStringParameter("key"),
+                    new
+                        SteamerStringParameter("vanityurl"),
+                    new SteamerStringParameter("url_type",
+                        false))))
         {
         }
     }

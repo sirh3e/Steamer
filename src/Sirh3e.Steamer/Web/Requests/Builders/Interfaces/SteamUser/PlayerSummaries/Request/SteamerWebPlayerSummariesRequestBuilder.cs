@@ -10,14 +10,18 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummar
         ISteamerWebPlayerSummariesRequestBuilder
     {
         public SteamerWebPlayerSummariesRequestBuilder(ISteamerInterface @interface) : base(@interface)
-            => Request = new SteamerWebPlayerSummariesRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
+            => Request =
+                new SteamerWebPlayerSummariesRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
 
         public ISteamerWebPlayerSummariesRequestBuilder SetKey(string key)
             => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));
 
         //ToDo change parameter to / create a parameter for list
         public ISteamerWebPlayerSummariesRequestBuilder SetSteamIds(params ulong[] steamIds)
-            => SetValue("steamids", string.Join(",", steamIds.Select(steamId => steamId.ToString()).ToList() ?? throw new ArgumentNullException(nameof(steamIds))));
+            => SetValue("steamids",
+                string.Join(",",
+                    steamIds.Select(steamId => steamId.ToString()).ToList() ??
+                    throw new ArgumentNullException(nameof(steamIds))));
 
         public override ISteamerWebPlayerSummariesRequest Build()
         {

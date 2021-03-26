@@ -7,7 +7,8 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.PlayerService.Response
 {
     public static class SteamerWebRecentlyPlayedGamesResponseExtension
     {
-        public static ISteamerWebRecentlyPlayedGamesResponse RetryServiceExecute(this ISteamerWebRecentlyPlayedGamesResponse response,
+        public static ISteamerWebRecentlyPlayedGamesResponse RetryServiceExecute(
+            this ISteamerWebRecentlyPlayedGamesResponse response,
             ISteamerWebService service)
         {
             _ = response ?? throw new ArgumentNullException(nameof(response));
