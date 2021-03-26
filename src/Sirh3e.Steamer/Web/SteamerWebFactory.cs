@@ -14,7 +14,7 @@ namespace Sirh3e.Steamer.Web
             _ = apiKey.IsNullOrEmpty() ?? throw new ArgumentNullException(nameof(apiKey));
 
             var authProvider = SteamerAuthProvider.Factory.CreateByApiKey(apiKey);
-            
+
             var webClient = SteamerWebClient.Factory.CreateByAuthProvider(authProvider);
             var httpClientProvider = SteamerHttpClientProvider.Factory.CreateDefault();
 

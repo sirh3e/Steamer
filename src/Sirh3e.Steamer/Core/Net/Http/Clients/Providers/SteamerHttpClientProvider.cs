@@ -30,7 +30,7 @@ namespace Sirh3e.Steamer.Core.Net.Http.Clients.Providers
         public static class Factory
         {
             public static SteamerHttpClientProvider CreateDefault()
-                => new Builder().SetHttpClient(new ()).Build();
+                => new Builder().SetHttpClient(new()).Build();
         }
     }
 }
