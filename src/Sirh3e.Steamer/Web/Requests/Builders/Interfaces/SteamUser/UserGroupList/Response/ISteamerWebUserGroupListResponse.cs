@@ -6,7 +6,7 @@ using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupList.Re
 namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupList.Response
 {
     public interface ISteamerWebUserGroupListResponse
-        : ISteamerResponse<ISteamerWebUserGroupListRequest, SteamerWebResponseModel<UserGroupListModel>>
+        : ISteamerResponse<ISteamerWebUserGroupListRequest, SteamerWebResponseModel<SteamerUserGroupListModel>>
     {
     }
 }

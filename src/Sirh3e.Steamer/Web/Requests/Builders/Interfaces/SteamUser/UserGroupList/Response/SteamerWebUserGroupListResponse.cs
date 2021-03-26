@@ -8,6 +8,6 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupLis
     public class SteamerWebUserGroupListResponse : ISteamerWebUserGroupListResponse
     {
         public ISteamerWebUserGroupListRequest Request { get; init; }
-        public Option<SteamerWebResponseModel<UserGroupListModel>> Model { get; init; }
+        public Option<SteamerWebResponseModel<SteamerUserGroupListModel>> Model { get; init; }
     }
 }
