@@ -1,9 +1,10 @@
 ﻿using System;
 
-namespace Sirh3e.Steamer.Core.Extensions.Internal.System
+namespace Sirh3e.Steamer.Internal.System
 {
-    internal static class DateTimeExtension
+    internal static class SteamerDateTimeExtension
     {
-        public static uint ToUnixTimeStamp(this DateTime dateTime) => (uint)dateTime.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
+        public static uint ToUnixTimeStamp(this DateTime dateTime)
+            => (uint)dateTime.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
     }
 }

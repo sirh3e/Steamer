@@ -3,9 +3,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Sirh3e.Steamer.Core.Net.Http.Methods;
 
-namespace Sirh3e.Steamer.Core.Extensions.Internal.System.Net.Http
+namespace Sirh3e.Steamer.Internal.System.Net.Http
 {
-    internal static class HttpClientExtension
+    internal static class SteamerHttpClientExtension
     {
         internal static Task<HttpResponseMessage> GetHttpResponseMessageAsync(this HttpClient client,
                                                                               ISteamerHttpMethod method,
