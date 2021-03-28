@@ -1,5 +1,5 @@
 ﻿using System;
-using Sirh3e.Steamer.Internal.System;
+using Sirh3e.Steamer.Internal.Extensions.System;
 
 namespace Sirh3e.Steamer.Core.Parameter.Types
 {

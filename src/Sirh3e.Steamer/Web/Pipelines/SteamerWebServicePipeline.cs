@@ -2,7 +2,7 @@
 using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
 using Sirh3e.Steamer.Core.Response;
-using Sirh3e.Steamer.Internal.Steamer.Core.Pipeline;
+using Sirh3e.Steamer.Internal.Extensions.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Web.Pipelines.Handlers;
 using Sirh3e.Steamer.Web.Services;
 

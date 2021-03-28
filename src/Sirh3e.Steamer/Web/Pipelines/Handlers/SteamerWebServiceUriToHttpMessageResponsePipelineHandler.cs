@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
 using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
-using Sirh3e.Steamer.Internal.System.Net.Http;
+using Sirh3e.Steamer.Internal.Extensions.System.Net.Http;
 
 namespace Sirh3e.Steamer.Web.Pipelines.Handlers
 {

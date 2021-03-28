@@ -2,7 +2,7 @@
 using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Clients.Web;
 using Sirh3e.Steamer.Core.Net.Http.Clients.Providers;
-using Sirh3e.Steamer.Internal.System;
+using Sirh3e.Steamer.Internal.Extensions.System;
 using Sirh3e.Steamer.Web.Services;
 
 namespace Sirh3e.Steamer.Web
