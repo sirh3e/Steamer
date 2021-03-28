@@ -4,10 +4,14 @@ using Sirh3e.Steamer.Core.Request;
 
 namespace Sirh3e.Steamer.Core.Response
 {
-    public interface ISteamerResponse<TRequest, TModel>
+    public interface ISteamerResponse<TRequest, TModel> : ISteamerResponse<TModel>
         where TRequest : ISteamerRequest
     {
-        public TRequest Request { get; init; } //Change Request Type
+        public TRequest Request { get; init; }
+    }
+
+    public interface ISteamerResponse<TModel>
+    {
         public Option<TModel> Model { get; init; }
 
         public void Match(Action<TModel> onSome, Action onNone)
