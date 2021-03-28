@@ -9,21 +9,21 @@ namespace Sirh3e.Steamer.Web
 {
     public static class SteamerWebFactory
     {
-        public static (SteamerWebClient, SteamerWebService) CreateByApiKey(string apiKey)
+        public static (SteamerWebService, SteamerWebClient) CreateByApiKey(string apiKey)
         {
             _ = apiKey.IsNullOrEmpty() ?? throw new ArgumentNullException(nameof(apiKey));
 
             var authProvider = SteamerAuthProvider.Factory.CreateByApiKey(apiKey);
 
-            var webClient = SteamerWebClient.Factory.CreateByAuthProvider(authProvider);
+            var client = SteamerWebClient.Factory.CreateByAuthProvider(authProvider);
             var httpClientProvider = SteamerHttpClientProvider.Factory.CreateDefault();
 
             var service = new SteamerWebService.Builder()
-                .SetWebClient(webClient)
+                .SetWebClient(client)
                 .SetHttpClientProvider(httpClientProvider)
                 .Build();
 
-            return (webClient, service);
+            return (service, client);
         }
     }
 }
