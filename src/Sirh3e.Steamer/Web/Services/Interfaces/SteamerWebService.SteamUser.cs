@@ -1,3 +1,4 @@
+using System;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerBans.Request;
@@ -21,9 +22,12 @@ namespace Sirh3e.Steamer.Web.Services
         }
 
         public ISteamerWebPlayerBansResponse Execute(ISteamerWebPlayerBansRequest request)
+            => Execute<SteamerWebPlayerBansResponse>(request ?? throw new ArgumentNullException(nameof(request)));
+        
+        public ISteamerWebPlayerBansResponse Execute<TResponse>(ISteamerWebPlayerBansRequest request)
+            where TResponse : ISteamerWebPlayerBansResponse, new()
         {
-            var response = new SteamerWebPlayerBansResponse();
-
+            var response = new TResponse();
             return GetResponse(request, response, response.Model.Unwrap);
         }
 
