@@ -31,8 +31,7 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
             {
                 if ( keyParameter.Required && string.IsNullOrEmpty(keyParameter.GetValueFromQueryString()) )
                 {
-                    var parameter = new SteamerStringParameter(key, true, AuthProvider.ApiKey);
-                    input.Method.Parameters.SetValue(parameter.Name, parameter);
+                    input.Method.Parameters.SetValue(key, AuthProvider.ApiKey);
                 }
             }
 
