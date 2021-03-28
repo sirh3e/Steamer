@@ -8,9 +8,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.TradeHisto
         : SteamerRequestBuilder<SteamerWebTradeHistoryRequestBuilder, ISteamerWebTradeHistoryRequest>,
             ISteamerWebTradeHistoryRequestBuilder
     {
-        public SteamerWebTradeHistoryRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebTradeHistoryRequestBuilder(ISteamerInterface @interface) : base(@interface)
+        {
             Request = new SteamerWebTradeHistoryRequest(Interface ??
                                                         throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebTradeHistoryRequest Build()
         {

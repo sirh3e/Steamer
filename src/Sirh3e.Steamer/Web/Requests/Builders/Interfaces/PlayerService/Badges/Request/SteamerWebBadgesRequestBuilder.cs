@@ -8,9 +8,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.R
         : SteamerRequestBuilder<SteamerWebBadgesRequestBuilder, ISteamerWebBadgesRequest>,
             ISteamerWebBadgesRequestBuilder
     {
-        public SteamerWebBadgesRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebBadgesRequestBuilder(ISteamerInterface @interface) : base(@interface)
+        {
             Request = new SteamerWebBadgesRequest(Interface ??
                                                   throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebBadgesRequest Build()
         {

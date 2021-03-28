@@ -8,9 +8,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.CancelTrad
         : SteamerRequestBuilder<SteamerWebCancelTradeOfferRequestBuilder, ISteamerWebCancelTradeOfferRequest>,
             ISteamerWebCancelTradeOfferRequestBuilder
     {
-        public SteamerWebCancelTradeOfferRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebCancelTradeOfferRequestBuilder(ISteamerInterface @interface) : base(@interface)
+        {
             Request = new SteamerWebCancelTradeOfferRequest(Interface ??
                                                             throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebCancelTradeOfferRequest Build()
         {

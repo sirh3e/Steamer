@@ -8,9 +8,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTra
         : SteamerRequestBuilder<SteamerWebDeclineTradeOfferRequestBuilder, ISteamerWebDeclineTradeOfferRequest>,
             ISteamerWebDeclineTradeOfferRequestBuilder
     {
-        public SteamerWebDeclineTradeOfferRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebDeclineTradeOfferRequestBuilder(ISteamerInterface @interface) : base(@interface)
+        {
             Request = new SteamerWebDeclineTradeOfferRequest(Interface ??
                                                              throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebDeclineTradeOfferRequest Build()
         {

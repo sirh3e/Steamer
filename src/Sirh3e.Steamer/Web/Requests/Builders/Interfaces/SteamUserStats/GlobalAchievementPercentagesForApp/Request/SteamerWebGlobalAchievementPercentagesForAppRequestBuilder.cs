@@ -10,10 +10,12 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.GlobalA
             ISteamerWebGlobalAchievementPercentagesForAppRequestBuilder
     {
         public SteamerWebGlobalAchievementPercentagesForAppRequestBuilder(ISteamerInterface @interface) :
-            base(@interface) =>
+            base(@interface)
+        {
             Request = new SteamerWebGlobalAchievementPercentagesForAppRequest(Interface ??
                                                                               throw new ArgumentNullException(
                                                                                   nameof(Interface)));
+        }
 
         public override ISteamerWebGlobalAchievementPercentagesForAppRequest Build()
         {

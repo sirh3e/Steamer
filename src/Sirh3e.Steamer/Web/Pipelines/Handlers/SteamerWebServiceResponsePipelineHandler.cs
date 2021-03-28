@@ -17,7 +17,7 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
 
             _ = request ?? throw new ArgumentNullException(nameof(request));
 
-            return new TSteamerResponse { Model = model, Request = request };
+            return new TSteamerResponse {Model = model, Request = request};
         }
     }
 }

@@ -14,8 +14,10 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
             Option<TResponseModel>)>
         where TSteamerRequest : ISteamerRequest
     {
-        public SteamerWebServiceResponseModelPipelineHandler(ISteamerSerializerProvider serializerProvider) =>
+        public SteamerWebServiceResponseModelPipelineHandler(ISteamerSerializerProvider serializerProvider)
+        {
             SerializerProvider = serializerProvider ?? throw new ArgumentNullException(nameof(serializerProvider));
+        }
 
         public ISteamerSerializerProvider SerializerProvider { get; set; }
 

@@ -34,10 +34,7 @@ namespace Sirh3e.Steamer.Core.Parameters
         {
             _ = value ?? throw new ArgumentNullException(nameof(value));
 
-            if ( Parameters.TryGetValue(key, out var parameter) )
-            {
-                parameter.Value = value;
-            }
+            if ( Parameters.TryGetValue(key, out var parameter) ) parameter.Value = value;
         }
 
         public IEnumerator<ISteamerParameter> GetEnumerator()

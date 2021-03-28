@@ -6,8 +6,10 @@ namespace Sirh3e.Steamer.Core.Serializers.Providers
 {
     public class SteamerSerializerProvider : ISteamerSerializerProvider
     {
-        public SteamerSerializerProvider(ISteamerSerializer serializer) =>
+        public SteamerSerializerProvider(ISteamerSerializer serializer)
+        {
             Serializer = serializer ?? throw new ArgumentNullException(nameof(serializer));
+        }
 
         public ISteamerSerializer Serializer { get; }
 

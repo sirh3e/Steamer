@@ -8,9 +8,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.ResolveVanit
         SteamerRequestBuilder<SteamerWebResolveVanityUrlRequestBuilder, ISteamerWebResolveVanityUrlRequest>,
         ISteamerWebResolveVanityUrlRequestBuilder
     {
-        public SteamerWebResolveVanityUrlRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebResolveVanityUrlRequestBuilder(ISteamerInterface @interface) : base(@interface)
+        {
             Request =
                 new SteamerWebResolveVanityUrlRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebResolveVanityUrlRequest Build()
         {

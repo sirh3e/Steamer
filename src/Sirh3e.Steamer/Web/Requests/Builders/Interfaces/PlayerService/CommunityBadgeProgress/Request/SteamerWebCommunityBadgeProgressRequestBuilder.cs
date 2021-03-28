@@ -9,9 +9,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Communit
                 ISteamerWebCommunityBadgeProgressRequest>,
             ISteamerWebCommunityBadgeProgressRequestBuilder
     {
-        public SteamerWebCommunityBadgeProgressRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebCommunityBadgeProgressRequestBuilder(ISteamerInterface @interface) : base(@interface)
+        {
             Request = new SteamerWebCommunityBadgeProgressRequest(Interface ??
                                                                   throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebCommunityBadgeProgressRequest Build()
         {

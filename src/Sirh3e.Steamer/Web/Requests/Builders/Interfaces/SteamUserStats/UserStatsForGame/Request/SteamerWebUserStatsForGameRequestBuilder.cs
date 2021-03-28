@@ -8,9 +8,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.UserSta
         : SteamerRequestBuilder<SteamerWebUserStatsForGameRequestBuilder, ISteamerWebUserStatsForGameRequest>,
             ISteamerWebUserStatsForGameRequestBuilder
     {
-        public SteamerWebUserStatsForGameRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebUserStatsForGameRequestBuilder(ISteamerInterface @interface) : base(@interface)
+        {
             Request = new SteamerWebUserStatsForGameRequest(Interface ??
                                                             throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebUserStatsForGameRequest Build()
         {

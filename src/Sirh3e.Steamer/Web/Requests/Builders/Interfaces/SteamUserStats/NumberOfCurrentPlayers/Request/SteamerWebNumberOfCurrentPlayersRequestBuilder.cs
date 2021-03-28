@@ -9,9 +9,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.NumberO
                 ISteamerWebNumberOfCurrentPlayersRequest>,
             ISteamerWebNumberOfCurrentPlayersRequestBuilder
     {
-        public SteamerWebNumberOfCurrentPlayersRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebNumberOfCurrentPlayersRequestBuilder(ISteamerInterface @interface) : base(@interface)
+        {
             Request = new SteamerWebNumberOfCurrentPlayersRequest(Interface ??
                                                                   throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebNumberOfCurrentPlayersRequest Build()
         {

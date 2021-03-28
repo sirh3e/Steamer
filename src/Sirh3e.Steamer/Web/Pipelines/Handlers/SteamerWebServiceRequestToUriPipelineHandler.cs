@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using Sirh3e.Steamer.Core.Parameter.Types;
 using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
 
@@ -16,7 +17,7 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
             _ = input.Method ?? throw new ArgumentNullException(nameof(input.Method));
 
             var queryNameValueCollection = HttpUtility.ParseQueryString(string.Empty);
-
+            
             foreach ( var parameter in input.Method.Parameters )
             {
                 if ( parameter.Required.Equals(false) &&

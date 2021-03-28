@@ -8,9 +8,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.SteamLev
         : SteamerRequestBuilder<SteamerWebSteamLevelRequestBuilder, ISteamerWebSteamLevelRequest>,
             ISteamerWebSteamLevelRequestBuilder
     {
-        public SteamerWebSteamLevelRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebSteamLevelRequestBuilder(ISteamerInterface @interface) : base(@interface)
+        {
             Request = new SteamerWebSteamLevelRequest(Interface ??
                                                       throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebSteamLevelRequest Build()
         {

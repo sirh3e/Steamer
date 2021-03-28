@@ -8,9 +8,11 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.OwnedGam
         : SteamerRequestBuilder<SteamerWebOwnedGamesRequestBuilder, ISteamerWebOwnedGamesRequest>,
             ISteamerWebOwnedGamesRequestBuilder
     {
-        public SteamerWebOwnedGamesRequestBuilder(ISteamerInterface @interface) : base(@interface) =>
+        public SteamerWebOwnedGamesRequestBuilder(ISteamerInterface @interface) : base(@interface)
+        {
             Request = new SteamerWebOwnedGamesRequest(Interface ??
                                                       throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebOwnedGamesRequest Build()
         {

@@ -6,7 +6,9 @@ namespace Sirh3e.Steamer.Core.Net.Http.Clients.Providers
     public class SteamerHttpClientProvider : ISteamerHttpClientProvider
     {
         public SteamerHttpClientProvider(HttpClient httpClient)
-            => HttpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+        {
+            HttpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+        }
 
         public HttpClient HttpClient { get; }
 
@@ -21,7 +23,7 @@ namespace Sirh3e.Steamer.Core.Net.Http.Clients.Providers
             }
 
             public SteamerHttpClientProvider Build()
-                => new(HttpClient ?? new());
+                => new(HttpClient ?? new HttpClient());
 
             public static implicit operator SteamerHttpClientProvider(Builder builder)
                 => builder.Build();
@@ -30,7 +32,7 @@ namespace Sirh3e.Steamer.Core.Net.Http.Clients.Providers
         public static class Factory
         {
             public static SteamerHttpClientProvider CreateDefault()
-                => new Builder().SetHttpClient(new()).Build();
+                => new Builder().SetHttpClient(new HttpClient()).Build();
         }
     }
 }

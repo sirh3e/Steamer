@@ -10,8 +10,10 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerSummar
         ISteamerWebPlayerSummariesRequestBuilder
     {
         public SteamerWebPlayerSummariesRequestBuilder(ISteamerInterface @interface) : base(@interface)
-            => Request =
+        {
+            Request =
                 new SteamerWebPlayerSummariesRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public ISteamerWebPlayerSummariesRequestBuilder SetKey(string key)
             => SetValue("key", key ?? throw new ArgumentNullException(nameof(key)));

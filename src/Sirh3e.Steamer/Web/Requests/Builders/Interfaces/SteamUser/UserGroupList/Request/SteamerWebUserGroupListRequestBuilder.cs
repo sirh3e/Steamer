@@ -9,8 +9,10 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.UserGroupLis
         ISteamerWebUserGroupListRequestBuilder
     {
         public SteamerWebUserGroupListRequestBuilder(ISteamerInterface @interface) : base(@interface)
-            => Request =
+        {
+            Request =
                 new SteamerWebUserGroupListRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebUserGroupListRequest Build()
         {

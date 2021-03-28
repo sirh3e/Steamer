@@ -10,8 +10,10 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.PlayerBans.R
         ISteamerWebPlayerBansRequestBuilder //ToDo rename SteamerMethod
     {
         public SteamerWebPlayerBansRequestBuilder(ISteamerInterface @interface) : base(@interface)
-            => Request =
+        {
+            Request =
                 new SteamerWebPlayerBansRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebPlayerBansRequest Build()
         {

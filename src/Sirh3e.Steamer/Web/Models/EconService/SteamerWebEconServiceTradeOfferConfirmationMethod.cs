@@ -3,18 +3,18 @@
     public enum SteamerWebEconServiceTradeOfferConfirmationMethod
     {
         /// <summary>
-        /// Invalid
+        ///     Invalid
         /// </summary>
         Invalid = 0,
 
         /// <summary>
-        /// An email was sent with details on how to confirm the trade offer
+        ///     An email was sent with details on how to confirm the trade offer
         /// </summary>
         Email = 1,
 
         /// <summary>
-        /// The trade offer may be confirmed via the mobile app
+        ///     The trade offer may be confirmed via the mobile app
         /// </summary>
-        Mobile = 2,
+        Mobile = 2
     }
 }

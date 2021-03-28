@@ -9,8 +9,10 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUser.FriendList.R
         ISteamerWebFriendListRequestBuilder
     {
         public SteamerWebFriendListRequestBuilder(ISteamerInterface @interface) : base(@interface)
-            => Request =
+        {
+            Request =
                 new SteamerWebFriendListRequest(Interface ?? throw new ArgumentNullException(nameof(Interface)));
+        }
 
         public override ISteamerWebFriendListRequest Build()
         {
