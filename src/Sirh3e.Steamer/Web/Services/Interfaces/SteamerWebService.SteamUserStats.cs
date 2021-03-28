@@ -18,35 +18,35 @@ namespace Sirh3e.Steamer.Web.Services
         {
             var response = new SteamerWebGlobalAchievementPercentagesForAppResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebNumberOfCurrentPlayersResponse Execute(ISteamerWebNumberOfCurrentPlayersRequest request)
         {
             var response = new SteamerWebNumberOfCurrentPlayersResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebPlayerAchievementsResponse Execute(ISteamerWebPlayerAchievementsRequest request)
         {
             var response = new SteamerWebPlayerAchievementsResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebSchemaForGameResponse Execute(ISteamerWebSchemaForGameRequest request)
         {
             var response = new SteamerWebSchemaForGameResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebUserStatsForGameResponse Execute(ISteamerWebUserStatsForGameRequest request)
         {
             var response = new SteamerWebUserStatsForGameResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
     }
 }

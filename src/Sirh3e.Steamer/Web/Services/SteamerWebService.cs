@@ -21,7 +21,7 @@ namespace Sirh3e.Steamer.Web.Services
         public void Dispose()
             => HttpClientProvider.HttpClient.Dispose();
 
-        private TSteamerResponse GetResponse<TSteamerRequest, TSteamerResponse, TSteamerResponseModel>(
+        private TSteamerResponse Execute<TSteamerRequest, TSteamerResponse, TSteamerResponseModel>(
             TSteamerRequest request,
             TSteamerResponse response,
             Func<TSteamerResponseModel> model)

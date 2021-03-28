@@ -19,42 +19,42 @@ namespace Sirh3e.Steamer.Web.Services
         {
             var response = new SteamerWebCancelTradeOfferResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebDeclineTradeOfferResponse Execute(ISteamerWebDeclineTradeOfferRequest request)
         {
             var response = new SteamerWebDeclineTradeOfferResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebTradeHistoryResponse Execute(ISteamerWebTradeHistoryRequest request)
         {
             var response = new SteamerWebTradeHistoryResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebTradeOfferResponse Execute(ISteamerWebTradeOfferRequest request)
         {
             var response = new SteamerWebTradeOfferResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebTradeOffersResponse Execute(ISteamerWebTradeOffersRequest request)
         {
             var response = new SteamerWebTradeOffersResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebTradeOffersSummaryResponse Execute(ISteamerWebTradeOffersSummaryRequest request)
         {
             var response = new SteamerWebTradeOffersSummaryResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
     }
 }

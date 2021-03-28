@@ -9,7 +9,7 @@ namespace Sirh3e.Steamer.Web.Services
         {
             var response = new SteamerWebAppListResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
     }
 }

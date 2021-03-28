@@ -17,35 +17,35 @@ namespace Sirh3e.Steamer.Web.Services
         {
             var response = new SteamerWebBadgesResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebCommunityBadgeProgressResponse Execute(ISteamerWebCommunityBadgeProgressRequest request)
         {
             var response = new SteamerWebCommunityBadgeProgressResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebOwnedGamesResponse Execute(ISteamerWebOwnedGamesRequest request)
         {
             var response = new SteamerWebOwnedGamesResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebRecentlyPlayedGamesResponse Execute(ISteamerWebRecentlyPlayedGamesRequest request)
         {
             var response = new SteamerWebRecentlyPlayedGamesResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
 
         public ISteamerWebSteamLevelResponse Execute(ISteamerWebSteamLevelRequest request)
         {
             var response = new SteamerWebSteamLevelResponse();
 
-            return GetResponse(request, response, response.Model.Unwrap);
+            return Execute(request, response, response.Model.Unwrap);
         }
     }
 }
