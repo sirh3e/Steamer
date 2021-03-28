@@ -7,13 +7,13 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamApps.Response
 {
     public static class SteamerWebAppListResponseExtension
     {
-        public static ISteamerWebAppListResponse RetryServiceExecute(this ISteamerWebAppListResponse response,
+        public static ISteamerWebAppListResponse Reexecute(this ISteamerWebAppListResponse response,
             ISteamerWebService service)
         {
             _ = response ?? throw new ArgumentNullException(nameof(response));
             _ = service ?? throw new ArgumentNullException(nameof(service));
 
-            return response.Request.ServiceExecute(service);
+            return response.Request.Execute(service);
         }
     }
 }

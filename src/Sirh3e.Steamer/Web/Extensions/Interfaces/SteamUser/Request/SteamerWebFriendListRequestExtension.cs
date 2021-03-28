@@ -7,7 +7,7 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUser.Request
 {
     public static class SteamerWebFriendListRequestExtension
     {
-        public static ISteamerWebFriendListResponse ServiceExecute(this ISteamerWebFriendListRequest request,
+        public static ISteamerWebFriendListResponse Execute(this ISteamerWebFriendListRequest request,
             ISteamerWebService service)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request));

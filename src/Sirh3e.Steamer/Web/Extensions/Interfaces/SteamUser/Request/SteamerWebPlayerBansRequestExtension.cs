@@ -7,7 +7,7 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUser.Request
 {
     public static class SteamerWebPlayerBansRequestExtension
     {
-        public static ISteamerWebPlayerBansResponse ServiceExecute(this ISteamerWebPlayerBansRequest request,
+        public static ISteamerWebPlayerBansResponse Execute(this ISteamerWebPlayerBansRequest request,
             ISteamerWebService service)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request));

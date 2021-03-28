@@ -7,14 +7,14 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUserStats.Response
 {
     public static class SteamerWebUserStatsForGameResponseExtension
     {
-        public static ISteamerWebUserStatsForGameResponse RetryServiceExecute(
+        public static ISteamerWebUserStatsForGameResponse Reexecute(
             this ISteamerWebUserStatsForGameResponse response,
             ISteamerWebService service)
         {
             _ = response ?? throw new ArgumentNullException(nameof(response));
             _ = service ?? throw new ArgumentNullException(nameof(service));
 
-            return response.Request.ServiceExecute(service);
+            return response.Request.Execute(service);
         }
     }
 }

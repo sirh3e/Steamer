@@ -7,7 +7,7 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUser.Request
 {
     public static class SteamerWebResolveVanityUrlRequestExtension
     {
-        public static ISteamerWebResolveVanityUrlResponse ServiceExecute(
+        public static ISteamerWebResolveVanityUrlResponse Execute(
             this ISteamerWebResolveVanityUrlRequest request,
             ISteamerWebService service)
         {

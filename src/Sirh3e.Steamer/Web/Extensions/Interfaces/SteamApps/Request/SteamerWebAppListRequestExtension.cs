@@ -7,7 +7,7 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamApps.Request
 {
     public static class SteamerWebAppListRequestExtension
     {
-        public static ISteamerWebAppListResponse ServiceExecute(this ISteamerWebAppListRequest request,
+        public static ISteamerWebAppListResponse Execute(this ISteamerWebAppListRequest request,
             ISteamerWebService service)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request));

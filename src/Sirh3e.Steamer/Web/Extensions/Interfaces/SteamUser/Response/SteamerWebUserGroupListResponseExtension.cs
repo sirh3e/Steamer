@@ -8,14 +8,14 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUser.Response
     public static class SteamerWebUserGroupListResponseExtension
     {
         //ToDo find a better name for it
-        public static ISteamerWebUserGroupListResponse RetryServiceExecute(
+        public static ISteamerWebUserGroupListResponse Reexecute(
             this ISteamerWebUserGroupListResponse response,
             ISteamerWebService service)
         {
             _ = response ?? throw new ArgumentNullException(nameof(response));
             _ = service ?? throw new ArgumentNullException(nameof(service));
 
-            return response.Request.ServiceExecute(service);
+            return response.Request.Execute(service);
         }
     }
 }

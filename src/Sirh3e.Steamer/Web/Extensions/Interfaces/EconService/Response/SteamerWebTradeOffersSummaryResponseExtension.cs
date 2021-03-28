@@ -7,14 +7,14 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.EconService.Response
 {
     public static class SteamerWebTradeOffersSummaryResponseExtension
     {
-        public static ISteamerWebTradeOffersSummaryResponse RetryServiceExecute(
+        public static ISteamerWebTradeOffersSummaryResponse Reexecute(
             this ISteamerWebTradeOffersSummaryResponse response,
             ISteamerWebService service)
         {
             _ = response ?? throw new ArgumentNullException(nameof(response));
             _ = service ?? throw new ArgumentNullException(nameof(service));
 
-            return response.Request.ServiceExecute(service);
+            return response.Request.Execute(service);
         }
     }
 }
