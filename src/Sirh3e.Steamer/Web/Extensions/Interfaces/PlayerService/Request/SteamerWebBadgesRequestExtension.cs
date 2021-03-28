@@ -7,7 +7,7 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.PlayerService.Request
 {
     public static class SteamerWebBadgesRequestExtension
     {
-        public static ISteamerWebBadgesResponse ServiceExecute(this ISteamerWebBadgesRequest request,
+        public static ISteamerWebBadgesResponse Execute(this ISteamerWebBadgesRequest request,
             ISteamerWebService service)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request));

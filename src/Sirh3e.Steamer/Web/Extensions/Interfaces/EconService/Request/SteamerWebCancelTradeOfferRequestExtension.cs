@@ -7,7 +7,7 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.EconService.Request
 {
     public static class SteamerWebCancelTradeOfferRequestExtension
     {
-        public static ISteamerWebCancelTradeOfferResponse ServiceExecute(
+        public static ISteamerWebCancelTradeOfferResponse Execute(
             this ISteamerWebCancelTradeOfferRequest request,
             ISteamerWebService service)
         {

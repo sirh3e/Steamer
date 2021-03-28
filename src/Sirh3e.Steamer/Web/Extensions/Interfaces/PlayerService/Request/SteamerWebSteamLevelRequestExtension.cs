@@ -7,7 +7,7 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.PlayerService.Request
 {
     public static class SteamerWebSteamLevelRequestExtension
     {
-        public static ISteamerWebSteamLevelResponse ServiceExecute(this ISteamerWebSteamLevelRequest request,
+        public static ISteamerWebSteamLevelResponse Execute(this ISteamerWebSteamLevelRequest request,
             ISteamerWebService service)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request));

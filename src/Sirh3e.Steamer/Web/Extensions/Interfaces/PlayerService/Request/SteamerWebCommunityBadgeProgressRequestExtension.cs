@@ -7,7 +7,7 @@ namespace Sirh3e.Steamer.Web.Extensions.Interfaces.PlayerService.Request
 {
     public static class SteamerWebCommunityBadgeProgressRequestExtension
     {
-        public static ISteamerWebCommunityBadgeProgressResponse ServiceExecute(
+        public static ISteamerWebCommunityBadgeProgressResponse Execute(
             this ISteamerWebCommunityBadgeProgressRequest request,
             ISteamerWebService service)
         {
