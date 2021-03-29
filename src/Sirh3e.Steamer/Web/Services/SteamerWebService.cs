@@ -29,6 +29,12 @@ namespace Sirh3e.Steamer.Web.Services
             where TSteamerResponse : ISteamerResponse<TSteamerRequest, TSteamerResponseModel>, new()
             => CreatePipeline<TSteamerRequest, TSteamerResponse, TSteamerResponseModel>().Process(request);
 
+        private TSteamerResponse Execute<TSteamerRequest, TSteamerResponse, TSteamerResponseModel>(
+            TSteamerRequest request)
+            where TSteamerRequest : ISteamerRequest
+            where TSteamerResponse : ISteamerResponse<TSteamerRequest, TSteamerResponseModel>, new()
+            => CreatePipeline<TSteamerRequest, TSteamerResponse, TSteamerResponseModel>().Process(request);
+
         private SteamerWebServicePipeline<TSteamerRequest, TSteamerResponse, TSteamerResponseModel> CreatePipeline
             <TSteamerRequest, TSteamerResponse, TSteamerResponseModel>()
             where TSteamerRequest : ISteamerRequest

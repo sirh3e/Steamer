@@ -23,6 +23,10 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
 
         public (TSteamerRequest, Option<TResponseModel>) Process(
             (TSteamerRequest, Result<HttpResponseMessage, string>) input)
+            => ProcessAsync(input).Result;
+
+        public async Task<(TSteamerRequest, Option<TResponseModel>)> ProcessAsync(
+            (TSteamerRequest, Result<HttpResponseMessage, string>) input)
         {
             var (request, result) = input;
 

@@ -14,6 +14,8 @@ namespace Sirh3e.Steamer.Web.Pipelines
         where TSteamerResponse : ISteamerResponse<TSteamerRequest, TSteamerResponseModel>, new()
         where TSteamerRequest : ISteamerRequest
     {
+        public ISteamerWebService Service { get; }
+
         public SteamerWebServicePipeline(ISteamerWebService service)
         {
             Service = service ?? throw new ArgumentNullException(nameof(service));
@@ -30,7 +32,5 @@ namespace Sirh3e.Steamer.Web.Pipelines
                 .AddHandler(new SteamerWebServiceResponsePipelineHandler<TSteamerRequest, TSteamerResponse,
                     TSteamerResponseModel>());
         }
-
-        public ISteamerWebService Service { get; set; }
     }
 }

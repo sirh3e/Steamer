@@ -1,4 +1,6 @@
-﻿using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.Request;
+﻿using Sirh3e.Steamer.Web.Models;
+using Sirh3e.Steamer.Web.Models.PlayerService.CommunityBadgeProgress;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.CommunityBadgeProgress.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.CommunityBadgeProgress.Response;

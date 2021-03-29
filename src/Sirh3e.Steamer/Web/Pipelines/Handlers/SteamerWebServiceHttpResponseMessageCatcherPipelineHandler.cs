@@ -11,13 +11,17 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
         where TSteamerRequest : ISteamerRequest
     {
         public (TSteamerRequest, HttpResponseMessage) Process((TSteamerRequest, Task<HttpResponseMessage>) input)
+            => ProcessAsync(input).Result;
+
+        public async Task<(TSteamerRequest, HttpResponseMessage)> ProcessAsync(
+            (TSteamerRequest, Task<HttpResponseMessage>) input)
         {
             var (request, taskHttpResponseMessage) = input;
 
             _ = request ?? throw new ArgumentNullException(nameof(request));
             _ = taskHttpResponseMessage ?? throw new ArgumentNullException(nameof(taskHttpResponseMessage));
 
-            var httpResponseMessage = taskHttpResponseMessage.Result;
+            var httpResponseMessage = await taskHttpResponseMessage;
 
             return (request, httpResponseMessage);
         }

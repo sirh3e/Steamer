@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Sirh3e.Rust.Option;
 using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
@@ -12,6 +13,9 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
         where TSteamerRequest : ISteamerRequest
     {
         public TSteamerResponse Process((TSteamerRequest, Option<TSteamerResponseModel>) input)
+            => ProcessAsync(input).Result;
+
+        public async Task<TSteamerResponse> ProcessAsync((TSteamerRequest, Option<TSteamerResponseModel>) input)
         {
             var (request, model) = input;
 

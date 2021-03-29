@@ -21,13 +21,15 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
         public ISteamerHttpClientProvider HttpClientProvider { get; set; }
 
         public (TSteamerRequest, Task<HttpResponseMessage>) Process((TSteamerRequest, Uri) input)
+            => ProcessAsync(input).Result;
+
+        public async Task<(TSteamerRequest, Task<HttpResponseMessage>)> ProcessAsync((TSteamerRequest, Uri) input)
         {
             var (request, uri) = input;
 
             _ = request ?? throw new ArgumentNullException(nameof(request));
             _ = uri ?? throw new ArgumentNullException(nameof(uri));
 
-            //ToDo create a httpcontainer container and pass it if not GET
             var responseTask =
                 HttpClientProvider.HttpClient.GetHttpResponseMessageAsync(request.Method.HttpMethod, uri);
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Sirh3e.Rust.Result;
 using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
@@ -13,6 +14,10 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
         where TSteamerRequest : ISteamerRequest
     {
         public (TSteamerRequest, Result<HttpResponseMessage, string>) Process(
+            (TSteamerRequest, HttpResponseMessage) input)
+            => ProcessAsync(input).Result;
+
+        public async Task<(TSteamerRequest, Result<HttpResponseMessage, string>)> ProcessAsync(
             (TSteamerRequest, HttpResponseMessage) input)
         {
             var (request, httpResponseMessage) = input;
