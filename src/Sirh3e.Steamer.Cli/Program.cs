@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
-using Sirh3e.Rust.Option;
 using Sirh3e.Steamer.Web;
 using Sirh3e.Steamer.Web.Extensions.Interfaces.SteamUser.Request;
 using Sirh3e.Steamer.Web.Extensions.Rust;
@@ -11,42 +12,35 @@ namespace Sirh3e.Steamer.Cli
     {
         private static async Task Main(string[] args)
         {
-            var apiKey = "";
-            var (service, client) = SteamerWebFactory.CreateByApiKey(apiKey);
+            var apiKey = "1A3E61134C39581437B9CFEADD8C87AD";
+            var (service, client) = SteamerWebFactory.CreateByKey(apiKey);
 
-            var start = DateTime.Now;
+            var stopwatch = Stopwatch.StartNew();
 
-            var resolveVanityUrlResponse = client
+            var steamId = await client
                 .SteamUser
                 .ResolveVanityUrl
-                .SetVanityUrl("sirh3e")
+                .SetVanityUrl("xtrivax")
                 .Build()
-                .Execute(service);
+                .ExecuteAsync(service)
+                .MatchAsync(response => response.Model.Match(model => model.SteamId, () => throw new NotImplementedException()), error => throw new NotImplementedException());
 
-            var steamId = resolveVanityUrlResponse
-                .Model
-                .Match(
-                    model => Option<ulong>.Some(model.Response.SteamId),
-                    () => Option<ulong>.None
-                    );
+            var steamIds = await client
+                .SteamUser
+                .FriendList
+                .SetSteamId(steamId)
+                .Build()
+                .ExecuteAsync(service)
+                .MatchAsync(response => response.Model.Match(model => 
+                    model.FriendsList.Friends
+                    .OrderBy(friend => friend.FriendSince)
+                    .Select(friend => friend.SteamId)
+                    , () => throw new NotImplementedException()), err => throw new NotImplementedException());
 
-            var request = client
-                .PlayerService
-                .SteamLevel
-                .SetSteamId(steamId.UnwrapOrElse(() => throw new NotImplementedException()))
-                .Build();
-
-            var response = service.Execute(request);
-
-            response.Match(model =>
-            {
-                var level = model.PlayerLevel;
-                Console.WriteLine(level);
-            }, () => { });
-
-            var end = DateTime.Now;
-
-            Console.WriteLine($"{(end - start).TotalSeconds}s");
+            stopwatch.Stop();
+            
+            Console.WriteLine(string.Join(", ", steamIds));
+            Console.WriteLine(stopwatch.Elapsed);
         }
     }
 }
