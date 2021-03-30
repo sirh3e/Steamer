@@ -9,14 +9,14 @@ namespace Sirh3e.Steamer.Core.Builder
         where TRequestBuilder : SteamerRequestBuilder<TRequestBuilder, TRequestInterface>
         where TRequestInterface : ISteamerRequest
     {
+        protected ISteamerInterface Interface { get; }
+        public TRequestInterface Request { get; protected set; }
+        public abstract TRequestInterface Build();
+
         protected SteamerRequestBuilder(ISteamerInterface @interface)
         {
             Interface = @interface ?? throw new ArgumentNullException(nameof(@interface));
         }
-
-        protected ISteamerInterface Interface { get; }
-        public TRequestInterface Request { get; protected set; }
-        public abstract TRequestInterface Build();
 
         protected TRequestBuilder SetValue<TValue>(string key, TValue value)
         {
