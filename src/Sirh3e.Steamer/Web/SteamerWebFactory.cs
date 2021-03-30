@@ -9,11 +9,11 @@ namespace Sirh3e.Steamer.Web
 {
     public static class SteamerWebFactory
     {
-        public static (SteamerWebService, SteamerWebClient) CreateByApiKey(string apiKey)
+        public static (SteamerWebService, SteamerWebClient) CreateByKey(string key)
         {
-            _ = apiKey.IsNullOrEmpty() ?? throw new ArgumentNullException(nameof(apiKey));
+            _ = key.IsNullOrEmpty() ?? throw new ArgumentNullException(nameof(key));
 
-            var authProvider = SteamerAuthProvider.Factory.CreateByApiKey(apiKey);
+            var authProvider = SteamerAuthProvider.Factory.CreateByApiKey(key);
 
             var client = SteamerWebClient.Factory.CreateByAuthProvider(authProvider);
             var httpClientProvider = SteamerHttpClientProvider.Factory.CreateDefault();
