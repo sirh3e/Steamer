@@ -31,14 +31,14 @@ namespace Sirh3e.Steamer.Cli
                 .SetSteamId(steamId)
                 .Build()
                 .ExecuteAsync(service)
-                .MatchAsync(response => response.Model.Match(model => 
+                .MatchAsync(response => response.Model.Match(model =>
                     model.FriendsList.Friends
                     .OrderBy(friend => friend.FriendSince)
                     .Select(friend => friend.SteamId)
                     , () => throw new NotImplementedException()), err => throw new NotImplementedException());
 
             stopwatch.Stop();
-            
+
             Console.WriteLine(string.Join(", ", steamIds));
             Console.WriteLine(stopwatch.Elapsed);
         }
