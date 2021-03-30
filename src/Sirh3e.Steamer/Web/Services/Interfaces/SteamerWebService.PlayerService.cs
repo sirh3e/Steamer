@@ -1,5 +1,6 @@
-﻿using Sirh3e.Steamer.Web.Models;
-using Sirh3e.Steamer.Web.Models.PlayerService.CommunityBadgeProgress;
+﻿using System.Threading.Tasks;
+using Sirh3e.Rust.Result;
+using Sirh3e.Steamer.Web.Errors;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.Badges.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.PlayerService.CommunityBadgeProgress.Request;
@@ -15,39 +16,48 @@ namespace Sirh3e.Steamer.Web.Services
 {
     public partial class SteamerWebService : ISteamerWebService
     {
-        public ISteamerWebBadgesResponse Execute(ISteamerWebBadgesRequest request)
+        public Task<Result<ISteamerWebBadgesResponse, ISteamerWebError>> ExecuteAsync(ISteamerWebBadgesRequest request)
         {
             var response = new SteamerWebBadgesResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebBadgesResponse, ISteamerWebBadgesResponse>(ExecuteAsync(request, response,
+                response.Model.Unwrap));
         }
 
-        public ISteamerWebCommunityBadgeProgressResponse Execute(ISteamerWebCommunityBadgeProgressRequest request)
+        public Task<Result<ISteamerWebCommunityBadgeProgressResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebCommunityBadgeProgressRequest request)
         {
             var response = new SteamerWebCommunityBadgeProgressResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebCommunityBadgeProgressResponse, ISteamerWebCommunityBadgeProgressResponse>(
+                ExecuteAsync(request, response, response.Model.Unwrap));
         }
 
-        public ISteamerWebOwnedGamesResponse Execute(ISteamerWebOwnedGamesRequest request)
+        public Task<Result<ISteamerWebOwnedGamesResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebOwnedGamesRequest request)
         {
             var response = new SteamerWebOwnedGamesResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebOwnedGamesResponse, ISteamerWebOwnedGamesResponse>(ExecuteAsync(request, response,
+                response.Model.Unwrap));
         }
 
-        public ISteamerWebRecentlyPlayedGamesResponse Execute(ISteamerWebRecentlyPlayedGamesRequest request)
+        public Task<Result<ISteamerWebRecentlyPlayedGamesResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebRecentlyPlayedGamesRequest request)
         {
             var response = new SteamerWebRecentlyPlayedGamesResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebRecentlyPlayedGamesResponse, ISteamerWebRecentlyPlayedGamesResponse>(
+                ExecuteAsync(request, response, response.Model.Unwrap));
         }
 
-        public ISteamerWebSteamLevelResponse Execute(ISteamerWebSteamLevelRequest request)
+        public Task<Result<ISteamerWebSteamLevelResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebSteamLevelRequest request)
         {
             var response = new SteamerWebSteamLevelResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebSteamLevelResponse, ISteamerWebSteamLevelResponse>(ExecuteAsync(request, response,
+                response.Model.Unwrap));
         }
     }
 }

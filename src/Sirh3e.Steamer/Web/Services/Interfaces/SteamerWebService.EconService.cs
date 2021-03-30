@@ -1,4 +1,7 @@
-﻿using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.CancelTradeOffer.Request;
+﻿using System.Threading.Tasks;
+using Sirh3e.Rust.Result;
+using Sirh3e.Steamer.Web.Errors;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.CancelTradeOffer.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.CancelTradeOffer.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.EconService.DeclineTradeOffer.Response;
@@ -15,46 +18,58 @@ namespace Sirh3e.Steamer.Web.Services
 {
     public partial class SteamerWebService : ISteamerWebService
     {
-        public ISteamerWebCancelTradeOfferResponse Execute(ISteamerWebCancelTradeOfferRequest request)
+        public Task<Result<ISteamerWebCancelTradeOfferResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebCancelTradeOfferRequest request)
         {
             var response = new SteamerWebCancelTradeOfferResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebCancelTradeOfferResponse, ISteamerWebCancelTradeOfferResponse>(
+                ExecuteAsync(request, response, response.Model.Unwrap));
         }
 
-        public ISteamerWebDeclineTradeOfferResponse Execute(ISteamerWebDeclineTradeOfferRequest request)
+        public Task<Result<ISteamerWebDeclineTradeOfferResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebDeclineTradeOfferRequest request)
         {
             var response = new SteamerWebDeclineTradeOfferResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebDeclineTradeOfferResponse, ISteamerWebDeclineTradeOfferResponse>(
+                ExecuteAsync(request, response, response.Model.Unwrap));
         }
 
-        public ISteamerWebTradeHistoryResponse Execute(ISteamerWebTradeHistoryRequest request)
+        public Task<Result<ISteamerWebTradeHistoryResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebTradeHistoryRequest request)
         {
             var response = new SteamerWebTradeHistoryResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebTradeHistoryResponse, ISteamerWebTradeHistoryResponse>(ExecuteAsync(request,
+                response, response.Model.Unwrap));
         }
 
-        public ISteamerWebTradeOfferResponse Execute(ISteamerWebTradeOfferRequest request)
+        public Task<Result<ISteamerWebTradeOfferResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebTradeOfferRequest request)
         {
             var response = new SteamerWebTradeOfferResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebTradeOfferResponse, ISteamerWebTradeOfferResponse>(ExecuteAsync(request, response,
+                response.Model.Unwrap));
         }
 
-        public ISteamerWebTradeOffersResponse Execute(ISteamerWebTradeOffersRequest request)
+        public Task<Result<ISteamerWebTradeOffersResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebTradeOffersRequest request)
         {
             var response = new SteamerWebTradeOffersResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebTradeOffersResponse, ISteamerWebTradeOffersResponse>(ExecuteAsync(request,
+                response, response.Model.Unwrap));
         }
 
-        public ISteamerWebTradeOffersSummaryResponse Execute(ISteamerWebTradeOffersSummaryRequest request)
+        public Task<Result<ISteamerWebTradeOffersSummaryResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebTradeOffersSummaryRequest request)
         {
             var response = new SteamerWebTradeOffersSummaryResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebTradeOffersSummaryResponse, ISteamerWebTradeOffersSummaryResponse>(
+                ExecuteAsync(request, response, response.Model.Unwrap));
         }
     }
 }

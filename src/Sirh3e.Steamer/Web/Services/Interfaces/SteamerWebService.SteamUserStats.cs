@@ -1,4 +1,7 @@
-﻿using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.GlobalAchievementPercentagesForApp.Request;
+﻿using System.Threading.Tasks;
+using Sirh3e.Rust.Result;
+using Sirh3e.Steamer.Web.Errors;
+using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.GlobalAchievementPercentagesForApp.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.GlobalAchievementPercentagesForApp.Response;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.NumberOfCurrentPlayers.Request;
 using Sirh3e.Steamer.Web.Requests.Builders.Interfaces.SteamUserStats.NumberOfCurrentPlayers.Response;
@@ -13,40 +16,50 @@ namespace Sirh3e.Steamer.Web.Services
 {
     public partial class SteamerWebService : ISteamerWebService
     {
-        public ISteamerWebGlobalAchievementPercentagesForAppResponse Execute(
+        public Task<Result<ISteamerWebGlobalAchievementPercentagesForAppResponse, ISteamerWebError>> ExecuteAsync(
             ISteamerWebGlobalAchievementPercentagesForAppRequest request)
         {
             var response = new SteamerWebGlobalAchievementPercentagesForAppResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebGlobalAchievementPercentagesForAppResponse,
+                ISteamerWebGlobalAchievementPercentagesForAppResponse>(ExecuteAsync(request, response,
+                response.Model.Unwrap));
         }
 
-        public ISteamerWebNumberOfCurrentPlayersResponse Execute(ISteamerWebNumberOfCurrentPlayersRequest request)
+        public Task<Result<ISteamerWebNumberOfCurrentPlayersResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebNumberOfCurrentPlayersRequest request)
         {
             var response = new SteamerWebNumberOfCurrentPlayersResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebNumberOfCurrentPlayersResponse, ISteamerWebNumberOfCurrentPlayersResponse>(
+                ExecuteAsync(request, response, response.Model.Unwrap));
         }
 
-        public ISteamerWebPlayerAchievementsResponse Execute(ISteamerWebPlayerAchievementsRequest request)
+        public Task<Result<ISteamerWebPlayerAchievementsResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebPlayerAchievementsRequest request)
         {
             var response = new SteamerWebPlayerAchievementsResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebPlayerAchievementsResponse, ISteamerWebPlayerAchievementsResponse>(
+                ExecuteAsync(request, response, response.Model.Unwrap));
         }
 
-        public ISteamerWebSchemaForGameResponse Execute(ISteamerWebSchemaForGameRequest request)
+        public Task<Result<ISteamerWebSchemaForGameResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebSchemaForGameRequest request)
         {
             var response = new SteamerWebSchemaForGameResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebSchemaForGameResponse, ISteamerWebSchemaForGameResponse>(ExecuteAsync(request,
+                response, response.Model.Unwrap));
         }
 
-        public ISteamerWebUserStatsForGameResponse Execute(ISteamerWebUserStatsForGameRequest request)
+        public Task<Result<ISteamerWebUserStatsForGameResponse, ISteamerWebError>> ExecuteAsync(
+            ISteamerWebUserStatsForGameRequest request)
         {
             var response = new SteamerWebUserStatsForGameResponse();
 
-            return Execute(request, response, response.Model.Unwrap);
+            return MapAsync<SteamerWebUserStatsForGameResponse, ISteamerWebUserStatsForGameResponse>(
+                ExecuteAsync(request, response, response.Model.Unwrap));
         }
     }
 }

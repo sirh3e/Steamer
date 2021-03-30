@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Sirh3e.Rust.Option;
+using Sirh3e.Rust.Result;
 using Sirh3e.Steamer.Core.Response;
 using Sirh3e.Steamer.Web.Extensions.Model;
 using Sirh3e.Steamer.Web.Models;
@@ -8,17 +10,25 @@ namespace Sirh3e.Steamer.Web.Extensions.Rust
 {
     public static class SteamerWebRustMatchExtension
     {
+        public static async void MatchAsync<TOk, TErr>(this Task<Result<TOk, TErr>> task, Action<TOk> onOk, Action<TErr> onErr)
+            => (await task).Match(onOk, onErr);
+
+        public static async Task<T> MatchAsync<T, TOk, TErr>(this Task<Result<TOk, TErr>> task, Func<TOk, T> onOk, Func<TErr, T> onErr)
+            => (await task).Match(onOk, onErr);
+
         public static void Match<TResponse>(this ISteamerResponse<SteamerWebResponseModel<TResponse>> response,
             Action<TResponse> onSome,
             Action onNone)
             => response.Model.Match(onSome, onNone);
 
-        public static TModel Match<TResponse, TModel>(this ISteamerResponse<SteamerWebResponseModel<TResponse>> response,
+        public static TModel Match<TResponse, TModel>(
+            this ISteamerResponse<SteamerWebResponseModel<TResponse>> response,
             Func<TResponse, TModel> onSome,
             Func<TModel> onNone)
             => response.Model.Match(onSome, onNone);
 
-        public static void Match<TResponse>(this Option<SteamerWebResponseModel<TResponse>> option,
+        public static void Match<TResponse>(
+            this Option<SteamerWebResponseModel<TResponse>> option,
             Action<TResponse> onSome,
             Action onNone) =>
             option.Match(response =>

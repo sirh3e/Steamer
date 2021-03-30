@@ -1,31 +1,33 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web;
+using Sirh3e.Rust.Result;
 using Sirh3e.Steamer.Core.Auth;
 using Sirh3e.Steamer.Core.Parameter.Types;
 using Sirh3e.Steamer.Core.Pipeline;
 using Sirh3e.Steamer.Core.Request;
+using Sirh3e.Steamer.Web.Errors;
+using Sirh3e.Steamer.Web.Internal.Rust;
 
 namespace Sirh3e.Steamer.Web.Pipelines.Handlers
 {
     public class
-        SteamerWebServiceRequestToUriPipelineHandler<TSteamerRequest> : ISteamerPipelineHandler<TSteamerRequest, (TSteamerRequest, Uri)>
+        SteamerWebServiceRequestToUriPipelineHandler<TSteamerRequest> : ISteamerPipelineHandler<TSteamerRequest,
+            Task<Result<(TSteamerRequest, Uri), ISteamerWebError>>>
         where TSteamerRequest : ISteamerRequest
     {
-        public ISteamerAuthProvider AuthProvider { get; set; }
-
         public SteamerWebServiceRequestToUriPipelineHandler(ISteamerAuthProvider steamerAuthProvider)
         {
             AuthProvider = steamerAuthProvider;
         }
 
-        public (TSteamerRequest, Uri) Process(TSteamerRequest input)
-            => ProcessAsync(input).Result;
+        public ISteamerAuthProvider AuthProvider { get; set; }
 
-        public async Task<(TSteamerRequest, Uri)> ProcessAsync(TSteamerRequest input)
+
+        public async Task<Result<(TSteamerRequest, Uri), ISteamerWebError>> Process(TSteamerRequest input)
         {
-            _ = input ?? throw new ArgumentNullException(nameof(input));
-            _ = input.Method ?? throw new ArgumentNullException(nameof(input.Method));
+            static Result<(TSteamerRequest, Uri), ISteamerWebError> OnOk(TSteamerRequest request, Uri uri)
+                => (request, uri).FromOk();
 
             var queryNameValueCollection = HttpUtility.ParseQueryString(string.Empty);
 
@@ -54,7 +56,7 @@ namespace Sirh3e.Steamer.Web.Pipelines.Handlers
 
             var uri = new Uri(builder.ToString());
 
-            return (input, uri);
+            return OnOk(input, uri);
         }
     }
 }
