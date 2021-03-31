@@ -11,7 +11,7 @@ namespace Sirh3e.Steamer.Web.Requests.Builders.Interfaces
         public ISteamerWebEconServiceInterfaceBuilder EconService { get; }
         public ISteamerWebPlayerServiceInterfaceBuilder PlayerService { get; }
         public ISteamerWebSteamAppsInterfaceBuilder SteamApps { get; }
-        public ISteamerWebUserInterfaceBuilder SteamUser { get; }
+        public ISteamerWebSteamUserInterfaceBuilder SteamUser { get; }
         public ISteamerWebSteamUserStatsInterfaceBuilder SteamUserStats { get; }
     }
 }

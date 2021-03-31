@@ -20,7 +20,7 @@ namespace Sirh3e.Steamer.Core.Clients.Web
             EconService = new SteamerWebEconServiceInterfaceBuilder();
             PlayerService = new SteamerWebPlayerServiceInterfaceBuilder();
             SteamApps = new SteamerWebSteamAppsInterfaceBuilder();
-            SteamUser = new SteamerWebUserInterfaceBuilder();
+            SteamUser = new SteamerWebSteamUserInterfaceBuilder();
             SteamUserStats = new SteamerWebSteamUserStatsInterfaceBuilder();
         }
 
@@ -29,7 +29,7 @@ namespace Sirh3e.Steamer.Core.Clients.Web
         public ISteamerWebEconServiceInterfaceBuilder EconService { get; }
         public ISteamerWebPlayerServiceInterfaceBuilder PlayerService { get; }
         public ISteamerWebSteamAppsInterfaceBuilder SteamApps { get; }
-        public ISteamerWebUserInterfaceBuilder SteamUser { get; }
+        public ISteamerWebSteamUserInterfaceBuilder SteamUser { get; }
         public ISteamerWebSteamUserStatsInterfaceBuilder SteamUserStats { get; }
     }
 }
