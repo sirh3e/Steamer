@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Sirh3e.Rust" Version="1.0.0-preview-0002" />
+      <PackageReference Include="Sirh3e.Rust" Version="1.0.0-preview-0003" />
     </ItemGroup>
 
     <ItemGroup>

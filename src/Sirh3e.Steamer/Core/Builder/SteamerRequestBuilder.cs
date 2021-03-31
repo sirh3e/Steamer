@@ -1,5 +1,6 @@
 ﻿using System;
 using Sirh3e.Steamer.Core.Interface;
+using Sirh3e.Steamer.Core.Parameters;
 using Sirh3e.Steamer.Core.Request;
 
 namespace Sirh3e.Steamer.Core.Builder
@@ -12,6 +13,18 @@ namespace Sirh3e.Steamer.Core.Builder
         protected ISteamerInterface Interface { get; }
         public TRequestInterface Request { get; protected set; }
         public abstract TRequestInterface Build();
+
+        public TRequestInterface Build(ISteamerParameters parameters)
+        {
+            _ = parameters ?? throw new ArgumentNullException(nameof(parameters));
+
+            foreach ( var parameter in parameters )
+            {
+                SetValue(parameter.Name, parameter.Value);
+            }
+
+            return Build();
+        }
 
         protected SteamerRequestBuilder(ISteamerInterface @interface)
         {
