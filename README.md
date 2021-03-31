@@ -18,7 +18,7 @@ See [interfaces](#interfaces) for all available interfaces and methods.
 ## Nuget
 
 ```cmd
-dotnet add package Sirh3e.Steamer --version 1.0.0-preview-0001
+dotnet add package Sirh3e.Steamer --version 0.1.0
 ```
 
 ## Interfaces
