@@ -84,7 +84,7 @@ New contributors are always welcome and I am happy to provide guidance if necess
 ## Authors
 
 - **Plackpegasus** - *For the name Steamer* - [Plackpegasus](https://github.com/Plackpegasus)
-  **SirCremefresh** - *For simplefining the examples* - [SirCremefresh](https://github.com/SirCremefresh)
+- **SirCremefresh** - *For simplefining the examples* - [SirCremefresh](https://github.com/SirCremefresh)
 - **sirh3e** - *Initial work* - [sirh3e](https://github.com/sirh3e)
 
 See also the list of [contributors](https://github.com/sirh3e/Steamer/contributors) who participated in this project.
