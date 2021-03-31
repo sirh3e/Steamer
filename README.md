@@ -13,6 +13,10 @@ See [interfaces](#interfaces) for all available interfaces and methods.
 | Maintainability | CODE CLIMATE  | [![Maintainability](https://api.codeclimate.com/v1/badges/3dcc070246ce930ea7c9/maintainability)](https://codeclimate.com/github/sirh3e/Steamer/maintainability) |
 | Code Quality    | CodeFactor    | [![CodeFactor](https://www.codefactor.io/repository/github/sirh3e/steamer/badge)](https://www.codefactor.io/repository/github/sirh3e/steamer) |
 
+## License
+
+[BSD-3-Clause](https://github.com/sirh3e/Steamer/blob/master/LICENSE.txt)
+
 ## Quick start
 
 ```csharp
@@ -29,10 +33,6 @@ var steamId = (await client.SteamUser.ResolveVanityUrl
 ```
 
 Else have a look at: [examples](https://github.com/sirh3e/Steamer/tree/development/examples)
-
-## License
-
-[BSD-3-Clause](https://github.com/sirh3e/Steamer/blob/master/LICENSE.txt)
 
 ## Nuget
 
