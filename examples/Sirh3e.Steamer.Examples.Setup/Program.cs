@@ -14,26 +14,44 @@ namespace Sirh3e.Steamer.Examples.Setup
     {
         static void Main(string[] args)
         {
-            var key = "YOUR API KEY"; //https://steamcommunity.com/dev/apikey
-            var (service, client) = SteamerWebFactory.CreateByKey(key); //Default
+            //Create a api key: https://steamcommunity.com/dev/apikey keep is secure
+            var key = "YOUR API KEY";
 
-            //Setup manual
-            var authProvider = new SteamerAuthProvider.Builder().SetApiKey(key).Build();
-
-            var serializerProvider = SteamerSerializerProvider.Factory.CreateDefault();//Default
-            serializerProvider = new SteamerSerializerProvider
-                    .SteamerBuilder()
-                    .SetSerializer(new SteamerSystemTextJsonSerializer(new SteamerSystemTextJsonSerializerOptionsProvider(new JsonSerializerOptions())))
-                    .Build();//Setup manual
-
-            client = new SteamerWebClient.Builder().SetAuthProvider(authProvider).SetSerializerProvider(serializerProvider).Build();
-
-            var httpClient = new HttpClient
+            //Default setup
             {
-                //Setup your proxy
-            };
-            var httpClientProvider = new SteamerHttpClientProvider(httpClient);
-            service = new SteamerWebService.Builder().SetWebClient(client).SetHttpClientProvider(httpClientProvider).Build();
+                var (service, client) = SteamerWebFactory.CreateByKey(key); //Default
+            }
+
+            //Manual setup
+            {
+                var authProvider = new SteamerAuthProvider.Builder()
+                    .SetApiKey(key)
+                    .Build();
+
+                //Default setup
+                var serializerProvider = SteamerSerializerProvider.Factory.CreateDefault();
+
+                //Manual setup
+                serializerProvider = new SteamerSerializerProvider.SteamerBuilder()
+                        .SetSerializer(new SteamerSystemTextJsonSerializer(new SteamerSystemTextJsonSerializerOptionsProvider(new JsonSerializerOptions())))
+                        .Build(); //Setup manual
+
+                var client = new SteamerWebClient.Builder()
+                    .SetAuthProvider(authProvider)
+                    .SetSerializerProvider(serializerProvider)
+                    .Build();
+
+                //Maybe setup for proxy or other things
+                var httpClient = new HttpClient();
+                var httpClientProvider = new SteamerHttpClientProvider.Builder()
+                    .SetHttpClient(httpClient)
+                    .Build();
+
+                var service = new SteamerWebService.Builder()
+                    .SetWebClient(client)
+                    .SetHttpClientProvider(httpClientProvider)
+                    .Build();
+            }
         }
     }
 }
