@@ -25,10 +25,11 @@ namespace Sirh3e.Steamer.Core.Parameters
         public bool TryAdd<TParameter>(string key, TParameter parameter)
             where TParameter : ISteamerParameter
         {
-            if ( Parameters.ContainsKey(key) ) return false;
+            if ( Parameters.ContainsKey(key) )
+                return false;
             Parameters.Add(key, parameter);
             return true;
-        } 
+        }
 #endif
 
         public bool TryGetValue<TParameter>(string key, out TParameter parameter)
