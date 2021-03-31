@@ -1,12 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
         <Nullable>enable</Nullable>
+        <LangVersion>9</LangVersion>
+        <TargetFrameworks>net461;netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Sirh3e.Rust" Version="1.0.0-preview-0003" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'netstandard2.1'">
+        <PackageReference Include="System.Text.Json" Version="5.0.1" />
+        <PackageReference Include="Huitian.PowerCollections" Version="1.0.0" NoWarn="NU1701" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+        <PackageReference Include="System.Text.Json" Version="4.6.0" />
+        <PackageReference Include="Huitian.PowerCollections" Version="1.0.0" NoWarn="NU1701" />
     </ItemGroup>
 
     <ItemGroup>
@@ -31,6 +42,10 @@
       <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\SchemaForGame\Response" />
       <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\UserStatsForGame\Request" />
       <Folder Include="Web\Requests\Builders\Interfaces\SteamUserStats\UserStatsForGame\Response" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461'" />
     </ItemGroup>
 
 </Project>

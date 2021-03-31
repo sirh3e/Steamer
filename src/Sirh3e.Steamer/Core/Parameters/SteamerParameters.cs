@@ -17,9 +17,19 @@ namespace Sirh3e.Steamer.Core.Parameters
         private IDictionary<string, ISteamerParameter> Parameters { get; } =
             new Dictionary<string, ISteamerParameter>();
 
+#if NETSTANDARD2_1_OR_GREATER
         public bool TryAdd<TParameter>(string key, TParameter parameter)
             where TParameter : ISteamerParameter
             => Parameters.TryAdd(key, parameter);
+#else
+        public bool TryAdd<TParameter>(string key, TParameter parameter)
+            where TParameter : ISteamerParameter
+        {
+            if ( Parameters.ContainsKey(key) ) return false;
+            Parameters.Add(key, parameter);
+            return true;
+        } 
+#endif
 
         public bool TryGetValue<TParameter>(string key, out TParameter parameter)
             where TParameter : ISteamerParameter

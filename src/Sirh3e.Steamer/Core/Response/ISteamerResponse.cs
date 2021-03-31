@@ -13,11 +13,12 @@ namespace Sirh3e.Steamer.Core.Response
     public interface ISteamerResponse<TModel>
     {
         public Option<TModel> Model { get; init; }
-
-        public void Match(Action<TModel> onSome, Action onNone)
+#if NETSTANDARD2_1_OR_GREATER
+       public void Match(Action<TModel> onSome, Action onNone)
             => Model.Match(onSome, onNone);
 
         public TSome Match<TSome>(Func<TModel, TSome> onSome, Func<TSome> onNone)
-            => Model.Match(onSome, onNone);
+            => Model.Match(onSome, onNone); 
+#endif
     }
 }
