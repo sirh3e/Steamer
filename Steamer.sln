@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirh3e.Steamer", "src\Sirh3e.Steamer\Sirh3e.Steamer.csproj", "{B1A8AA2E-C01F-4C72-B617-A3408ECF6749}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirh3e.Steamer.Examples.Setup", "examples\Sirh3e.Steamer.Examples.Setup\Sirh3e.Steamer.Examples.Setup.csproj", "{48D47783-19F8-4EB8-ABA8-DE78A8928211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirh3e.Steamer.Examples.Request", "examples\Sirh3e.Steamer.Examples.Request\Sirh3e.Steamer.Examples.Request.csproj", "{5D5E498F-22E6-418B-BB7F-138D6F2E9B7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{B1A8AA2E-C01F-4C72-B617-A3408ECF6749}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1A8AA2E-C01F-4C72-B617-A3408ECF6749}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1A8AA2E-C01F-4C72-B617-A3408ECF6749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48D47783-19F8-4EB8-ABA8-DE78A8928211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48D47783-19F8-4EB8-ABA8-DE78A8928211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48D47783-19F8-4EB8-ABA8-DE78A8928211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48D47783-19F8-4EB8-ABA8-DE78A8928211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D5E498F-22E6-418B-BB7F-138D6F2E9B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D5E498F-22E6-418B-BB7F-138D6F2E9B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D5E498F-22E6-418B-BB7F-138D6F2E9B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D5E498F-22E6-418B-BB7F-138D6F2E9B7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
