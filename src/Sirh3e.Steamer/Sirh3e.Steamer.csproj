@@ -4,6 +4,16 @@
         <Nullable>enable</Nullable>
         <LangVersion>9</LangVersion>
         <TargetFrameworks>net461;netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Sirh3e.Steamer</Title>
+        <Authors>sirh3e</Authors>
+        <Description>Is a .NET wrapper library for the Steam Web API. So you can use static types.Language</Description>
+        <RepositoryUrl>https://github.com/sirh3e/Steamer.git</RepositoryUrl>
+        <RepositoryBranch>development</RepositoryBranch>
+        <PackageProjectUrl>https://github.com/sirh3e/Steamer.git</PackageProjectUrl>
+        <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+        <PackageTags>sirh3e Sirh3e steamapi SteamApi steamwebapi SteamWebApi steamwebapi-fluent SteamWebApi-Fluent</PackageTags>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,12 +22,12 @@
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'netstandard2.1'">
         <PackageReference Include="System.Text.Json" Version="5.0.1" />
-        <PackageReference Include="Huitian.PowerCollections" Version="1.0.0" NoWarn="NU1701" />
+        <PackageReference Include="Huitian.PowerCollections" Version="1.0.0" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
         <PackageReference Include="System.Text.Json" Version="4.6.0" />
-        <PackageReference Include="Huitian.PowerCollections" Version="1.0.0" NoWarn="NU1701" />
+        <PackageReference Include="Huitian.PowerCollections" Version="1.0.0" />
     </ItemGroup>
 
     <ItemGroup>
