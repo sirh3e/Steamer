@@ -10,6 +10,8 @@ See [interfaces](#interfaces) for all available interfaces and methods.
 |-----------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | .NET Core       | Github Action | [![.NET Core](https://github.com/sirh3e/Steamer/actions/workflows/dotnet-core.yml/badge.svg)](https://github.com/sirh3e/Steamer/actions/workflows/dotnet-core.yml)                                                                                 |
 | .NET Format     | Github Action | [![.NET Format](https://github.com/sirh3e/Steamer/actions/workflows/dotnet-format.yml/badge.svg)](https://github.com/sirh3e/Steamer/actions/workflows/dotnet-format.yml)                                                                             |
+| Maintainability | CODE CLIMATE  | [![Maintainability](https://api.codeclimate.com/v1/badges/3dcc070246ce930ea7c9/maintainability)](https://codeclimate.com/github/sirh3e/Steamer/maintainability) |
+| Code Quality    | CodeFactor    | [![CodeFactor](https://www.codefactor.io/repository/github/sirh3e/steamer/badge)](https://www.codefactor.io/repository/github/sirh3e/steamer) |
 
 ## License
 
