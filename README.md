@@ -13,6 +13,23 @@ See [interfaces](#interfaces) for all available interfaces and methods.
 | Maintainability | CODE CLIMATE  | [![Maintainability](https://api.codeclimate.com/v1/badges/3dcc070246ce930ea7c9/maintainability)](https://codeclimate.com/github/sirh3e/Steamer/maintainability) |
 | Code Quality    | CodeFactor    | [![CodeFactor](https://www.codefactor.io/repository/github/sirh3e/steamer/badge)](https://www.codefactor.io/repository/github/sirh3e/steamer) |
 
+## Quick start
+
+```csharp
+var steamUserName = "sirh3e";
+var key = "YOUR API KEY"; //Create a api key: https://steamcommunity.com/dev/apikey keepit secure
+var (service, client) = SteamerWebFactory.CreateByKey(key);
+
+//OnErr where the throw new NotImplementedException is handle the error your self :D
+var steamId = (await client.SteamUser.ResolveVanityUrl
+        .SetVanityUrl(steamUserName)
+        .Build()
+        .ExecuteAsync(service))
+        .Match(response => response.Model.Map(model => model.Response.SteamId).UnwrapOrDefault(), error => throw new NotImplementedException());
+```
+
+Else have a look at: [examples](https://github.com/sirh3e/Steamer/tree/development/examples)
+
 ## License
 
 [BSD-3-Clause](https://github.com/sirh3e/Steamer/blob/master/LICENSE.txt)
@@ -55,23 +72,6 @@ Currently implemented interfaces and methods:
   - UserStatsForGame
 
 Is a method or interface missing please create a [issue](https://github.com/sirh3e/Steamer/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BENHANCEMENT%5D)
-
-## Quick start
-
-```csharp
-var steamUserName = "sirh3e";
-var key = "YOUR API KEY"; //Create a api key: https://steamcommunity.com/dev/apikey keepit secure
-var (service, client) = SteamerWebFactory.CreateByKey(key);
-
-//OnErr where the throw new NotImplementedException is handle the error your self :D
-var steamId = (await client.SteamUser.ResolveVanityUrl
-        .SetVanityUrl(steamUserName)
-        .Build()
-        .ExecuteAsync(service))
-        .Match(response => response.Model.Map(model => model.Response.SteamId).UnwrapOrDefault(), error => throw new NotImplementedException());
-```
-
-Else have a look at: [examples](https://github.com/sirh3e/Steamer/tree/development/examples)
 
 ## Semantic Versioning
 
