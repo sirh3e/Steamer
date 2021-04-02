@@ -21,7 +21,7 @@ See [interfaces](#interfaces) for all available interfaces and methods.
 
 ```csharp
 var steamUserName = "sirh3e";
-var key = "YOUR API KEY"; //Create a api key: https://steamcommunity.com/dev/apikey keepit secure
+var key = "YOUR API KEY"; //Create a api key: https://steamcommunity.com/dev/apikey keep it secure
 var (service, client) = SteamerWebFactory.CreateByKey(key);
 
 //OnErr where the throw new NotImplementedException is handle the error your self :D
